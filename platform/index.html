@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-59H9NW9QDS"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-59H9NW9QDS');
+      /* GA4 — consent-gated (PECR): loads only after the cookie banner is accepted */
+      (function () {
+        function loadGA() {
+          if (window.__pfGA) return; window.__pfGA = true;
+          var s = document.createElement('script'); s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-59H9NW9QDS';
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-59H9NW9QDS');
+        }
+        if (/(^|;\s*)pf_cookie_consent=accepted/.test(document.cookie)) { loadGA(); }
+        else { document.addEventListener('pf:consent-granted', loadGA); }
+      })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PropertyFlow Platform — AI Pricing, Channel Management, Messaging, Compliance & Financials</title>
-    <meta name="description" content="The all-in-one STL management platform. AI Smart Pricing, multi-channel distribution, unified guest messaging, compliance tracking, and financial reporting — first 3 properties always free, £9.99 per extra after that.">
+    <title>Airbnb Management Software UK — All Features | PropertyFlow</title>
+    <meta name="description" content="AI pricing, channel manager, unified inbox, compliance and financial reporting in one short-term let platform. First 3 properties free. Explore every feature.">
     <meta property="og:title" content="PropertyFlow Platform — Replace Your Entire STL Tech Stack">
-    <meta property="og:description" content="The all-in-one STL management platform. AI Smart Pricing, multi-channel distribution, unified guest messaging, compliance tracking, and financial reporting — first 3 properties always free, £9.99 per extra after that.">
+    <meta property="og:description" content="The all-in-one STL management platform. AI AI Pricing, multi-channel distribution, unified guest messaging, document reminders, and financial reporting — your first 3 properties free, £9.99 per extra property after that, or Partner 50/50.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.propertyflow.uk/platform/">
         <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -25,21 +36,20 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="canonical" href="https://www.propertyflow.uk/platform/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PropertyFlow Platform — Cognito Pricing, Compliance, Channel Management &amp; More">
-    <meta name="twitter:description" content="Explore PropertyFlow's complete platform: Cognito Pricing engine, STL compliance management, multi-platform distribution, and hands-free property management for UK STL operators.">
-    <meta property="og:image" content="https://www.propertyflow.uk/images/og-default.jpg">
+    <meta name="twitter:title" content="PropertyFlow Platform — AI Pricing, Compliance, Channel Manager &amp; More">
+    <meta name="twitter:description" content="Explore PropertyFlow's complete platform: AI Pricing engine, STL compliance management, multi-platform distribution, and hands-free property management for UK STL operators.">
+    <meta property="og:image" content="https://www.propertyflow.uk/images/og-default.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:site" content="@propertyflowuk">
-    <meta name="twitter:image" content="https://www.propertyflow.uk/images/og-default.jpg">
+    <meta name="twitter:image" content="https://www.propertyflow.uk/images/og-default.webp">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/tailwind.css">
-    <link rel="stylesheet" href="/css/style.css?v=25">
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
-    <!-- AOS Scroll Animations -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home-ds.css?v=13">
+    <link rel="stylesheet" href="/css/site-ds.css?v=17">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin>
     <script type="application/ld+json">
@@ -66,259 +76,660 @@
         "@type": "Country",
         "name": "United Kingdom"
       },
-      "description": "All-in-one platform for short-term let management — Cognito pricing, compliance tracking, multi-channel distribution, and hands-free management."
+      "description": "All-in-one platform for short-term let management — AI Pricing, document reminders, multi-channel distribution, and hands-free management."
     }
     </script>
 </head>
-<body class="bg-white text-charcoal">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 border-b border-gray-100 z-50" style="background-color: #faf8f5;">
-        <div class="max-w-7xl mx-auto flex items-center justify-between" style="padding: 0.875rem 1.5rem;">
-            <a href="/" class="flex items-center font-bold" style="gap: 0.625rem; color: #141A23; font-size: 1.375rem; text-decoration: none; line-height: 1;">
-                <svg width="56" height="28" viewBox="0 0 64 31"><path d="M 0 31 L 0 15.5 L 11.9 8.9 L 23 15.5 L 23 31 Z" fill="#eea946"/><path d="M 31.8 31 L 31.8 9.3 L 48.4 0 L 64 9.3 L 64 31 Z" fill="#E65A38"/></svg>
-                Property Flow
-            </a>
-            <div class="hidden lg:flex items-center" style="gap: 1.25rem;">
-                <a href="/for-landlords/" class="nav-link">For Users</a>
-                <a href="/for-investors/" class="nav-link">For Investors</a>
-                <div class="relative group">
-                    <a href="/platform/" class="nav-link flex items-center" style="gap: 0.25rem;">Platform <span style="font-size: 0.75rem;">&#9660;</span></a>
-                    <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 rounded-lg shadow-lg py-2" style="min-width: 200px;">
-                        <a href="/platform/ai-pricing/" class="block px-4 py-2 hover:bg-gray-50 text-sm nav-link">Cognito Pricing</a>
-                        <a href="/platform/compliance/" class="block px-4 py-2 hover:bg-gray-50 text-sm nav-link">Compliance Tracking</a>
-                        <a href="/platform/channel-management/" class="block px-4 py-2 hover:bg-gray-50 text-sm nav-link">Channel Management</a>
-                        <a href="/platform/hands-free/" class="block px-4 py-2 hover:bg-gray-50 text-sm nav-link">Hands-Free</a>
+<body class="ds-page ds-grain">
+        <nav id="ds-nav" class="ds-nav" aria-label="Main navigation" data-ds-overlay="false">
+        <div class="ds-nav__shell">
+            <div class="ds-nav__bar">
+                <a href="/" class="ds-nav__logo">
+                    <img id="ds-nav-logo" src="/images/design/pf-logo-dark.svg" alt="PropertyFlow" width="140" height="24">
+                </a>
+                <div class="ds-nav__links">
+                    
+            <div class="ds-mega-navitem">
+                <a href="/platform/" class="ds-nav__link ds-nav__link--mega">Platform
+                    <svg class="ds-nav__chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+                </a>
+                <div class="ds-mega-panel">
+                    <div class="ds-mega-panel__inner">
+                        <div class="ds-mega-panel__rail">
+                            <p class="ds-mega-panel__kicker">The platform</p>
+                            <p class="ds-mega-panel__title">One system for the whole let.</p>
+                            <p class="ds-mega-panel__desc">From the first enquiry to the year-end accounts, PropertyFlow handles the busywork most tools only report on.</p>
+                            <a href="/platform/" class="ds-mega-panel__cta">Explore the platform
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                        <div class="ds-mega-panel__grid"><div class="ds-mega__col"><p class="ds-mega__col-label">Win the booking</p><div class="ds-mega__col-rule"></div><a href="/platform/channel-management/" class="ds-mega__link"><span class="ds-mega__link-title">Channel Manager</span><span class="ds-mega__link-desc">List on every OTA and sync from one calendar.</span></a><a href="/platform/ai-pricing/" class="ds-mega__link"><span class="ds-mega__link-title">AI Pricing</span><span class="ds-mega__link-desc">Rates adjusted nightly for demand and season.</span></a><a class="ds-mega__link ds-mega__link--soon" style="cursor:default;" aria-disabled="true"><span class="ds-mega__link-title">Direct Booking Site<span class="ds-mega__badge ds-mega__badge--soon">Coming soon</span></span><span class="ds-mega__link-desc">Take commission-free bookings on your own site.</span></a></div><div class="ds-mega__col"><p class="ds-mega__col-label">Run the stay</p><div class="ds-mega__col-rule"></div><a href="/platform/unified-inbox/" class="ds-mega__link"><span class="ds-mega__link-title">Unified Inbox</span><span class="ds-mega__link-desc">Every guest message, every channel, one thread.</span></a><a href="/platform/multi-calendar/" class="ds-mega__link"><span class="ds-mega__link-title">Multi-Calendar</span><span class="ds-mega__link-desc">All reservations in a single, always-synced view.</span></a><a href="/platform/turnovers-team/" class="ds-mega__link"><span class="ds-mega__link-title">Turnovers & Team</span><span class="ds-mega__link-desc">Cleaners dispatched the moment a guest leaves.</span></a></div><div class="ds-mega__col"><p class="ds-mega__col-label">Keep the books & the rules</p><div class="ds-mega__col-rule"></div><a href="/platform/revenue-reporting/" class="ds-mega__link"><span class="ds-mega__link-title">Revenue & Reporting</span><span class="ds-mega__link-desc">See what each property really earns.</span></a><a href="/platform/financials-xero/" class="ds-mega__link"><span class="ds-mega__link-title">Financials &amp; Payouts</span><span class="ds-mega__link-desc">Statements, payouts and reconciliation in one place.</span></a><a href="/platform/compliance/" class="ds-mega__link"><span class="ds-mega__link-title">Document Reminders</span><span class="ds-mega__link-desc">Expiry reminders for licences and certificates.</span></a></div></div>
                     </div>
                 </div>
-                <a href="/about/" class="nav-link">About</a>
-                <a href="/blog/" class="nav-link">Blog</a>
-                <a href="/contact/" class="nav-link">Contact</a>
-                <a href="https://app.propertyflow.uk/login" class="nav-link" style="font-size: 0.875rem;">Log in</a> <a href="https://app.propertyflow.uk/register" class="btn-primary" style="white-space: nowrap;">Sign Up</a>
             </div>
-            <button id="mobile-menu-toggle" class="lg:hidden" style="color: #141A23; font-size: 1.5rem; background: none; border: none; cursor: pointer;">&#9776;</button>
+            <div class="ds-mega-navitem">
+                <a href="/for-landlords/" class="ds-nav__link ds-nav__link--mega">Solutions
+                    <svg class="ds-nav__chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+                </a>
+                <div class="ds-mega-panel">
+                    <div class="ds-mega-panel__inner">
+                        <div class="ds-mega-panel__rail">
+                            <p class="ds-mega-panel__kicker">Solutions</p>
+                            <p class="ds-mega-panel__title">Built around how you let.</p>
+                            <p class="ds-mega-panel__desc">However many properties you run and whatever you are trying to fix, there is a way in.</p>
+                            <a href="/for-landlords/" class="ds-mega-panel__cta">Find your fit
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                        <div class="ds-mega-panel__grid ds-mega-panel__grid--two"><div class="ds-mega__col"><p class="ds-mega__col-label">Where you are</p><div class="ds-mega__col-rule"></div><a href="/for-landlords/just-starting-out/" class="ds-mega__link"><span class="ds-mega__link-title">Just starting out<span class="ds-mega__badge">Free</span></span><span class="ds-mega__link-desc">Your first 3 properties, free to run.</span></a><a href="/for-landlords/building-a-portfolio/" class="ds-mega__link"><span class="ds-mega__link-title">Building a portfolio</span><span class="ds-mega__link-desc">Add properties and scale on the PMS.</span></a><a href="/for-landlords/managing-for-owners/" class="ds-mega__link"><span class="ds-mega__link-title">Managing for owners</span><span class="ds-mega__link-desc">Run many owners and units in one place.</span></a></div><div class="ds-mega__col"><p class="ds-mega__col-label">What you are solving</p><div class="ds-mega__col-rule"></div><a href="/for-landlords/new-to-property-software/" class="ds-mega__link"><span class="ds-mega__link-title">New to property software</span><span class="ds-mega__link-desc">See what a real PMS does for you.</span></a><a href="/for-landlords/coming-from-spreadsheets/" class="ds-mega__link"><span class="ds-mega__link-title">Coming from spreadsheets</span><span class="ds-mega__link-desc">Move off scattered tools and threads.</span></a><a href="/platform/hands-free/" class="ds-mega__link"><span class="ds-mega__link-title">Ready to go hands-free<span class="ds-mega__badge">Partner</span></span><span class="ds-mega__link-desc">Hand operations to us as a Partner.</span></a></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ds-mega-navitem">
+                <a href="/become-a-partner/" class="ds-nav__link ds-nav__link--mega">Become a Partner
+                    <svg class="ds-nav__chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+                </a>
+                <div class="ds-mega-panel">
+                    <div class="ds-mega-panel__inner">
+                        <div class="ds-mega-panel__rail">
+                            <p class="ds-mega-panel__kicker">Become a Partner</p>
+                            <p class="ds-mega-panel__title">We run the operation. You grow.</p>
+                            <p class="ds-mega-panel__desc">A genuine 50/50 partnership — for hosts who want their time back, and agents who'd rather sell than operate.</p>
+                            <a href="/become-a-partner/apply/" class="ds-mega-panel__cta">Apply to partner
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                        <div class="ds-mega-panel__grid"><div class="ds-mega__col"><p class="ds-mega__col-label">How it works</p><div class="ds-mega__col-rule"></div><a href="/become-a-partner/the-50-50-model/" class="ds-mega__link"><span class="ds-mega__link-title">The 50/50 model</span><span class="ds-mega__link-desc">How the split and the partnership work.</span></a><a href="/become-a-partner/what-we-take-on/" class="ds-mega__link"><span class="ds-mega__link-title">What we take on</span><span class="ds-mega__link-desc">Linen, cleaning, changeovers, logistics.</span></a><a href="/become-a-partner/what-stays-yours/" class="ds-mega__link"><span class="ds-mega__link-title">What stays yours</span><span class="ds-mega__link-desc">Guests, relationships and growth.</span></a></div><div class="ds-mega__col"><p class="ds-mega__col-label">Getting set up</p><div class="ds-mega__col-rule"></div><a href="/become-a-partner/apply/" class="ds-mega__link"><span class="ds-mega__link-title">Apply</span><span class="ds-mega__link-desc">Start your application in minutes.</span></a><a href="/become-a-partner/onboarding/" class="ds-mega__link"><span class="ds-mega__link-title">Onboarding</span><span class="ds-mega__link-desc">Go live quickly — your account manager runs it from day one.</span></a><a href="/become-a-partner/what-we-look-for/" class="ds-mega__link"><span class="ds-mega__link-title">What we look for</span><span class="ds-mega__link-desc">Who the partnership is a fit for.</span></a></div><div class="ds-mega__col"><p class="ds-mega__col-label">The upside</p><div class="ds-mega__col-rule"></div><a href="/become-a-partner/your-time-back/" class="ds-mega__link"><span class="ds-mega__link-title">Your time back</span><span class="ds-mega__link-desc">Stop touching operations entirely.</span></a><a href="/become-a-partner/room-to-scale/" class="ds-mega__link"><span class="ds-mega__link-title">Room to scale</span><span class="ds-mega__link-desc">Win properties, not chase cleaners.</span></a><a href="/become-a-partner/one-platform-underneath/" class="ds-mega__link"><span class="ds-mega__link-title">One platform underneath</span><span class="ds-mega__link-desc">Everything still runs on the PMS.</span></a></div></div>
+                    </div>
+                </div>
+            </div>
+                    <a href="/pricing/" class="ds-nav__link ds-nav__link--desktop">Pricing</a><a href="/contact/" class="ds-nav__link ds-nav__link--desktop">Contact</a>
+                </div>
+                <div class="ds-nav__actions">
+                    <a href="https://app.propertyflow.uk/login" class="ds-nav__login">Log in</a>
+                    <a href="https://app.propertyflow.uk/register" class="ds-nav__signup">Get started</a>
+                </div>
+                <button id="mobile-menu-toggle" class="ds-nav__menu" aria-label="Open menu">&#9776;</button>
+            </div>
         </div>
-        <div id="mobile-nav" class="hidden lg:hidden bg-white border-b border-gray-200" style="display: none; flex-direction: column;">
-            <a href="/for-landlords/" class="px-6 py-3 border-b border-gray-100 hover:bg-gray-50 nav-link" style="display: block;">For Users</a>
-            <a href="/for-investors/" class="px-6 py-3 border-b border-gray-100 hover:bg-gray-50 nav-link" style="display: block;">For Investors</a>
-            <a href="/platform/" class="px-6 py-3 border-b border-gray-100 hover:bg-gray-50 nav-link" style="display: block;">Platform</a>
-            <a href="/about/" class="px-6 py-3 border-b border-gray-100 hover:bg-gray-50 nav-link" style="display: block;">About</a>
-            <a href="/blog/" class="px-6 py-3 border-b border-gray-100 hover:bg-gray-50 nav-link" style="display: block;">Blog</a>
-            <a href="/careers/" class="px-6 py-3 border-b border-gray-100 hover:bg-gray-50 nav-link" style="display: block;">Careers</a>
-            <a href="/contact/" class="px-6 py-3 border-b border-gray-100 hover:bg-gray-50 nav-link" style="display: block;">Contact</a>
-            <a href="https://app.propertyflow.uk/login" class="px-6 py-3 border-b border-gray-100 hover:bg-gray-50 nav-link" style="display: block;">Log in</a><div class="px-6 py-3"><a href="/contact/" class="btn-primary block text-center" style="width: 100%;">Sign Up</a></div>
+        <div id="mobile-nav" class="ds-mobile-nav">
+            <a href="/platform/" class="ds-mobile-nav__link">Platform</a><a href="/for-landlords/" class="ds-mobile-nav__link">Solutions</a><a href="/become-a-partner/" class="ds-mobile-nav__link">Become a Partner</a><a href="/pricing/" class="ds-mobile-nav__link">Pricing</a><a href="/contact/" class="ds-mobile-nav__link">Contact</a><a href="/about/" class="ds-mobile-nav__link">About</a><a href="/careers/" class="ds-mobile-nav__link">Careers</a>
+            <a href="https://app.propertyflow.uk/login" class="ds-mobile-nav__link">Log in</a>
+            <a href="https://app.propertyflow.uk/register" class="ds-nav__signup ds-nav__signup--block">Get started</a>
         </div>
     </nav>
-    <main>
+    <div class="ds-nav-spacer" aria-hidden="true"></div>
+<main>
 
-    <!-- Hero Section -->
-    <section class="hero-bg-section pt-32 pb-16 px-6 text-white" style="background-color: #141A23;">
-        <video class="hero-video-bg frame-up" autoplay muted loop playsinline webkit-playsinline disableremoteplayback preload="auto" poster="/images/showcase/edinburgh-aerial-hd.jpg">
-            <source src="/videos/edinburgh-aerial.mp4" type="video/mp4">
-        </video>
-        <div class="hero-media-overlay"></div>
-        <div class="max-w-3xl mx-auto text-center" style="position: relative; z-index: 2;">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">One Platform. Your Entire STL Business.</h1>
-            <p class="text-xl text-gray-300">One platform for your entire STL tech stack. AI Smart Pricing, multi-channel distribution, guest messaging, compliance tracking, and financial management — first 3 properties always free, £9.99 per extra after that.</p>
+    <!-- Hero -->
+    <section class="ds-phero ds-phero--center">
+        <div class="ds-phero__eyebrow">
+            <span class="ds-phero__dot" aria-hidden="true"></span>
+            <span class="ds-phero__label">The Platform</span>
+        </div>
+        <h1 class="ds-phero__title">Everything it takes to run your lets. <span class="ds-phero__accent">One platform.</span></h1>
+        <p class="ds-phero__lead">AI pricing, multi-channel distribution, a unified guest inbox, document reminders and financials, all in one place — and free to try on your first three properties.</p>
+        <div class="ds-phero__actions">
+            <a href="https://app.propertyflow.uk/register" class="ds-cta" style="background:var(--ds-gradient);color:#fff;">
+                Get started free
+                <span class="ds-cta__orb" style="background:#fff;color:var(--ds-orange);animation:none;">
+                    <svg class="ds-cta__arrow ds-cta__arrow--main" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    <svg class="ds-cta__arrow ds-cta__arrow--alt" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </span>
+            </a>
+            <a href="#plans" class="ds-cta ds-cta--dark" style="padding:0.875rem 1.5rem;">See plans &amp; pricing</a>
+        </div>
+        <p class="ds-phero__note">No card required &middot; No lock-in &middot; Live in minutes</p>
+    </section>
+
+    <!-- Product visual -->
+    <section class="ds-wrap ds-section ds-section--sm" style="padding-top:0;">
+        <div class="ds-media-frame ds-media-frame--hero">
+            <div class="pfd-scope">
+                            <div class="pfd" aria-hidden="true">
+                                <aside class="pfd-side">
+                                    <img src="/images/design/pf-logo-dark.svg" alt="" class="pfd-side__logo">
+                                    <div class="pfd-nav pfd-nav--on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</div>
+                                    <div class="pfd-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Calendar</div>
+                                    <div class="pfd-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Bookings</div>
+                                    <div class="pfd-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Inbox<span class="pfd-nav__badge">2</span></div>
+                                    <div class="pfd-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>Pricing</div>
+                                    <div class="pfd-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3L23 10M1 14l4.6 4A9 9 0 0 0 20.5 15"/></svg>Turnovers</div>
+                                    <div class="pfd-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>Financials</div>
+                                    <div class="pfd-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Compliance</div>
+                                </aside>
+                                <main class="pfd-main">
+                                    <header class="pfd-top">
+                                        <div>
+                                            <div class="pfd-top__hi">Good afternoon, Rose-Brint Estates</div>
+                                            <div class="pfd-top__sub">Saturday 18 July · 2 check-ins · 2 turnovers</div>
+                                        </div>
+                                        <div class="pfd-top__right">
+                                            <div class="pfd-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search</div>
+                                            <div class="pfd-iconbtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span class="pfd-iconbtn__dot"></span></div>
+                                            <div class="pfd-ava">RB</div>
+                                        </div>
+                                    </header>
+                                    <div class="pfd-kpis">
+                                        <div class="pfd-kpi">
+                                            <div class="pfd-kpi__lbl">Revenue this month</div>
+                                            <div class="pfd-kpi__val">£28,640</div>
+                                            <div class="pfd-kpi__sub"><span class="pfd-up">▲ 18%</span> vs June</div>
+                                            <svg class="pfd-spark" viewBox="0 0 100 28" preserveAspectRatio="none"><path d="M0 23 C10 21 18 22 27 18 C36 14 42 17 52 13 C62 9 68 12 78 8 C87 5 93 6 100 3 L100 28 L0 28 Z" fill="rgba(255,56,92,.12)"/><path d="M0 23 C10 21 18 22 27 18 C36 14 42 17 52 13 C62 9 68 12 78 8 C87 5 93 6 100 3" fill="none" stroke="#FF385C" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="3" r="2.6" fill="#FF385C"/></svg>
+                                        </div>
+                                        <div class="pfd-kpi">
+                                            <div class="pfd-kpi__lbl">Check-ins today</div>
+                                            <div class="pfd-kpi__val">2</div>
+                                            <div class="pfd-kpi__sub">Next at 3:00 pm</div>
+                                        </div>
+                                        <div class="pfd-kpi">
+                                            <div class="pfd-kpi__lbl">Turnovers today</div>
+                                            <div class="pfd-kpi__val">2</div>
+                                            <div class="pfd-kpi__sub"><span class="pfd-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Both assigned</span></div>
+                                        </div>
+                                        <div class="pfd-kpi">
+                                            <div class="pfd-kpi__lbl">Compliance</div>
+                                            <div class="pfd-kpi__val">100%</div>
+                                            <div class="pfd-kpi__sub"><span class="pfd-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>12 certificates valid</span></div>
+                                        </div>
+                                    </div>
+                                    <section class="pfd-cal">
+                                        <header class="pfd-cal__head">
+                                            <span class="pfd-cal__title">July 2026</span>
+                                            <span class="pfd-cal__month">5 properties · every channel, one calendar</span>
+                                            <div class="pfd-legend">
+                                                <span><i style="background:#FF385C;"></i>Airbnb</span>
+                                                <span><i style="background:#006CE4;"></i>Booking.com</span>
+                                                <span><i style="background:#17356B;"></i>Vrbo</span>
+                                                <span><i style="background:#0E9F6E;"></i>Direct</span>
+                                            </div>
+                                        </header>
+                                        <div class="pfd-grid">
+                                            <div class="pfd-lbls">
+                                                <div class="pfd-lbls__spacer"></div>
+                                                <div class="pfd-lbl"><b>Marchmont 2BR</b><span>2 bed · sleeps 4</span></div>
+                                                <div class="pfd-lbl"><b>Leith Walk Flat</b><span>1 bed · sleeps 2</span></div>
+                                                <div class="pfd-lbl"><b>Easter Road Apt</b><span>2 bed · sleeps 5</span></div>
+                                                <div class="pfd-lbl"><b>Stockbridge Loft</b><span>1 bed · sleeps 3</span></div>
+                                                <div class="pfd-lbl"><b>Portobello Beach House</b><span>3 bed · sleeps 6</span></div>
+                                            </div>
+                                            <div class="pfd-track">
+                                                <div class="pfd-band" style="left:calc(5*100%/14);width:calc(2*100%/14);"></div>
+                                                <div class="pfd-band" style="left:calc(12*100%/14);width:calc(2*100%/14);"></div>
+                                                <div class="pfd-band pfd-band--today" style="left:calc(5*100%/14);width:calc(1*100%/14);"></div>
+                                                <div class="pfd-days">
+                                                    <div class="pfd-day"><i>MON</i><b>13</b></div>
+                                                    <div class="pfd-day"><i>TUE</i><b>14</b></div>
+                                                    <div class="pfd-day"><i>WED</i><b>15</b></div>
+                                                    <div class="pfd-day"><i>THU</i><b>16</b></div>
+                                                    <div class="pfd-day"><i>FRI</i><b>17</b></div>
+                                                    <div class="pfd-day pfd-day--today"><i>SAT</i><b>18</b></div>
+                                                    <div class="pfd-day"><i>SUN</i><b>19</b></div>
+                                                    <div class="pfd-day"><i>MON</i><b>20</b></div>
+                                                    <div class="pfd-day"><i>TUE</i><b>21</b></div>
+                                                    <div class="pfd-day"><i>WED</i><b>22</b></div>
+                                                    <div class="pfd-day"><i>THU</i><b>23</b></div>
+                                                    <div class="pfd-day"><i>FRI</i><b>24</b></div>
+                                                    <div class="pfd-day"><i>SAT</i><b>25</b></div>
+                                                    <div class="pfd-day"><i>SUN</i><b>26</b></div>
+                                                </div>
+                                                <div class="pfd-rows">
+                                                    <div class="pfd-row">
+                                                        <div class="pfd-p" style="left:calc(3.5*100%/14);width:calc(4*100%/14);"><span class="pfd-p__logo">A</span><span class="pfd-p__name">Grace Hamilton</span><span class="pfd-p__tag">£1,240</span></div>
+                                                        <div class="pfd-p pfd-p--b" style="left:calc(9.5*100%/14);width:calc(4*100%/14);"><span class="pfd-p__logo">B.</span><span class="pfd-p__name">Léa Moreau</span></div>
+                                                    </div>
+                                                    <div class="pfd-row">
+                                                        <div class="pfd-p pfd-p--b" style="left:calc(.5*100%/14);width:calc(4*100%/14);"><span class="pfd-p__logo">B.</span><span class="pfd-p__name">Ruth Weber</span></div>
+                                                        <div class="pfd-p" style="left:calc(6.5*100%/14);width:calc(5*100%/14);"><span class="pfd-p__logo">A</span><span class="pfd-p__name">Chen Wei</span></div>
+                                                    </div>
+                                                    <div class="pfd-row">
+                                                        <div class="pfd-p pfd-p--v" style="left:calc(1.5*100%/14);width:calc(7*100%/14);"><span class="pfd-p__logo">V</span><span class="pfd-p__name">Mateo Kovacic</span></div>
+                                                        <div class="pfd-p pfd-p--d" style="left:calc(10.5*100%/14);width:calc(3*100%/14);"><span class="pfd-p__logo">D</span><span class="pfd-p__name">Ailsa Fraser</span></div>
+                                                    </div>
+                                                    <div class="pfd-row">
+                                                        <div class="pfd-p" style="left:calc(.5*100%/14);width:calc(2*100%/14);"><span class="pfd-p__logo">A</span><span class="pfd-p__name">M. Palermo</span></div>
+                                                        <div class="pfd-p pfd-p--b" style="left:calc(2.5*100%/14);width:calc(3*100%/14);"><span class="pfd-p__logo">B.</span><span class="pfd-p__name">Tomas Lehner</span></div>
+                                                        <div class="pfd-p" style="left:calc(5.5*100%/14);width:calc(4*100%/14);"><span class="pfd-p__logo">A</span><span class="pfd-p__name">Sofia Brown</span></div>
+                                                    </div>
+                                                    <div class="pfd-row">
+                                                        <div class="pfd-p pfd-p--d" style="left:calc(2.5*100%/14);width:calc(3*100%/14);"><span class="pfd-p__logo">D</span><span class="pfd-p__name">Yuki Nakamura</span></div>
+                                                        <div class="pfd-p" style="left:calc(5.5*100%/14);width:calc(5*100%/14);"><span class="pfd-p__logo">A</span><span class="pfd-p__name">Callum Douglas</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <footer class="pfd-cal__foot">
+                                            <span>98 bookings in July</span>
+                                            <div class="pfd-bar">
+                                                <span style="width:43%;background:#FF385C;"></span>
+                                                <span style="width:32%;background:#006CE4;"></span>
+                                                <span style="width:15%;background:#17356B;"></span>
+                                                <span style="width:10%;background:#0E9F6E;"></span>
+                                            </div>
+                                            <div class="pfd-foot__counts">
+                                                <span><i style="background:#FF385C;"></i>Airbnb 42</span>
+                                                <span><i style="background:#006CE4;"></i>Booking.com 31</span>
+                                                <span><i style="background:#17356B;"></i>Vrbo 15</span>
+                                                <span><i style="background:#0E9F6E;"></i>Direct 10</span>
+                                            </div>
+                                        </footer>
+                                    </section>
+                                </main>
+                            </div>
+                        </div>
+            <img src="/images/design/pf-product.webp" alt="PropertyFlow platform overview" class="pfd-fallback" loading="eager" style="display:none;width:100%;height:auto;">
         </div>
     </section>
 
-    <!-- Feature Cards Grid -->
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up" data-aos-delay="100">Everything Included. Nothing Extra to Buy.</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Cognito Pricing Card -->
-                <a href="/platform/ai-pricing/" class="group" data-aos="fade-up">
-                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 h-full hover:border-[#E65A38] hover:shadow-xl transition-all transform hover:scale-105 card-hover">
-                        <div class="w-16 h-16 bg-gradient-to-br from-[#E65A38] to-[#eea946] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">AI-Powered Cognito Pricing Engine</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">Dynamic pricing powered by real market data. Our AI analyses occupancy patterns, seasonal trends, competitor rates, and local events to optimise your nightly rate and maximise revenue.</p>
-                        <span class="text-[#E65A38] font-semibold group-hover:underline flex items-center gap-2">
-                            Explore Cognito Pricing <span>→</span>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Compliance Card -->
-                <a href="/platform/compliance/" class="group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 h-full hover:border-[#141A23] hover:shadow-xl transition-all transform hover:scale-105 card-hover">
-                        <div class="w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #141A23 0%, #1e2a38 50%, #2a1f1a 100%);">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 3.062v6.218c0 1.081-.563 2.083-1.785 2.974a5.53 5.53 0 01-.78.552 5.545 5.545 0 01-.936.334 4.97 4.97 0 01-.641.088 4.971 4.971 0 01-.641-.088 5.545 5.545 0 01-.936-.334 5.53 5.53 0 01-.78-.552c-1.222-.891-1.785-1.893-1.785-2.974V6.517c0-1.6.886-3.006 2.267-3.062z" clip-rule="evenodd"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Compliance Tracking</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">Automated dashboard that tracks every licence, certificate, and deadline for your property. 90-day renewal reminders, real-time licence status, and certificate storage — nothing lapses.</p>
-                        <span class="text-[#141A23] font-semibold group-hover:underline flex items-center gap-2">
-                            Explore Compliance Tracking <span>→</span>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Channel Management Card -->
-                <a href="/platform/channel-management/" class="group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 h-full hover:border-[#eea946] hover:shadow-xl transition-all transform hover:scale-105 card-hover">
-                        <div class="w-16 h-16 bg-gradient-to-br from-[#eea946] to-[#E65A38] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Channel Management</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">List your property on Airbnb, Booking.com, Google Vacation Rentals, and a growing network of booking platforms. Sync calendars in real-time, manage rates across all channels, and eliminate double-bookings.</p>
-                        <span class="text-[#eea946] font-semibold group-hover:underline flex items-center gap-2">
-                            Explore Channel Management <span>→</span>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Hands-Free Card -->
-                <a href="/platform/hands-free/" class="group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-white border-2 border-gray-200 rounded-xl p-8 h-full hover:border-[#141A23] hover:shadow-xl transition-all transform hover:scale-105 card-hover">
-                        <div class="w-16 h-16 bg-gradient-to-br from-[#141A23] to-[#1a2a3f] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Hands-Free Management</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">Built-in tools to coordinate your cleaning team, track maintenance, automate guest messages, and manage operations from one dashboard. Your team, your standards.</p>
-                        <span class="text-[#141A23] font-semibold group-hover:underline flex items-center gap-2">
-                            Explore Hands-Free Management <span>→</span>
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- OTA Integration Marquee -->
-    <section class="py-16 px-6 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4" data-aos="fade-up">Connected to the Platforms That Matter</h2>
-            <p class="text-center text-gray-700 mb-12">PropertyFlow distributes your listing across major booking platforms — with new channels added regularly.</p>
-
-            <div class="marquee" role="region" aria-label="Booking platform partners">
-                <div class="marquee-track">
-                    <!-- Set 1 -->
-                    <div class="marquee-item"><img src="https://cdn.simpleicons.org/airbnb/FF385C" alt="Airbnb logo" width="40" height="40"></div>
-                    <div class="marquee-item"><img src="https://cdn.simpleicons.org/bookingdotcom/003580" alt="Booking.com logo" width="40" height="40"></div>
-                    <div class="marquee-item"><span class="brand-wordmark" role="img" aria-label="Vrbo logo" style="color: #1F5F99;">Vrbo</span></div>
-                    <div class="marquee-item"><img src="https://cdn.simpleicons.org/expedia/202843" alt="Expedia logo" width="40" height="40"></div>
-                    <div class="marquee-item"><img src="https://cdn.simpleicons.org/hotelsdotcom/E61E43" alt="Hotels.com logo" width="40" height="40"></div>
-                    <div class="marquee-item"><span class="brand-wordmark" role="img" aria-label="Agoda logo" style="color: #5392F9;">agoda</span></div>
-                    <div class="marquee-item"><img src="https://cdn.simpleicons.org/tripdotcom/2681FF" alt="Trip.com logo" width="40" height="40"></div>
-                    <div class="marquee-item"><img src="https://cdn.simpleicons.org/google/4285F4" alt="Google Vacation Rentals logo" width="40" height="40"></div>
-                    <div class="marquee-item"><img src="https://cdn.simpleicons.org/tripadvisor/00AF87" alt="TripAdvisor logo" width="40" height="40"></div>
-                    <div class="marquee-item"><span class="brand-wordmark" role="img" aria-label="Hostelworld logo" style="color: #F47853;">Hostelworld</span></div>
-                    <div class="marquee-item"><img src="https://cdn.simpleicons.org/trivago/007FAF" alt="Trivago logo" width="40" height="40"></div>
-                    <div class="marquee-item"><span class="brand-wordmark" role="img" aria-label="HomeToGo logo" style="color: #00C2A8;">HomeToGo</span></div>
-                    <!-- Set 2 (duplicate for seamless loop — hidden from screen readers) -->
-                    <div class="marquee-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/airbnb/FF385C" alt="" width="40" height="40"></div>
-                    <div class="marquee-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/bookingdotcom/003580" alt="" width="40" height="40"></div>
-                    <div class="marquee-item" aria-hidden="true"><span class="brand-wordmark" style="color: #1F5F99;">Vrbo</span></div>
-                    <div class="marquee-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/expedia/202843" alt="" width="40" height="40"></div>
-                    <div class="marquee-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/hotelsdotcom/E61E43" alt="" width="40" height="40"></div>
-                    <div class="marquee-item" aria-hidden="true"><span class="brand-wordmark" style="color: #5392F9;">agoda</span></div>
-                    <div class="marquee-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/tripdotcom/2681FF" alt="" width="40" height="40"></div>
-                    <div class="marquee-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/google/4285F4" alt="" width="40" height="40"></div>
-                    <div class="marquee-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/tripadvisor/00AF87" alt="" width="40" height="40"></div>
-                    <div class="marquee-item" aria-hidden="true"><span class="brand-wordmark" style="color: #F47853;">Hostelworld</span></div>
-                    <div class="marquee-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/trivago/007FAF" alt="" width="40" height="40"></div>
-                    <div class="marquee-item" aria-hidden="true"><span class="brand-wordmark" style="color: #00C2A8;">HomeToGo</span></div>
+    <!-- Contrast -->
+    <section class="ds-section">
+        <h2 class="ds-section__h2" style="max-width:54rem;">Most STL software watches your business. PropertyFlow helps you run it.</h2>
+        <p class="ds-section__lead">A channel manager shows you a calendar. A dashboard shows you last month. PropertyFlow does the actual work, every night, across every property.</p>
+        <div class="ds-compare">
+            <div class="ds-compare__card">
+                <div class="ds-compare__title">THE STITCHED-TOGETHER STACK</div>
+                <div class="ds-compare__list">
+                    <div class="ds-compare__item"><span class="ds-compare__mark ds-compare__mark--no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6 18 18M18 6 6 18"/></svg></span>A channel manager for your calendar</div>                    <div class="ds-compare__item"><span class="ds-compare__mark ds-compare__mark--no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6 18 18M18 6 6 18"/></svg></span>A spreadsheet for licences and certificates</div>
+                    <div class="ds-compare__item"><span class="ds-compare__mark ds-compare__mark--no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6 18 18M18 6 6 18"/></svg></span>WhatsApp threads for cleaners and contractors</div>
+                    <div class="ds-compare__item"><span class="ds-compare__mark ds-compare__mark--no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6 18 18M18 6 6 18"/></svg></span>An accounting package bolted on at the end</div>
                 </div>
             </div>
-
-            <p class="text-center text-gray-700 mt-8 text-sm">Airbnb, Booking.com, Vrbo, Expedia, and more — one platform, total distribution.</p>
+            <div class="ds-compare__card ds-compare__card--accent">
+                <div class="ds-compare__title ds-compare__title--accent">ONE PLATFORM THAT RUNS IT</div>
+                <div class="ds-compare__list">
+                    <div class="ds-compare__item ds-compare__item--yes"><span class="ds-compare__mark ds-compare__mark--yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Every channel synced from one calendar</div>                    <div class="ds-compare__item ds-compare__item--yes"><span class="ds-compare__mark ds-compare__mark--yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Renewal reminders for your licences and certificates</div>
+                    <div class="ds-compare__item ds-compare__item--yes"><span class="ds-compare__mark ds-compare__mark--yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Turnovers dispatched the moment a guest checks out</div>
+                    <div class="ds-compare__item ds-compare__item--yes"><span class="ds-compare__mark ds-compare__mark--yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Financials, built in</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 px-6 bg-gradient-to-r from-[#141A23] to-[#1a2a3f] text-white">
-        <div class="max-w-3xl mx-auto text-center" data-aos="fade-in">
-            <h2 class="text-3xl font-bold mb-6">Ready to Replace Your Entire Tech Stack?</h2>
-            <p class="text-xl text-gray-300 mb-8">See PropertyFlow in action. One platform for AI Smart Pricing, distribution, messaging, compliance and financials — first 3 properties always free, £9.99 per extra after that.</p>
-            <a href="/contact/" class="btn-primary inline-block transform hover:scale-105">
-                Get Started Free
+    <!-- Feature deep-dives -->
+    <section class="ds-section">
+        <div class="ds-feature-rows">
+            <article class="ds-feature-row">
+                <div class="ds-feature-row__text">
+                    <span class="ds-feature-tag">AI PRICING</span>
+                    <h2>Pricing that never sleeps.</h2>
+                    <p class="ds-feature-row__body">A dynamic pricing engine repriced every night against real demand, local events and seasonality. No separate tool, no manual updates.</p>
+                    <ul class="ds-bullet-list">
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Fresh rates for every night, every property</li>
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Reacts to local demand, events and seasonality</li>
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Optimises yield across your whole portfolio</li>
+                    </ul>
+                </div>
+                <div class="ds-feature-row__media">
+        <style>
+            .pfp-scope{container-type:inline-size;position:relative;}
+            .pfp-wrap{position:relative;font-family:'Hanken Grotesk',sans-serif;color:#191919;padding:8cqw 0 8cqw;pointer-events:none;user-select:none;}
+            .pfp{position:relative;background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:2.6cqw;box-shadow:0 4cqw 9cqw -4cqw rgba(25,25,25,.3);padding:2.8cqw 3cqw 2.4cqw;}
+            .pfp-head{display:flex;align-items:center;gap:1.4cqw;margin-bottom:2.6cqw;}
+            .pfp-head b{font-size:2.6cqw;font-weight:800;letter-spacing:-.01em;}
+            .pfp-head span{font-size:1.85cqw;color:#8a887f;font-weight:600;}
+            .pfp-ai{margin-left:auto;display:flex;align-items:center;gap:.9cqw;background:rgba(22,163,74,.12);color:#16A34A;font-size:1.7cqw;font-weight:800;border-radius:999px;padding:.8cqw 1.7cqw;}
+            .pfp-ai i{width:1.3cqw;height:1.3cqw;border-radius:999px;background:#16A34A;display:inline-block;}
+            .pfp-plot{position:relative;display:flex;align-items:flex-end;gap:2cqw;height:17cqw;}
+            .pfp-base{position:absolute;left:0;right:0;bottom:6.9cqw;border-top:2px dashed rgba(17,17,17,.18);}
+            .pfp-base em{position:absolute;right:0;top:-2.6cqw;font-style:normal;font-size:1.6cqw;font-weight:700;color:#9a988f;background:#fff;padding-left:1cqw;}
+            .pfp-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:.8cqw;position:relative;}
+            .pfp-col b{font-size:1.9cqw;font-weight:800;font-variant-numeric:tabular-nums;}
+            .pfp-bar{width:72%;border-radius:1.1cqw 1.1cqw .4cqw .4cqw;background:rgba(255,56,92,.18);}
+            .pfp-col--hot .pfp-bar{background:linear-gradient(180deg,#FF5A5F,#E61E4D);}
+            .pfp-col--hot b{color:#E61E4D;}
+            .pfp-days{display:flex;gap:2cqw;margin-top:1cqw;}
+            .pfp-days span{flex:1;text-align:center;font-size:1.5cqw;font-weight:700;letter-spacing:.08em;color:#B4B1A6;}
+            .pfp-evt{position:absolute;top:-4.6cqw;left:50%;transform:translateX(-50%);background:#191919;color:#fff;font-size:1.6cqw;font-weight:700;padding:.7cqw 1.5cqw;border-radius:999px;white-space:nowrap;}
+            .pfp-evt::after{content:"";position:absolute;left:50%;bottom:-.9cqw;transform:translateX(-50%);border:.9cqw solid transparent;border-top-color:#191919;border-bottom:none;}
+            .pfp-foot{display:flex;align-items:center;gap:1.2cqw;margin-top:2.2cqw;padding-top:1.9cqw;border-top:1px solid rgba(17,17,17,.06);font-size:1.8cqw;font-weight:600;color:#6a6a6a;}
+            .pfp-foot svg{width:2.1cqw;height:2.1cqw;color:var(--ds-orange);}
+            .pfp-foot b{color:#191919;font-weight:800;}
+            .pfp-tonight{position:absolute;top:0;right:-2cqw;display:flex;align-items:center;gap:1.4cqw;background:#191919;color:#fff;border-radius:2cqw;padding:1.7cqw 2.3cqw;box-shadow:0 3cqw 7cqw -3cqw rgba(25,25,25,.55);z-index:3;}
+            .pfp-tonight i{width:4.2cqw;height:4.2cqw;border-radius:1.2cqw;background:var(--ds-gradient);display:flex;align-items:center;justify-content:center;font-style:normal;flex:0 0 auto;}
+            .pfp-tonight i svg{width:2.2cqw;height:2.2cqw;color:#fff;}
+            .pfp-tonight em{display:block;font-style:normal;font-size:1.6cqw;font-weight:600;color:rgba(255,255,255,.65);}
+            .pfp-tonight b{display:block;font-size:2.6cqw;font-weight:800;font-variant-numeric:tabular-nums;}
+            .pfp-tonight b s{text-decoration:none;font-size:1.6cqw;font-weight:700;color:#FF8A94;margin-left:.8cqw;}
+            .pfp-event{position:absolute;left:-2cqw;bottom:1cqw;display:flex;align-items:center;gap:1.5cqw;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.75);border-radius:2cqw;padding:1.7cqw 2.2cqw;box-shadow:0 3cqw 7cqw -3cqw rgba(25,25,25,.4);z-index:3;}
+            .pfp-event i{width:4.4cqw;height:4.4cqw;border-radius:999px;background:var(--ds-orange-soft);color:var(--ds-orange);display:flex;align-items:center;justify-content:center;font-style:normal;flex:0 0 auto;}
+            .pfp-event i svg{width:2.2cqw;height:2.2cqw;}
+            .pfp-event b{display:block;font-size:1.95cqw;font-weight:800;}
+            .pfp-event span{display:block;font-size:1.7cqw;color:#8a887f;margin-top:.3cqw;}
+        </style>
+        <div class="pfp-scope"><div class="pfp-wrap" aria-hidden="true">
+            <div class="pfp-tonight"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></i><div><em>Tonight · Marchmont 2BR</em><b>£184<s>AI set ▲</s></b></div></div>
+            <div class="pfp">
+                <div class="pfp-head"><b>Next 7 nights</b><span>Marchmont 2BR</span><span class="pfp-ai"><i></i>AI Pricing on</span></div>
+                <div class="pfp-plot">
+                    <div class="pfp-base"><em>Base £150</em></div>
+                    <div class="pfp-col"><b>£138</b><div class="pfp-bar" style="height:5.3cqw;"></div></div>
+                    <div class="pfp-col"><b>£145</b><div class="pfp-bar" style="height:6.3cqw;"></div></div>
+                    <div class="pfp-col"><b>£150</b><div class="pfp-bar" style="height:6.9cqw;"></div></div>
+                    <div class="pfp-col"><b>£158</b><div class="pfp-bar" style="height:7.9cqw;"></div></div>
+                    <div class="pfp-col pfp-col--hot"><b>£172</b><div class="pfp-bar" style="height:9.8cqw;"></div></div>
+                    <div class="pfp-col pfp-col--hot"><b>£210<span style="display:block;font-size:1.45cqw;color:#E61E4D;font-weight:800;">+40%</span></b><div class="pfp-bar" style="height:14.7cqw;"></div></div>
+                    <div class="pfp-col pfp-col--hot"><b>£196</b><div class="pfp-bar" style="height:12.9cqw;"></div></div>
+                </div>
+                <div class="pfp-days"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+                <div class="pfp-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>Repriced tonight at 00:04 — <b>every property, every night</b></div>
+            </div>
+            <div class="pfp-event"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></i><div><b>Event detected: Edinburgh Fringe</b><span>2 – 26 Aug · rates lifted across the city</span></div></div>
+        </div></div></div>
+            </article>
+
+            <article class="ds-feature-row ds-feature-row--flip">
+                <div class="ds-feature-row__text">
+                    <span class="ds-feature-tag">DISTRIBUTION</span>
+                    <h2>Every channel, one calendar.</h2>
+                    <p class="ds-feature-row__body">List across every major OTA and your own direct site from a single dashboard. One calendar keeps them all in sync, closing dates everywhere the moment a booking lands.</p>
+                    <ul class="ds-bullet-list">
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>8+ channels live from day one</li>
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Real-time calendar and rate sync</li>
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Built to prevent double bookings</li>
+                    </ul>
+                </div>
+                <div class="ds-feature-row__media">
+                    <style>
+            .pfx-scope{container-type:inline-size;position:relative;}
+            .pfx{position:relative;font-family:'Hanken Grotesk',sans-serif;color:#191919;padding:2cqw 0 3cqw;pointer-events:none;user-select:none;}
+            .pfx-prop{position:relative;display:flex;align-items:center;gap:2.2cqw;background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:2.6cqw;padding:2.4cqw 2.8cqw;box-shadow:0 4cqw 8cqw -4cqw rgba(25,25,25,.28);width:86%;margin:0 auto 2.6cqw;z-index:2;}
+            .pfx-prop img{width:8cqw;height:8cqw;border-radius:1.8cqw;object-fit:cover;flex:0 0 auto;}
+            .pfx-prop b{display:block;font-size:2.6cqw;font-weight:800;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+            .pfx-prop span{display:flex;align-items:center;gap:1cqw;font-size:1.9cqw;color:#8a887f;font-weight:500;margin-top:.6cqw;}
+            .pfx-dot{width:1.1cqw;height:1.1cqw;border-radius:999px;background:#16A34A;display:inline-block;}
+            .pfx-price{margin-left:auto;text-align:right;flex:0 0 auto;}
+            .pfx-price i{display:block;font-style:normal;font-size:4.2cqw;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+            .pfx-price em{font-style:normal;font-size:1.8cqw;font-weight:600;color:#8a887f;}
+            .pfx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.9cqw;}
+            .pfx-ch{background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:2.2cqw;padding:2cqw 2.3cqw;box-shadow:0 2.6cqw 5.5cqw -3cqw rgba(25,25,25,.22);}
+            .pfx-ch__top{display:flex;align-items:center;justify-content:space-between;gap:1.4cqw;min-height:3.2cqw;}
+            .pfx-ch__top img{height:2.4cqw;width:auto;max-width:58%;object-fit:contain;object-position:left center;}
+            .pfx-tick{width:3.1cqw;height:3.1cqw;border-radius:999px;background:rgba(22,163,74,.13);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+            .pfx-tick svg{width:1.6cqw;height:1.6cqw;stroke:#16A34A;}
+            .pfx-ch__sub{display:flex;align-items:baseline;gap:1.1cqw;margin-top:1.5cqw;font-size:1.8cqw;color:#8a887f;font-weight:500;}
+            .pfx-ch__sub b{font-size:2.4cqw;font-weight:800;color:#191919;font-variant-numeric:tabular-nums;}
+            .pfx-ch--more{border-style:dashed;background:transparent;box-shadow:none;display:flex;align-items:center;justify-content:center;font-size:2cqw;font-weight:700;color:#8a887f;}
+        </style>
+        <div class="pfx-scope"><div class="pfx" aria-hidden="true">
+            <div class="pfx-prop"><img src="/images/showcase/apartment-interior-hd.webp" alt=""><div><b>Marchmont 2BR · Edinburgh</b><span><i class="pfx-dot"></i>One calendar, everywhere</span></div><div class="pfx-price"><i>£184</i><em>per night</em></div></div>
+            <div class="pfx-grid">
+                <div class="pfx-ch"><div class="pfx-ch__top"><img src="/images/design/ota/airbnb.webp" alt="Airbnb"><span class="pfx-tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div><div class="pfx-ch__sub"><b>£184</b>Synced</div></div>
+                <div class="pfx-ch"><div class="pfx-ch__top"><img src="/images/design/ota/booking.webp" alt="Booking.com"><span class="pfx-tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div><div class="pfx-ch__sub"><b>£184</b>Synced</div></div>
+                <div class="pfx-ch"><div class="pfx-ch__top"><img src="/images/design/ota/vrbo.webp" alt="Vrbo"><span class="pfx-tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div><div class="pfx-ch__sub"><b>£184</b>Synced</div></div>
+                <div class="pfx-ch"><div class="pfx-ch__top"><img src="/images/design/ota/expedia.webp" alt="Expedia"><span class="pfx-tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div><div class="pfx-ch__sub"><b>£184</b>Synced</div></div>
+                <div class="pfx-ch"><div class="pfx-ch__top"><img src="/images/design/ota/google.webp" alt="Google Vacation Rentals"><span class="pfx-tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div><div class="pfx-ch__sub"><b>£184</b>Synced</div></div>
+                <div class="pfx-ch pfx-ch--more">+ Agoda, Trip.com, Direct</div>
+            </div>
+        </div></div>
+                </div>
+            </article>
+
+            <article class="ds-feature-row">
+                <div class="ds-feature-row__text">
+                    <span class="ds-feature-tag">COMPLIANCE</span>
+                    <h2>Expiry dates, remembered for you.</h2>
+                    <p class="ds-feature-row__body">Keep licences and certificates in one place, each with a renewal date — and get reminded well before anything expires. Reminders, not legal advice — the decisions stay yours.</p>
+                    <ul class="ds-bullet-list">
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Expiry reminders for licences and certificates</li>
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>A renewal date against every document</li>
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Documents per property, at a glance</li>
+                    </ul>
+                </div>
+                <div class="ds-feature-row__media">
+                    <style>
+            .pfk-scope{container-type:inline-size;position:relative;}
+            .pfk{position:relative;font-family:'Hanken Grotesk',sans-serif;color:#191919;padding:2cqw 0 6cqw;pointer-events:none;user-select:none;}
+            .pfk-card{position:relative;background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:2.6cqw;box-shadow:0 4cqw 9cqw -4cqw rgba(25,25,25,.3);padding:2.6cqw 2.8cqw;}
+            .pfk-head{display:flex;align-items:center;gap:1.4cqw;margin-bottom:2.2cqw;}
+            .pfk-head b{font-size:2.6cqw;font-weight:800;letter-spacing:-.01em;}
+            .pfk-head span{margin-left:auto;font-size:1.75cqw;font-weight:800;color:#16A34A;background:rgba(22,163,74,.12);border-radius:999px;padding:.8cqw 1.7cqw;}
+            .pfk-row{display:flex;align-items:center;gap:2cqw;padding:1.9cqw 0;border-top:1px solid rgba(17,17,17,.06);}
+            .pfk-ring{width:7cqw;height:7cqw;border-radius:999px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative;}
+            .pfk-ring i{position:absolute;inset:.8cqw;background:#fff;border-radius:999px;}
+            .pfk-ring b{position:relative;font-size:1.9cqw;font-weight:800;font-variant-numeric:tabular-nums;}
+            .pfk-row__body{min-width:0;flex:1;}
+            .pfk-row__body b{display:block;font-size:2.1cqw;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+            .pfk-row__body span{font-size:1.75cqw;color:#8a887f;}
+            .pfk-badge{flex:0 0 auto;font-size:1.6cqw;font-weight:800;border-radius:999px;padding:.7cqw 1.6cqw;}
+            .pfk-badge--ok{background:rgba(22,163,74,.12);color:#16A34A;}
+            .pfk-badge--mid{background:rgba(217,119,6,.13);color:#B45309;}
+            .pfk-alert{position:absolute;right:-2cqw;bottom:0;display:flex;align-items:center;gap:1.5cqw;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.75);border-radius:2cqw;padding:1.7cqw 2.2cqw;box-shadow:0 3cqw 7cqw -3cqw rgba(25,25,25,.4);z-index:3;max-width:78%;}
+            .pfk-alert i{width:4.4cqw;height:4.4cqw;border-radius:999px;background:rgba(217,119,6,.13);color:#B45309;display:flex;align-items:center;justify-content:center;font-style:normal;flex:0 0 auto;}
+            .pfk-alert i svg{width:2.2cqw;height:2.2cqw;}
+            .pfk-alert b{display:block;font-size:1.95cqw;font-weight:800;}
+            .pfk-alert span{display:block;font-size:1.7cqw;color:#8a887f;margin-top:.3cqw;}
+        </style>
+        <div class="pfk-scope"><div class="pfk" aria-hidden="true">
+            <div class="pfk-card">
+                <div class="pfk-head"><b>Documents · Marchmont 2BR</b><span>All in date</span></div>
+                <div class="pfk-row" style="border-top:none;">
+                    <div class="pfk-ring" style="background:conic-gradient(#16A34A 100%,#EDEBF3 0);"><i></i><b>✓</b></div>
+                    <div class="pfk-row__body"><b>Gas Safety (CP12)</b><span>Renews 8 Aug 2026 · reminder set</span></div>
+                    <span class="pfk-badge pfk-badge--ok">In date</span>
+                </div>
+                <div class="pfk-row">
+                    <div class="pfk-ring" style="background:conic-gradient(#D97706 12%,#EDEBF3 0);"><i></i><b>21d</b></div>
+                    <div class="pfk-row__body"><b>Fire risk assessment</b><span>Renews in 21 days · reminder sent</span></div>
+                    <span class="pfk-badge pfk-badge--mid">Due soon</span>
+                </div>
+                <div class="pfk-row">
+                    <div class="pfk-ring" style="background:conic-gradient(#16A34A 100%,#EDEBF3 0);"><i></i><b>✓</b></div>
+                    <div class="pfk-row__body"><b>STL licence</b><span>Valid to Feb 2027</span></div>
+                    <span class="pfk-badge pfk-badge--ok">In date</span>
+                </div>
+            </div>
+            <div class="pfk-alert"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></i><div><b>Reminder sent · Fire risk assessment</b><span>Renews in 21 days — plenty of time to rebook</span></div></div>
+        </div></div>
+                </div>
+            </article>
+
+            <article class="ds-feature-row ds-feature-row--flip">
+                <div class="ds-feature-row__text">
+                    <span class="ds-feature-tag">GUESTS, TEAMS &amp; MONEY</span>
+                    <h2>One place to run the operation.</h2>
+                    <p class="ds-feature-row__body">A unified inbox for every guest, job assignment for cleaners and contractors, and financials with Xero and bank feeds built in. The busywork gets a lot lighter.</p>
+                    <ul class="ds-bullet-list">
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Unified guest inbox across all channels</li>
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Assign jobs, track turnarounds, capture photos</li>
+                        <li><span class="ds-bullet-list__tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Statements, payouts and Xero, built in</li>
+                    </ul>
+                </div>
+                <div class="ds-feature-row__media">
+                    <style>
+            .pfi-scope{container-type:inline-size;position:relative;}
+            .pfi{position:relative;font-family:'Hanken Grotesk',sans-serif;color:#191919;padding:2cqw 0 7cqw;pointer-events:none;user-select:none;}
+            .pfi-card{position:relative;background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:2.6cqw;box-shadow:0 4cqw 9cqw -4cqw rgba(25,25,25,.3);padding:2.6cqw 2.8cqw;}
+            .pfi-head{display:flex;align-items:center;gap:1.6cqw;margin-bottom:2.2cqw;}
+            .pfi-ava{width:5.2cqw;height:5.2cqw;border-radius:999px;background:linear-gradient(135deg,#FF8A94,#E61E4D);color:#fff;font-size:2cqw;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+            .pfi-head b{display:block;font-size:2.4cqw;font-weight:800;}
+            .pfi-head span{display:block;font-size:1.8cqw;color:#8a887f;margin-top:.3cqw;}
+            .pfi-src{margin-left:auto;display:flex;align-items:center;gap:.9cqw;font-size:1.7cqw;font-weight:700;color:#FF385C;}
+            .pfi-src i{width:2.6cqw;height:2.6cqw;border-radius:999px;background:#FF385C;color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:1.4cqw;font-weight:800;}
+            .pfi-msg{max-width:82%;border-radius:2cqw;padding:1.8cqw 2.2cqw;font-size:1.95cqw;line-height:1.45;margin-bottom:1.4cqw;}
+            .pfi-msg--in{background:#F5F3EF;border-bottom-left-radius:.6cqw;}
+            .pfi-msg--out{margin-left:auto;background:linear-gradient(135deg,#FF5A5F,#E61E4D);color:#fff;border-bottom-right-radius:.6cqw;}
+            .pfi-ai{display:inline-flex;align-items:center;gap:1cqw;font-size:1.7cqw;font-weight:800;color:var(--ds-orange);background:var(--ds-orange-soft);border-radius:999px;padding:.9cqw 1.8cqw;margin-top:.6cqw;}
+            .pfi-ai svg{width:1.9cqw;height:1.9cqw;}
+            .pfi-res{position:absolute;right:-2cqw;bottom:0;width:56%;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.78);border-radius:2.2cqw;box-shadow:0 3.5cqw 8cqw -3.5cqw rgba(25,25,25,.42);padding:2.1cqw 2.4cqw;z-index:3;}
+            .pfi-res__head{font-size:1.6cqw;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#9a988f;margin-bottom:1.4cqw;}
+            .pfi-res__row{display:flex;justify-content:space-between;gap:1.5cqw;font-size:1.85cqw;padding:.85cqw 0;border-top:1px solid rgba(17,17,17,.05);}
+            .pfi-res__row span{color:#8a887f;font-weight:600;}
+            .pfi-res__row b{font-weight:800;font-variant-numeric:tabular-nums;}
+            .pfi-res__ok{color:#16A34A !important;}
+        </style>
+        <div class="pfi-scope"><div class="pfi" aria-hidden="true">
+            <div class="pfi-card">
+                <div class="pfi-head"><span class="pfi-ava">AC</span><div><b>Amelia Clarke</b><span>Marchmont 2BR · 20 – 23 Jul</span></div><span class="pfi-src"><i>A</i>Airbnb</span></div>
+                <div class="pfi-msg pfi-msg--in">Hi! We land early — any chance of a 1pm check-in?</div>
+                <div class="pfi-msg pfi-msg--out">Of course — the flat will be ready from 1pm. Lockbox code comes on the morning of arrival. Safe travels!</div>
+                <span class="pfi-ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>AI draft — sent in one tap</span>
+            </div>
+            <div class="pfi-res">
+                <div class="pfi-res__head">Reservation</div>
+                <div class="pfi-res__row" style="border-top:none;"><span>Booking total</span><b>£645.00</b></div>
+                <div class="pfi-res__row"><span>Turnover</span><b class="pfi-res__ok">Cleaner assigned ✓</b></div>
+                <div class="pfi-res__row"><span>Payout</span><b class="pfi-res__ok">Synced to Xero ✓</b></div>
+            </div>
+        </div></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Included on every plan -->
+    <section class="ds-section--cream">
+        <div class="ds-section__inner">
+            <h2 class="ds-section__h2">Your entire tech stack in one platform — no bolt-on modules to buy, ever.</h2>
+            <p class="ds-section__lead">From channels and pricing to compliance, financials and team tools, it all lives in one platform.</p>
+            <div class="ds-included-grid">
+                <div class="ds-included-item">
+                    <span class="ds-included-item__tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    <div><strong>8+ OTA channels</strong><span>Airbnb, Booking.com, Vrbo, Expedia, Agoda, Trip.com, Hopper, Google &amp; Direct.</span></div>
+                </div>
+                <div class="ds-included-item">
+                    <span class="ds-included-item__tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    <div><strong>AI AI pricing</strong><span>Dynamic rates for every night, every property.</span></div>
+                </div>
+                <div class="ds-included-item">
+                    <span class="ds-included-item__tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    <div><strong>Unified guest inbox</strong><span>Every channel message in one thread.</span></div>
+                </div>
+                <div class="ds-included-item">
+                    <span class="ds-included-item__tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    <div><strong>Document Reminders</strong><span>Expiry reminders for licences and certificates.</span></div>
+                </div>
+                <div class="ds-included-item">
+                    <span class="ds-included-item__tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    <div><strong>Financials &amp; Payouts</strong><span>Statements, payouts and bank feed.</span></div>
+                </div>
+                <div class="ds-included-item">
+                    <span class="ds-included-item__tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    <div><strong>Team &amp; cleaner management</strong><span>Assign jobs, track turnarounds, capture photos.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans -->
+    <section class="ds-section ds-section--plans" id="plans">
+        <div style="text-align:center;max-width:40rem;margin:0 auto 3rem;">
+            <h2 class="ds-section__h2">Start free. Scale on your terms.</h2>
+            <p class="ds-section__lead" style="margin-left:auto;margin-right:auto;">Try the full platform free on up to three properties, then add more for £9.99 per extra property per month.</p>
+        </div>
+        <div class="ds-plans" style="margin:0 auto;">
+            <article class="ds-tier">
+                <p class="ds-tier__tag">START HERE</p>
+                <h3 class="ds-tier__name">Free</h3>
+                <p class="ds-tier__sub">For solo hosts · 1–3 properties</p>
+                <div class="ds-tier__price">£0 <span>/ month, </span></div>
+                <p class="ds-tier__note">No card required, no commitment</p>
+                <hr class="ds-tier__rule">
+                <ul class="ds-tier__features">
+                    <li><span class="ds-tier__tick">✓</span>Full PMS access</li>
+                    <li><span class="ds-tier__tick">✓</span>8+ OTA channels connected</li>
+                    <li><span class="ds-tier__tick">✓</span>AI AI pricing</li>
+                    <li><span class="ds-tier__tick">✓</span>Unified guest inbox</li>
+                    <li><span class="ds-tier__tick">✓</span>Document Reminders</li>
+                </ul>
+                <a href="https://app.propertyflow.uk/register" class="ds-tier__btn ds-tier__btn--dark">Get started free</a>
+            </article>
+            <article class="ds-tier ds-tier--featured">
+                <span class="ds-tier__badge">MOST POPULAR</span>
+                <p class="ds-tier__tag">SCALE YOUR PORTFOLIO</p>
+                <h3 class="ds-tier__name">Premium</h3>
+                <p class="ds-tier__sub">For multi-property portfolios · 4+ properties</p>
+                <div class="ds-tier__price">£9.99 <span>/ extra property / month</span></div>
+                <p class="ds-tier__note">First 3 free · Airbnb 0%, other OTAs 3%</p>
+                <hr class="ds-tier__rule">
+                <ul class="ds-tier__features">
+                    <li><span class="ds-tier__tick">✓</span>Everything in Free</li>
+                    <li><span class="ds-tier__tick">✓</span>As many properties as you like</li>
+                    <li><span class="ds-tier__tick">✓</span>Financials sync</li>
+                    <li><span class="ds-tier__tick">✓</span>Team &amp; cleaner management</li>
+                    <li><span class="ds-tier__tick">✓</span>Priority support</li>
+                </ul>
+                <a href="https://app.propertyflow.uk/register" class="ds-tier__btn ds-tier__btn--accent">Choose Premium</a>
+            </article>
+        </div>
+        <p class="ds-plans-note" style="text-align:center;">No setup fees, no lock-in. Move up whenever you're ready.</p>
+    </section>
+
+    <!-- Partner CTA -->
+    <section class="ds-section">
+        <div class="ds-partner-band" style="background-image:linear-gradient(rgba(16,16,19,0.84),rgba(16,16,19,0.84)),url('/images/design/pf-cta-hero.webp'); background-size:cover; background-position:center;">
+            <p class="ds-partner-band__tag">Ready to go further?</p>
+            <h2>When self-management isn&rsquo;t enough, become a Partner.</h2>
+            <p>Keep the full platform, and hand us every ground operation, all the admin and the operating costs. You focus on winning properties and growing your business; we run the rest.</p>
+            <a href="/become-a-partner/" class="ds-cta ds-cta--white">
+                Explore the Partner programme
+                <span class="ds-cta__orb">
+                    <svg class="ds-cta__arrow ds-cta__arrow--main" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    <svg class="ds-cta__arrow ds-cta__arrow--alt" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </span>
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
     </main>
-    <footer class="bg-[#141A23] text-white py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="footer-grid mb-12">
-                <div>
-                    <a href="/" class="inline-block mb-6">
-                        <img src="/img/logo-footer.png" srcset="/img/logo-footer.png 1x, /img/logo-footer@2x.png 2x" alt="Property Flow" width="180" height="90" loading="lazy" style="height: auto;">
-                    </a>
-                    <p class="text-sm text-gray-400 mb-6">The all-in-one property management platform for short-term let operators.</p>
-                    <p class="text-sm text-gray-400 mb-1"><a href="tel:+442045772084" class="hover:text-[#E65A38] py-1 inline-block">+44 204 577 2084</a></p>
-                    <p class="text-sm text-gray-400"><a href="mailto:info@propertyflow.uk" class="hover:text-[#E65A38]">info@propertyflow.uk</a></p>
-                    <div class="flex items-center gap-3 mt-3">
-                        <a href="https://www.linkedin.com/company/property-flow-official/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#E65A38] transition-colors" aria-label="LinkedIn">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        <a href="https://www.instagram.com/propertyflowuk/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#E65A38] transition-colors" aria-label="Instagram">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/></svg>
-                        </a>
+
+<footer class="ds-footer">
+        <div class="ds-wrap ds-footer__inner">
+            <div class="ds-footer__grid">
+                <div class="ds-footer__brand">
+                    <a href="/"><img src="/images/design/pf-logo-dark.svg" alt="PropertyFlow" height="28"></a>
+                    <p>The all-in-one property management platform for short-term let operators. AI pricing, distribution, messaging, compliance and financials — your first 3 properties are free.</p>
+                    <a href="tel:+442045772084" class="ds-footer__phone">+44 204 577 2084</a>
+                    <a href="mailto:info@propertyflow.uk">info@propertyflow.uk</a>
+                    <div class="ds-footer__social">
+                        <a href="https://www.linkedin.com/company/property-flow-official/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+                        <a href="https://www.instagram.com/propertyflowuk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a>
                     </div>
                 </div>
                 <div>
-                    <p class="font-semibold mb-4 text-white text-base">Navigation</p>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="/for-landlords/" class="hover:text-[#E65A38]">For Users</a></li>
-                        <li><a href="/for-investors/" class="hover:text-[#E65A38]">For Investors</a></li>
-                        <li><a href="/platform/" class="hover:text-[#E65A38]">Platform</a></li>
-                        <li><a href="/about/" class="hover:text-[#E65A38]">About</a></li>
-                        <li><a href="/blog/" class="hover:text-[#E65A38]">Blog</a></li>
-                        <li><a href="/careers/" class="hover:text-[#E65A38]">Careers</a></li>
-                        <li><a href="/contact/" class="hover:text-[#E65A38]">Contact</a></li>
-                    </ul>
+                    <p class="ds-footer__title">Navigation</p>
+                    <a href="/for-landlords/">For Landlords</a>
+                    <a href="/for-investors/">For Investors</a>
+                    <a href="/platform/">Platform</a>
+                    <a href="/about/">About</a>
+                    
+                    <a href="/careers/">Careers</a>
+                    <a href="/contact/">Contact</a>
                 </div>
                 <div>
-                    <p class="font-semibold mb-4 text-white text-base">Platform</p>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="/platform/" class="hover:text-[#E65A38]">Platform Overview</a></li>
-                        <li><a href="/platform/compliance/" class="hover:text-[#E65A38]">Compliance Tracking</a></li>
-                        <li><a href="/platform/ai-pricing/" class="hover:text-[#E65A38]">Cognito Pricing</a></li>
-                        <li><a href="/platform/channel-management/" class="hover:text-[#E65A38]">Channel Management</a></li>
-                        <li><a href="/platform/hands-free/" class="hover:text-[#E65A38]">Hands-Free</a></li>
-                    </ul>
+                    <p class="ds-footer__title">Platform</p>
+                    <a href="/platform/">Platform Overview</a>
+                    <a href="/platform/compliance/">Document Reminders</a>
+                    <a href="/platform/ai-pricing/">AI Pricing</a>
+                    <a href="/platform/channel-management/">Channel Manager</a>
+                    <a href="/platform/hands-free/">Hands-Free</a>
                 </div>
                 <div>
-                    <p class="font-semibold mb-4 text-white text-base">Legal</p>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="/privacy-policy.html" class="hover:text-[#E65A38]">Privacy Policy</a></li>
-                        <li><a href="/terms.html" class="hover:text-[#E65A38]">Terms</a></li>
-                        <li>ICO Registration<br><span class="text-xs">ZC088419</span></li>
-                        <li>Company No.<br><span class="text-xs">16927756</span></li>
-                    </ul>
+                    <p class="ds-footer__title">Legal</p>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms</a>
+                    <p class="ds-footer__legal">ICO Registration<br><span>ZC088419</span></p>
+                    <p class="ds-footer__legal">Company No.<br><span>16927756</span></p>
                 </div>
             </div>
-            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between text-sm text-gray-400 footer-bottom-bar">
-                <p>© 2026 PropertyFlow Technologies Ltd. Company No. 16927756</p>
-                <p class="mt-2 md:mt-0" style="">+44 204 577 2084 · propertyflow.uk</p>
+            <div class="ds-footer__ai">
+                <p class="ds-footer__ai-title">Ask AI about PropertyFlow</p>
+                <div class="ds-footer__ai-btns">
+                    <a href="https://chatgpt.com/?q=Tell%20me%20about%20PropertyFlow" class="ds-footer__ai-btn" target="_blank" rel="noopener noreferrer"><span class="ds-footer__ai-dot" style="background:#10a37f"></span>ChatGPT</a>
+                    <a href="https://claude.ai/new?q=Tell%20me%20about%20PropertyFlow" class="ds-footer__ai-btn" target="_blank" rel="noopener noreferrer"><span class="ds-footer__ai-dot" style="background:#d97757"></span>Claude</a>
+                    
+                    <a href="https://www.perplexity.ai/search?q=PropertyFlow%20UK%20short-term%20lets" class="ds-footer__ai-btn" target="_blank" rel="noopener noreferrer"><span class="ds-footer__ai-dot" style="background:#20808d"></span>Perplexity</a>
+                </div>
+            </div>
+            <div class="ds-footer__bottom">
+                <p>© 2026 PropertyFlow Technologies Ltd. Company No. 16927756 · <span class="ds-footer__phone">+44 204 577 2084</span> · propertyflow.uk</p>
             </div>
         </div>
     </footer>
         <!-- JavaScript -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="/js/propertyflow.js?v=6"></script>
+<script src="/js/propertyflow.js?v=10"></script>
 <!-- HubSpot Tracking Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147879634.js"></script>
-<!-- GSAP for professional animations -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script>
-gsap.registerPlugin(ScrollTrigger);
-gsap.to('.hero-video-bg', {
-    yPercent: 20,
-    ease: 'none',
-    scrollTrigger: {
-        trigger: '.hero-bg-section',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-    }
-});
-</script>
     <script src="/js/cookie-consent.js"></script>
+    <script src="/js/meta-pixel.js"></script>
 </body>
 </html>
