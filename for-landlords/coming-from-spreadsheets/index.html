@@ -46,10 +46,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
     <link rel="stylesheet" href="/css/home-dark.css?v=1">
-    <link rel="stylesheet" href="/css/coming-from-spreadsheets-dark.css?v=1">
+    <link rel="stylesheet" href="/css/coming-from-spreadsheets-dark.css?v=2">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <script type="application/ld+json">
     {
@@ -115,10 +115,6 @@
                         <button type="button" class="hd-nav__link hd-nav__link--dropdown" aria-expanded="false">Solution<img src="/images/design/redesign/nav/chevron-down.svg" alt="" class="hd-nav__chevron"></button>
                         <div class="hd-nav__mega hd-nav__mega--solution">
                             <div class="hd-nav__mega-grid">
-                                <a href="/for-landlords/just-starting-out/" class="hd-nav__mega-item">
-                                    <span class="hd-nav__mega-title">Just starting out</span>
-                                    <span class="hd-nav__mega-desc">Your first 3 properties, free to learn</span>
-                                </a>
                                 <a href="/platform/hands-free/" class="hd-nav__mega-item">
                                     <span class="hd-nav__mega-title">Ready to go hands free</span>
                                     <span class="hd-nav__mega-desc">Hand operations to us as a partner</span>
@@ -157,7 +153,6 @@
             <a href="/platform/compliance/" class="hd-mobile-nav__link">Document Reminder</a>
             <a href="/platform/revenue-reporting/" class="hd-mobile-nav__link">Portfolio Growth &amp; Reporting</a>
             <p class="hd-mobile-nav__group-label">Solution</p>
-            <a href="/for-landlords/just-starting-out/" class="hd-mobile-nav__link">Just Starting Out</a>
             <a href="/platform/hands-free/" class="hd-mobile-nav__link">Ready to go Hands Free</a>
             <a href="/for-landlords/coming-from-spreadsheets/" class="hd-mobile-nav__link">Coming from Spreadsheet</a>
             <a href="/for-landlords/managing-for-owners/" class="hd-mobile-nav__link">Managing for Owner</a>
@@ -188,8 +183,86 @@
             <div><span class="cfs-hero__stat-value">Zero</span><p class="cfs-hero__stat-label">spreadsheets to build owner reports</p></div>
           </div>
         </div>
-        <div class="cfs-hero__visual">
-          <img src="/images/design/redesign/coming-from-spreadsheets/hero-visual.webp" alt="Side by side: a spreadsheet with a double-booking conflict versus PropertyFlow's synced reservation list">
+        <div class="cfs-hero__visual" role="img" aria-label="Side by side: a spreadsheet with a double-booking conflict versus PropertyFlow's synced reservation list">
+          <div class="cfs-compare">
+            <span class="cfs-sheet__badge"><img src="/images/design/redesign/coming-from-spreadsheets/icon-double-booked-badge.svg" alt="">Double booked</span>
+            <div class="cfs-compare__panel cfs-compare__panel--sheet">
+              <div class="cfs-sheet__formula"><span>fx</span><span>=IF (c14=c22, &ldquo;conflict&rdquo;,&rdquo;ok&rdquo;)</span></div>
+              <div class="cfs-sheet__row cfs-sheet__row--head">
+                <span class="cfs-sheet__num"></span>
+                <span class="cfs-sheet__cell">A - Property</span>
+                <span class="cfs-sheet__cell">B - Guest</span>
+                <span class="cfs-sheet__cell">C - Check-in</span>
+                <span class="cfs-sheet__cell cfs-sheet__cell--last">D - Source</span>
+              </div>
+              <div class="cfs-sheet__row">
+                <span class="cfs-sheet__num">12</span>
+                <span class="cfs-sheet__cell">Marchmont 2BR</span>
+                <span class="cfs-sheet__cell">R. Nguyen</span>
+                <span class="cfs-sheet__cell">14 Aug</span>
+                <span class="cfs-sheet__cell cfs-sheet__cell--last">Airbnb (paste)</span>
+              </div>
+              <div class="cfs-sheet__row">
+                <span class="cfs-sheet__num">13</span>
+                <span class="cfs-sheet__cell">Bayside 1BR</span>
+                <span class="cfs-sheet__cell">L. Smith</span>
+                <span class="cfs-sheet__cell">15 Sep</span>
+                <span class="cfs-sheet__cell cfs-sheet__cell--last">Vrbo (paste)</span>
+              </div>
+              <div class="cfs-sheet__row">
+                <span class="cfs-sheet__num">14</span>
+                <span class="cfs-sheet__cell">Cedar Grove 3BR</span>
+                <span class="cfs-sheet__cell">K. Johnson</span>
+                <span class="cfs-sheet__cell">20 Oct</span>
+                <span class="cfs-sheet__cell cfs-sheet__cell--last">Booking.com (paste)</span>
+              </div>
+              <div class="cfs-sheet__row">
+                <span class="cfs-sheet__num">15</span>
+                <span class="cfs-sheet__cell cfs-sheet__cell--conflict">Bayside 2BR</span>
+                <span class="cfs-sheet__cell">Pending</span>
+                <span class="cfs-sheet__cell cfs-sheet__cell--conflict">21 Aug</span>
+                <span class="cfs-sheet__cell cfs-sheet__cell--last">Direct booking</span>
+              </div>
+              <div class="cfs-sheet__row">
+                <span class="cfs-sheet__num">16</span>
+                <span class="cfs-sheet__cell">Downtown Pentho..</span>
+                <span class="cfs-sheet__cell">Pending</span>
+                <span class="cfs-sheet__cell">?</span>
+                <span class="cfs-sheet__cell cfs-sheet__cell--last">Direct booking</span>
+              </div>
+              <div class="cfs-sheet__tabbar">Sheet2 - last edited by you, 11:42 am - 3 tabs open</div>
+            </div>
+            <div class="cfs-compare__panel cfs-compare__panel--pf">
+              <div class="cfs-pf__head">
+                <p class="cfs-pf__title">Reservation</p>
+                <p class="cfs-pf__sub">Synced automatically - every channel</p>
+              </div>
+              <div class="cfs-pf__list">
+                <div class="cfs-pf__row">
+                  <div class="cfs-pf__main">
+                    <img class="cfs-pf__check" src="/images/design/redesign/coming-from-spreadsheets/icon-checkmark-circle.svg" alt="">
+                    <div class="cfs-pf__text"><p class="cfs-pf__name">Marchmont 2BR</p><p class="cfs-pf__meta">R. Nguyen - Airbnb</p></div>
+                  </div>
+                  <span class="cfs-pf__date">14 Aug</span>
+                </div>
+                <div class="cfs-pf__row">
+                  <div class="cfs-pf__main">
+                    <img class="cfs-pf__check" src="/images/design/redesign/coming-from-spreadsheets/icon-checkmark-circle.svg" alt="">
+                    <div class="cfs-pf__text"><p class="cfs-pf__name">Elm Street 3BR</p><p class="cfs-pf__meta">J. Smith - Vrbo</p></div>
+                  </div>
+                  <span class="cfs-pf__date">20 Aug</span>
+                </div>
+                <div class="cfs-pf__row">
+                  <div class="cfs-pf__main">
+                    <img class="cfs-pf__check" src="/images/design/redesign/coming-from-spreadsheets/icon-checkmark-circle.svg" alt="">
+                    <div class="cfs-pf__text"><p class="cfs-pf__name">Maple Grove 1BR</p><p class="cfs-pf__meta">T. Johnson - Booking.com</p></div>
+                  </div>
+                  <span class="cfs-pf__date">25 Aug</span>
+                </div>
+              </div>
+              <p class="cfs-pf__banner">Dates blocked across every channel the instant this booking landed nothing else can take 14 Aug.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -200,6 +273,7 @@
         <div class="cfs-section-head">
           <div class="hd-label"><span class="hd-label__num">02</span><span class="hd-label__rule"></span><span class="hd-label__text">How th move actually goes</span></div>
           <h2 class="cfs-h2">No complicated switch. Bring what you already have. <span class="muted">We'll help bring it together.</span></h2>
+          <p class="cfs-lede">Connect your booking channels, bring across your property details and set up your operations around the way you already work.</p>
         </div>
         <div class="cfs-steps-card">
           <div class="cfs-steps">
@@ -266,24 +340,22 @@
             <div>
               <p class="hd-footer__col-title">Platform</p>
               <ul class="hd-footer__links">
-                <li><a href="/platform/">Overview</a></li>
-                <li><a href="/platform/channel-management/">Channel Manager</a></li>
-                <li><a href="/platform/ai-pricing/">AI Pricing</a></li>
+                <li><a href="/platform/ai-pricing/">Smart Pricing</a></li>
                 <li><a href="/platform/unified-inbox/">Unified Inbox</a></li>
-                <li><a href="/platform/multi-calendar/">Multi-Calendar</a></li>
-                <li><a href="/platform/turnovers-team/">Turnover & Teams</a></li>
-                <li><a href="/platform/financials-xero/">Financials</a></li>
-                <li><a href="/platform/compliance/">Document Reminder</a></li>
-                <li><a href="/platform/revenue-reporting/">Portfolio Growth & Reporting</a></li>
+                <li><a href="/platform/multi-calendar/">Multi Calendar</a></li>
+                <li><a href="/platform/turnovers-team/">Team Operation</a></li>
+                <li><a href="/platform/financials-xero/">Financial & Payouts</a></li>
+                <li><a href="/platform/compliance/">Compliance Tracking</a></li>
+                <li><a href="/platform/revenue-reporting/">Reporting & Insights</a></li>
+                <li><a href="/platform/channel-management/">Channel management</a></li>
               </ul>
             </div>
             <div>
               <p class="hd-footer__col-title">Solutions</p>
               <ul class="hd-footer__links">
-                <li><span class="hd-footer__legal-text">Just Starting Out</span></li>
-                <li><span class="hd-footer__legal-text">Managing for Owners</span></li>
-                <li><span class="hd-footer__legal-text">Coming from Spreadsheets</span></li>
-                <li><span class="hd-footer__legal-text">Hands-Free Partner</span></li>
+                <li><a href="/for-landlords/managing-for-owners/">Managing a Portfolio</a></li>
+                <li><a href="/for-landlords/coming-from-spreadsheets/">Switching to PropertyFlow</a></li>
+                <li><a href="/platform/hands-free/">Hands-Free Operations</a></li>
               </ul>
             </div>
             <div>
@@ -297,8 +369,6 @@
             <div>
               <p class="hd-footer__col-title">Legal</p>
               <ul class="hd-footer__links">
-                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/terms.html">Terms of Service</a></li>
                 <li><span class="hd-footer__legal-text">ICO Registration ZC088419</span></li>
               </ul>
             </div>
@@ -314,7 +384,7 @@
       </div>
     </footer>
 <script src="/js/nav-dropdown.js"></script>
-<script src="/js/propertyflow.js?v=10"></script>
+<script src="/js/propertyflow.js?v=13"></script>
 <!-- HubSpot Tracking Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147879634.js"></script>
 <script src="/js/cookie-consent.js"></script>

@@ -46,10 +46,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
     <link rel="stylesheet" href="/css/home-dark.css?v=1">
-    <link rel="stylesheet" href="/css/channel-mgmt-dark.css?v=1">
+    <link rel="stylesheet" href="/css/channel-mgmt-dark.css?v=3">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -134,10 +134,6 @@
                         <button type="button" class="hd-nav__link hd-nav__link--dropdown" aria-expanded="false">Solution<img src="/images/design/redesign/nav/chevron-down.svg" alt="" class="hd-nav__chevron"></button>
                         <div class="hd-nav__mega hd-nav__mega--solution">
                             <div class="hd-nav__mega-grid">
-                                <a href="/for-landlords/just-starting-out/" class="hd-nav__mega-item">
-                                    <span class="hd-nav__mega-title">Just starting out</span>
-                                    <span class="hd-nav__mega-desc">Your first 3 properties, free to learn</span>
-                                </a>
                                 <a href="/platform/hands-free/" class="hd-nav__mega-item">
                                     <span class="hd-nav__mega-title">Ready to go hands free</span>
                                     <span class="hd-nav__mega-desc">Hand operations to us as a partner</span>
@@ -176,7 +172,6 @@
             <a href="/platform/compliance/" class="hd-mobile-nav__link">Document Reminder</a>
             <a href="/platform/revenue-reporting/" class="hd-mobile-nav__link">Portfolio Growth &amp; Reporting</a>
             <p class="hd-mobile-nav__group-label">Solution</p>
-            <a href="/for-landlords/just-starting-out/" class="hd-mobile-nav__link">Just Starting Out</a>
             <a href="/platform/hands-free/" class="hd-mobile-nav__link">Ready to go Hands Free</a>
             <a href="/for-landlords/coming-from-spreadsheets/" class="hd-mobile-nav__link">Coming from Spreadsheet</a>
             <a href="/for-landlords/managing-for-owners/" class="hd-mobile-nav__link">Managing for Owner</a>
@@ -243,56 +238,224 @@
         <h2 class="hd-h2">Everything you need. <span class="hd-h2--muted-line2">All in one place.</span></h2>
         <div class="cm-tabs">
           <div class="cm-tabs__list">
-            <div class="cm-tabs__item cm-tabs__item--active">
+            <button type="button" class="cm-tabs__item cm-tabs__item--active" data-tab="1">
               <div class="cm-tabs__row"><span class="cm-tabs__num">01</span><span class="cm-tabs__rule"></span><span class="cm-tabs__title">Real-time sync</span></div>
               <p class="cm-tabs__desc">The moment a guest books anywhere, PropertyFlow closes those dates across every connected platform in under a second. No polling window. No manual step. No risk.</p>
-            </div>
-            <div class="cm-tabs__item">
+            </button>
+            <button type="button" class="cm-tabs__item" data-tab="2">
               <div class="cm-tabs__row"><span class="cm-tabs__num">02</span><span class="cm-tabs__rule"></span><span class="cm-tabs__title">Per-channel pricing</span></div>
-            </div>
-            <div class="cm-tabs__item">
+              <p class="cm-tabs__desc">Manage rates centrally while applying channel-specific pricing rules or adjustments from one place.</p>
+            </button>
+            <button type="button" class="cm-tabs__item" data-tab="3">
               <div class="cm-tabs__row"><span class="cm-tabs__num">03</span><span class="cm-tabs__rule"></span><span class="cm-tabs__title">Unified inbox</span></div>
-            </div>
-            <div class="cm-tabs__item">
+              <p class="cm-tabs__desc">Bring guest conversations from connected booking channels into one workspace, so your team can manage messages without jumping between platforms.</p>
+            </button>
+            <button type="button" class="cm-tabs__item" data-tab="4">
               <div class="cm-tabs__row"><span class="cm-tabs__num">04</span><span class="cm-tabs__rule"></span><span class="cm-tabs__title">Double-booking prevention</span></div>
-            </div>
-            <div class="cm-tabs__item">
+              <p class="cm-tabs__desc">When dates are booked on a connected channel, availability is updated across the others to reduce the risk of conflicting reservations.</p>
+            </button>
+            <button type="button" class="cm-tabs__item" data-tab="5">
               <div class="cm-tabs__row"><span class="cm-tabs__num">05</span><span class="cm-tabs__rule"></span><span class="cm-tabs__title">Direct booking site</span></div>
-            </div>
+              <p class="cm-tabs__desc">Give guests a branded way to book directly while availability remains connected with the rest of your PropertyFlow calendar.</p>
+            </button>
           </div>
-          <div>
-            <h3 class="cm-sync__heading">One booking. Every Calendar updated.</h3>
-            <div class="cm-sync__card">
-              <div class="cm-sync__head">
-                <span class="cm-sync__head-label">Booking received · Airbnb</span>
-                <span class="cm-sync__status"><span class="cm-sync__dot"></span><span class="cm-sync__status-label">Idle</span></span>
+          <div class="cm-panels">
+            <div class="cm-panel cm-panel--active" data-panel="1">
+              <h3 class="cm-sync__heading">One booking. Every Calendar updated.</h3>
+              <div class="cm-sync__card">
+                <div class="cm-sync__head">
+                  <span class="cm-sync__head-label">Booking received · Airbnb</span>
+                  <span class="cm-sync__status"><span class="cm-sync__dot"></span><span class="cm-sync__status-label">Idle</span></span>
+                </div>
+                <div class="cm-sync__row">
+                  <span class="cm-sync__badge" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;">AB</span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Airbnb</p><p class="cm-sync__listening">Listening</p></div>
+                  <span class="cm-sync__more">·</span>
+                </div>
+                <div class="cm-sync__row">
+                  <span class="cm-sync__badge" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;">BK</span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Booking.com</p><p class="cm-sync__listening">Listening</p></div>
+                  <span class="cm-sync__more">·</span>
+                </div>
+                <div class="cm-sync__row">
+                  <span class="cm-sync__badge" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;">VB</span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Vrbo</p><p class="cm-sync__listening">Listening</p></div>
+                  <span class="cm-sync__more">·</span>
+                </div>
+                <div class="cm-sync__row">
+                  <span class="cm-sync__badge" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;">TR</span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Trip.com</p><p class="cm-sync__listening">Listening</p></div>
+                  <span class="cm-sync__more">·</span>
+                </div>
+                <div class="cm-sync__row" style="border-bottom:none;">
+                  <span class="cm-sync__badge" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;">DR</span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Direct</p><p class="cm-sync__listening">Listening</p></div>
+                  <span class="cm-sync__more">·</span>
+                </div>
+                <div class="cm-sync__foot"><p>No active sync</p></div>
               </div>
-              <div class="cm-sync__row">
-                <span class="cm-sync__badge" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;">AB</span>
-                <div class="cm-sync__name-wrap"><p class="cm-sync__name">Airbnb</p><p class="cm-sync__listening">Listening</p></div>
-                <span class="cm-sync__more">·</span>
+            </div>
+            <div class="cm-panel" data-panel="2">
+              <h3 class="cm-sync__heading">One property. Custom rates everywhere.</h3>
+              <div class="cm-sync__card">
+                <div class="cm-sync__head">
+                  <span class="cm-sync__head-label">Per-channel pricing</span>
+                  <span class="cm-sync__status"><span class="cm-sync__dot cm-sync__dot--live"></span><span class="cm-sync__status-label">Active</span></span>
+                </div>
+                <div class="cm-price__cols"><span>Platform</span><span>Nightly rate</span><span>Commission</span></div>
+                <div class="cm-price__row">
+                  <span class="cm-sync__icon" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/></svg></span>
+                  <span class="cm-price__name">Airbnb</span>
+                  <span class="cm-price__rate">$195</span>
+                  <span class="cm-price__badge" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;">3%</span>
+                </div>
+                <div class="cm-price__row">
+                  <span class="cm-sync__icon" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/></svg></span>
+                  <span class="cm-price__name">Booking.com</span>
+                  <span class="cm-price__rate">$210</span>
+                  <span class="cm-price__badge" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;">15%</span>
+                </div>
+                <div class="cm-price__row">
+                  <span class="cm-sync__icon" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/></svg></span>
+                  <span class="cm-price__name">Vrbo</span>
+                  <span class="cm-price__rate">$180</span>
+                  <span class="cm-price__badge" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;">5%</span>
+                </div>
+                <div class="cm-price__row">
+                  <span class="cm-sync__icon" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/></svg></span>
+                  <span class="cm-price__name">Trip.com</span>
+                  <span class="cm-price__rate">$190</span>
+                  <span class="cm-price__badge" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;">12%</span>
+                </div>
+                <div class="cm-price__row" style="border-bottom:none;">
+                  <span class="cm-sync__icon" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/></svg></span>
+                  <span class="cm-price__name">Direct</span>
+                  <span class="cm-price__rate">$165</span>
+                  <span class="cm-price__badge" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;">0%</span>
+                </div>
+                <div class="cm-sync__foot"><p>Rates updated 2m ago</p></div>
               </div>
-              <div class="cm-sync__row">
-                <span class="cm-sync__badge" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;">BK</span>
-                <div class="cm-sync__name-wrap"><p class="cm-sync__name">Booking.com</p><p class="cm-sync__listening">Listening</p></div>
-                <span class="cm-sync__more">·</span>
+            </div>
+            <div class="cm-panel" data-panel="3">
+              <h3 class="cm-sync__heading">Every message. One conversation thread.</h3>
+              <div class="cm-sync__card">
+                <div class="cm-sync__head">
+                  <span class="cm-sync__head-label">Unified inbox</span>
+                  <span class="cm-sync__status"><span class="cm-sync__dot cm-sync__dot--live"></span><span class="cm-sync__status-label">5 unread</span></span>
+                </div>
+                <div class="cm-inbox__row">
+                  <span class="cm-sync__icon" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Sarah Jenkins</p><p class="cm-sync__listening">Check-in at 3pm?</p></div>
+                  <div class="cm-inbox__meta"><span class="cm-inbox__time">2m</span><span class="cm-inbox__unread" style="background:#ff5a5f;"></span></div>
+                </div>
+                <div class="cm-inbox__row">
+                  <span class="cm-sync__icon" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Marcus Thorne</p><p class="cm-sync__listening">Need extra towels</p></div>
+                  <div class="cm-inbox__meta"><span class="cm-inbox__time">15m</span><span class="cm-inbox__unread" style="background:#4285f4;"></span></div>
+                </div>
+                <div class="cm-inbox__row">
+                  <span class="cm-sync__icon" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Elena Rodriguez</p><p class="cm-sync__listening">Is the pool heated?</p></div>
+                  <div class="cm-inbox__meta"><span class="cm-inbox__time">1h</span><span class="cm-inbox__unread" style="background:#3d6eff;"></span></div>
+                </div>
+                <div class="cm-inbox__row">
+                  <span class="cm-sync__icon" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">David Chen</p><p class="cm-sync__listening">Late checkout request</p></div>
+                  <div class="cm-inbox__meta"><span class="cm-inbox__time">3h</span><span class="cm-inbox__unread" style="background:#fc0;"></span></div>
+                </div>
+                <div class="cm-inbox__row" style="border-bottom:none;">
+                  <span class="cm-sync__icon" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Lucy Lui</p><p class="cm-sync__listening">Booking confirmed</p></div>
+                  <div class="cm-inbox__meta"><span class="cm-inbox__time">Yesterday</span><span class="cm-inbox__unread" style="background:#e83245;"></span></div>
+                </div>
+                <div class="cm-sync__foot"><p>View all conversations</p></div>
               </div>
-              <div class="cm-sync__row">
-                <span class="cm-sync__badge" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;">VB</span>
-                <div class="cm-sync__name-wrap"><p class="cm-sync__name">Vrbo</p><p class="cm-sync__listening">Listening</p></div>
-                <span class="cm-sync__more">·</span>
+            </div>
+            <div class="cm-panel" data-panel="4">
+              <h3 class="cm-sync__heading">Instant blocking across all calendars.</h3>
+              <div class="cm-sync__card">
+                <div class="cm-sync__head">
+                  <span class="cm-sync__head-label" style="display:flex;align-items:center;gap:8px;"><span class="cm-protect__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>Calendar sync · Protected</span>
+                  <span class="cm-sync__status"><span class="cm-sync__dot cm-sync__dot--live"></span><span class="cm-sync__status-label">Active</span></span>
+                </div>
+                <div class="cm-protect__sub">
+                  <span>Aug 15-18 · Auto-blocked</span>
+                  <span class="cm-protect__tag">Protected</span>
+                </div>
+                <div class="cm-protect__row">
+                  <span class="cm-protect__name">Airbnb</span>
+                  <span class="cm-protect__date" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;">15</span>
+                  <span class="cm-protect__date" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;">16</span>
+                  <span class="cm-protect__date" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;">17</span>
+                  <span class="cm-protect__date" style="background:rgba(255,90,95,0.09);border-color:rgba(255,90,95,0.14);color:#ff5a5f;">18</span>
+                </div>
+                <div class="cm-protect__row">
+                  <span class="cm-protect__name">Booking.com</span>
+                  <span class="cm-protect__date" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;">15</span>
+                  <span class="cm-protect__date" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;">16</span>
+                  <span class="cm-protect__date" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;">17</span>
+                  <span class="cm-protect__date" style="background:rgba(66,133,244,0.09);border-color:rgba(66,133,244,0.14);color:#4285f4;">18</span>
+                </div>
+                <div class="cm-protect__row">
+                  <span class="cm-protect__name">Vrbo</span>
+                  <span class="cm-protect__date" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;">15</span>
+                  <span class="cm-protect__date" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;">16</span>
+                  <span class="cm-protect__date" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;">17</span>
+                  <span class="cm-protect__date" style="background:rgba(61,110,255,0.09);border-color:rgba(61,110,255,0.14);color:#3d6eff;">18</span>
+                </div>
+                <div class="cm-protect__row">
+                  <span class="cm-protect__name">Trip.com</span>
+                  <span class="cm-protect__date" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;">15</span>
+                  <span class="cm-protect__date" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;">16</span>
+                  <span class="cm-protect__date" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;">17</span>
+                  <span class="cm-protect__date" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;">18</span>
+                </div>
+                <div class="cm-protect__row">
+                  <span class="cm-protect__name">Direct</span>
+                  <span class="cm-protect__date" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;">15</span>
+                  <span class="cm-protect__date" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;">16</span>
+                  <span class="cm-protect__date" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;">17</span>
+                  <span class="cm-protect__date" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;">18</span>
+                </div>
+                <div class="cm-sync__foot" style="display:flex;align-items:center;justify-content:space-between;">
+                  <p>All channels are instantly blocked</p>
+                  <p style="color:#3ddc84;">✓ Protected</p>
+                </div>
               </div>
-              <div class="cm-sync__row">
-                <span class="cm-sync__badge" style="background:rgba(255,204,0,0.09);border-color:rgba(255,204,0,0.14);color:#fc0;">EX</span>
-                <div class="cm-sync__name-wrap"><p class="cm-sync__name">Expedia</p><p class="cm-sync__listening">Listening</p></div>
-                <span class="cm-sync__more">·</span>
+            </div>
+            <div class="cm-panel" data-panel="5">
+              <h3 class="cm-sync__heading">Your brand. Zero commission fees.</h3>
+              <div class="cm-sync__card">
+                <div class="cm-sync__head">
+                  <span class="cm-sync__head-label" style="display:flex;flex-direction:column;gap:2px;"><strong style="color:var(--text-primary);font-size:12px;">Direct booking site</strong><span>Live preview</span></span>
+                  <span class="cm-sync__status"><span class="cm-sync__dot cm-sync__dot--live"></span><span class="cm-sync__status-label">Live</span></span>
+                </div>
+                <div class="cm-direct__preview">
+                  <div class="cm-direct__nav"><strong>YourBrand.com</strong><span>Properties&nbsp;&nbsp;About&nbsp;&nbsp;Contact</span></div>
+                  <p class="cm-direct__villa">The Sunset Villa</p>
+                  <p class="cm-direct__loc">Malibu, California</p>
+                  <div class="cm-direct__fields">
+                    <div><span>Check In</span><strong>Oct 12</strong></div>
+                    <div><span>Check Out</span><strong>Oct 15</strong></div>
+                    <div><span>Guests</span><strong>2 Adults</strong></div>
+                  </div>
+                  <button type="button" class="cm-direct__book">Book Now →</button>
+                  <div class="cm-direct__fees">Zero fees</div>
+                </div>
+                <div class="cm-sync__foot" style="background:transparent;padding:12px 16px 0;"><p style="color:var(--text-primary);font-weight:600;">Recent direct bookings</p></div>
+                <div class="cm-direct__row">
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Sarah Jenkins</p><p class="cm-sync__listening">Oct 12 - Oct 15</p></div>
+                  <span class="cm-direct__amount">£450.00</span>
+                </div>
+                <div class="cm-direct__row">
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Michael Chen</p><p class="cm-sync__listening">Oct 18 - Oct 22</p></div>
+                  <span class="cm-direct__amount">£620.00</span>
+                </div>
+                <div class="cm-direct__row" style="border-bottom:none;">
+                  <div class="cm-sync__name-wrap"><p class="cm-sync__name">Emma Watson</p><p class="cm-sync__listening">Oct 25 - Oct 28</p></div>
+                  <span class="cm-direct__amount">£380.00</span>
+                </div>
               </div>
-              <div class="cm-sync__row" style="border-bottom:none;">
-                <span class="cm-sync__badge" style="background:rgba(232,50,69,0.09);border-color:rgba(232,50,69,0.14);color:#e83245;">DR</span>
-                <div class="cm-sync__name-wrap"><p class="cm-sync__name">Direct</p><p class="cm-sync__listening">Listening</p></div>
-                <span class="cm-sync__more">·</span>
-              </div>
-              <div class="cm-sync__foot"><p>No active sync</p></div>
             </div>
           </div>
         </div>
@@ -304,35 +467,62 @@
       <div class="hd-wrap">
         <div class="hd-label"><span class="hd-label__num">03</span><span class="hd-label__rule"></span><span class="hd-label__text">From our hosts</span></div>
         <h2 class="hd-h2">Built for hosts. <span class="hd-h2--muted-line2">Proven in practice.</span></h2>
-        <div class="cm-testimonials__grid">
-          <div class="cm-tcard">
-            <div>
-              <div class="cm-tcard__stars">★★★★★</div>
-              <p class="cm-tcard__quote">"We used to spend two hours every morning checking five different calendars. PropertyFlow made that a one-second refresh. I haven't had a double booking since day one."</p>
-            </div>
-            <div class="cm-tcard__foot">
-              <p class="cm-tcard__name">Sarah M.</p>
-              <p class="cm-tcard__meta">12 properties · Edinburgh</p>
-            </div>
+        <div class="cm-tbento">
+          <div class="cm-tbento__images">
+            <img class="cm-tbento__img" src="/images/design/redesign/channel-mgmt/testimonial-bedroom.webp" alt="A PropertyFlow-managed short-term rental bedroom">
+            <img class="cm-tbento__img" src="/images/design/redesign/channel-mgmt/testimonial-living-1.webp" alt="A PropertyFlow-managed short-term rental living room">
           </div>
-          <div class="cm-tcard">
-            <div>
-              <div class="cm-tcard__stars">★★★★★</div>
-              <p class="cm-tcard__quote">"The direct booking site alone paid for the subscription in the first month. Guests book commission-free, the calendar stays in sync — it just works."</p>
+          <div class="cm-tbento__content">
+            <div class="cm-tbento__row">
+              <div class="cm-tcard" style="flex-basis:51%;">
+                <div>
+                  <div class="cm-tcard__stars">★★★★★</div>
+                  <p class="cm-tcard__quote">"We used to spend two hours every morning checking five different calendars. PropertyFlow made that a one-second refresh. I haven't had a double booking since day one."</p>
+                </div>
+                <div class="cm-tcard__foot">
+                  <span class="cm-tcard__avatar cm-tcard__avatar--purple">SM</span>
+                  <div>
+                    <p class="cm-tcard__name">Sarah M.</p>
+                    <p class="cm-tcard__meta">12 properties · Edinburgh</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cm-tcard" style="flex-basis:47%;">
+                <div>
+                  <div class="cm-tcard__stars">★★★★★</div>
+                  <p class="cm-tcard__quote">"The direct booking site alone paid for the subscription in the first month. Guests book commission-free, the calendar stays in sync — it just works."</p>
+                </div>
+                <div class="cm-tcard__foot">
+                  <span class="cm-tcard__avatar cm-tcard__avatar--green">JK</span>
+                  <div>
+                    <p class="cm-tcard__name">James K.</p>
+                    <p class="cm-tcard__meta">4 properties · Manchester</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="cm-tcard__foot">
-              <p class="cm-tcard__name">James K.</p>
-              <p class="cm-tcard__meta">4 properties · Manchester</p>
-            </div>
-          </div>
-          <div class="cm-tcard">
-            <div>
-              <div class="cm-tcard__stars">★★★★★</div>
-              <p class="cm-tcard__quote">"I was on four OTAs and managing everything by hand. The first week on PropertyFlow I recovered six hours I didn't know I was losing every week."</p>
-            </div>
-            <div class="cm-tcard__foot">
-              <p class="cm-tcard__name">Priya R.</p>
-              <p class="cm-tcard__meta">8 properties · London</p>
+            <div class="cm-tbento__row">
+              <div class="cm-tcard cm-tcard--stat" style="flex-basis:30%;">
+                <div>
+                  <p class="cm-tcard__stat-num">900+</p>
+                  <p class="cm-tcard__stat-label">Bookings managed</p>
+                </div>
+                <p class="cm-tcard__stat-note">Through active PropertyFlow pipelines globally.</p>
+              </div>
+              <div class="cm-tcard" style="flex-basis:39%;">
+                <div>
+                  <div class="cm-tcard__stars">★★★★★</div>
+                  <p class="cm-tcard__quote">"I was on four OTAs and managing everything by hand. The first week on PropertyFlow I recovered six hours I didn't know I was losing every week."</p>
+                </div>
+                <div class="cm-tcard__foot">
+                  <span class="cm-tcard__avatar cm-tcard__avatar--pink">PR</span>
+                  <div>
+                    <p class="cm-tcard__name">Priya R.</p>
+                    <p class="cm-tcard__meta">8 properties · London</p>
+                  </div>
+                </div>
+              </div>
+              <img class="cm-tbento__img cm-tbento__img--narrow" src="/images/design/redesign/channel-mgmt/testimonial-living-2.webp" alt="A PropertyFlow-managed short-term rental living room" style="flex-basis:27%;">
             </div>
           </div>
         </div>
@@ -346,16 +536,64 @@
         <h2 class="hd-h2">All your booking channels. <span class="hd-h2--muted-line2">One connected system.</span></h2>
         <p class="hd-lede" style="max-width:520px;margin-left:auto;margin-right:auto;">Keep your listings, pricing and availability connected across your channels all from one place.</p>
         <div class="cm-channels__grid" style="text-align:left;">
-          <div class="cm-channel"><span class="cm-channel__icon"><img src="/images/design/redesign/channel-mgmt/airbnb.svg" alt="Airbnb"></span><span class="cm-channel__name">Airbnb</span></div>
-          <div class="cm-channel"><span class="cm-channel__icon"><img src="/images/design/redesign/channel-mgmt/booking.svg" alt="Booking.com"></span><span class="cm-channel__name">Booking.com</span></div>
-          <div class="cm-channel"><span class="cm-channel__icon"><img src="/images/design/redesign/channel-mgmt/vrbo.svg" alt="Vrbo"></span><span class="cm-channel__name">Vrbo</span></div>
-          <div class="cm-channel"><span class="cm-channel__icon"><img src="/images/design/redesign/channel-mgmt/expedia.svg" alt="Expedia"></span><span class="cm-channel__name">Expedia</span></div>
-          <div class="cm-channel"><span class="cm-channel__icon"><img src="/images/design/redesign/channel-mgmt/agoda.svg" alt="Agoda"></span><span class="cm-channel__name">Agoda</span></div>
-          <div class="cm-channel"><span class="cm-channel__icon"><img src="/images/design/redesign/channel-mgmt/tripadvisor.svg" alt="TripAdvisor"></span><span class="cm-channel__name">TripAdvisor</span></div>
-          <div class="cm-channel"><span class="cm-channel__icon"><img src="/images/design/redesign/channel-mgmt/google-travel.svg" alt="Google Vacation Rentals"></span><span class="cm-channel__name">Google Vacation Rentals</span></div>
-          <div class="cm-channel"><span class="cm-channel__icon"><img src="/images/design/redesign/channel-mgmt/hopper.svg" alt="Hopper"></span><span class="cm-channel__name">Hoppers</span></div>
+          <div class="cm-channel"><img class="cm-channel__logo" src="/images/design/redesign/hero/logo-airbnb.webp" alt="Airbnb"></div>
+          <div class="cm-channel"><img class="cm-channel__logo" src="/images/design/redesign/hero/logo-booking.webp" alt="Booking.com"></div>
+          <div class="cm-channel"><img class="cm-channel__logo" src="/images/design/redesign/hero/logo-vrbo.webp" alt="Vrbo"></div>
+          <div class="cm-channel"><img class="cm-channel__logo" src="/images/design/redesign/hero/logo-instant-booking.webp" alt="Instant booking"></div>
+          <div class="cm-channel"><img class="cm-channel__logo" src="/images/design/redesign/hero/logo-agoda.webp" alt="Agoda"></div>
+          <div class="cm-channel"><img class="cm-channel__logo" src="/images/design/redesign/hero/logo-tripcom.webp" alt="Trip.com"></div>
+          <div class="cm-channel"><img class="cm-channel__logo cm-channel__logo--wide" src="/images/design/redesign/hero/logo-google-vacation-rentals.webp" alt="Google Vacation Rentals"></div>
+          <div class="cm-channel"><img class="cm-channel__logo" src="/images/design/redesign/hero/logo-hopper.webp" alt="Hopper"></div>
         </div>
         <p class="cm-channels__footnote">Connect through iCal or API, with more channels added regularly</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="hd-section cm-faq">
+      <div class="hd-wrap cm-faq__grid">
+        <div class="cm-faq__head">
+          <div class="hd-label"><span class="hd-label__num">05</span><span class="hd-label__rule"></span><span class="hd-label__text">FAQ</span></div>
+          <h2 class="hd-h2">Question?<br><span class="hd-h2--muted-line2">We got you.</span></h2>
+          <p class="cm-faq__note">Still have a question? We're happy to help<br>Email us at <a href="mailto:info@propertyflowltd.co.uk" class="cm-faq__note-link">info@propertyflowltd.co.uk</a></p>
+        </div>
+        <div class="hd-faq__list">
+          <details class="hd-faq__item">
+            <summary class="hd-faq__q">
+              <span class="hd-faq__q-text">What does PropertyFlow&rsquo;s channel manager do?</span>
+              <span class="hd-faq__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+            </summary>
+            <p class="hd-faq__a">Yes. PropertyFlow is designed to bring your connected channels together, so you can manage your portfolio from one central system rather than checking each platform individually.</p>
+          </details>
+          <details class="hd-faq__item">
+            <summary class="hd-faq__q">
+              <span class="hd-faq__q-text">How does PropertyFlow help prevent double bookings?</span>
+              <span class="hd-faq__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+            </summary>
+            <p class="hd-faq__a">When a booking comes through a connected channel, availability is updated across your connected calendars, helping prevent the same dates from being booked twice.</p>
+          </details>
+          <details class="hd-faq__item">
+            <summary class="hd-faq__q">
+              <span class="hd-faq__q-text">Can I manage multiple booking channels from PropertyFlow?</span>
+              <span class="hd-faq__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+            </summary>
+            <p class="hd-faq__a">Yes. PropertyFlow is designed to bring your connected channels together, so you can manage your portfolio from one central system rather than checking each platform individually.</p>
+          </details>
+          <details class="hd-faq__item">
+            <summary class="hd-faq__q">
+              <span class="hd-faq__q-text">Is PropertyFlow suitable for smaller portfolios?</span>
+              <span class="hd-faq__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+            </summary>
+            <p class="hd-faq__a">Yes. Whether you're starting with one property or managing a growing portfolio, PropertyFlow is designed to give you one place to manage your day-to-day operations.</p>
+          </details>
+          <details class="hd-faq__item">
+            <summary class="hd-faq__q">
+              <span class="hd-faq__q-text">What&rsquo;s the difference between iCal and API connections?</span>
+              <span class="hd-faq__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+            </summary>
+            <p class="hd-faq__a">iCal primarily synchronises calendar availability between platforms. API connections can support a deeper exchange of information, depending on what each booking channel makes available through its integration.</p>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -390,23 +628,22 @@
             <div>
               <p class="hd-footer__col-title">Platform</p>
               <ul class="hd-footer__links">
-                <li><a href="/platform/channel-management/">Channel Manager</a></li>
-                <li><a href="/platform/ai-pricing/">AI Pricing</a></li>
+                <li><a href="/platform/ai-pricing/">Smart Pricing</a></li>
                 <li><a href="/platform/unified-inbox/">Unified Inbox</a></li>
-                <li><a href="/platform/multi-calendar/">Multi-Calendar</a></li>
-                <li><a href="/platform/turnovers-team/">Turnover & Teams</a></li>
-                <li><a href="/platform/financials-xero/">Financials</a></li>
-                <li><a href="/platform/compliance/">Document Reminder</a></li>
-                <li><a href="/platform/revenue-reporting/">Portfolio Growth & Reporting</a></li>
+                <li><a href="/platform/multi-calendar/">Multi Calendar</a></li>
+                <li><a href="/platform/turnovers-team/">Team Operation</a></li>
+                <li><a href="/platform/financials-xero/">Financial & Payouts</a></li>
+                <li><a href="/platform/compliance/">Compliance Tracking</a></li>
+                <li><a href="/platform/revenue-reporting/">Reporting & Insights</a></li>
+                <li><a href="/platform/channel-management/">Channel management</a></li>
               </ul>
             </div>
             <div>
               <p class="hd-footer__col-title">Solutions</p>
               <ul class="hd-footer__links">
-                <li><span class="hd-footer__legal-text">Just Starting Out</span></li>
-                <li><span class="hd-footer__legal-text">Managing for Owners</span></li>
-                <li><span class="hd-footer__legal-text">Coming from Spreadsheets</span></li>
-                <li><span class="hd-footer__legal-text">Hands-Free Partner</span></li>
+                <li><a href="/for-landlords/managing-for-owners/">Managing a Portfolio</a></li>
+                <li><a href="/for-landlords/coming-from-spreadsheets/">Switching to PropertyFlow</a></li>
+                <li><a href="/platform/hands-free/">Hands-Free Operations</a></li>
               </ul>
             </div>
             <div>
@@ -420,8 +657,6 @@
             <div>
               <p class="hd-footer__col-title">Legal</p>
               <ul class="hd-footer__links">
-                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/terms.html">Terms of Service</a></li>
                 <li><span class="hd-footer__legal-text">ICO Registration ZC088419</span></li>
               </ul>
             </div>
@@ -437,7 +672,18 @@
       </div>
     </footer>
 <script src="/js/nav-dropdown.js"></script>
-<script src="/js/propertyflow.js?v=10"></script>
+<script src="/js/propertyflow.js?v=13"></script>
+<script>
+(function () {
+  var items = document.querySelectorAll('.cm-tabs__item');
+  items.forEach(function (item) {
+    item.addEventListener('click', function () {
+      items.forEach(function (i) { i.classList.remove('cm-tabs__item--active'); });
+      item.classList.add('cm-tabs__item--active');
+    });
+  });
+})();
+</script>
 <!-- HubSpot Tracking Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147879634.js"></script>
 <script src="/js/cookie-consent.js"></script>

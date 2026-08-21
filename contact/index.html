@@ -43,16 +43,15 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:site" content="@propertyflowuk">
     <meta name="twitter:image" content="https://www.propertyflow.uk/images/og-default.webp">
-<!-- HubSpot Forms Embed -->
-    <link rel="preconnect" href="https://js-eu1.hsforms.net" crossorigin>
-    <script src="https://js-eu1.hsforms.net/forms/embed/147879634.js" defer></script>
+<!-- Calendly -->
+    <link rel="preconnect" href="https://calendly.com" crossorigin>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
     <link rel="stylesheet" href="/css/home-dark.css?v=1">
-    <link rel="stylesheet" href="/css/contact-dark.css?v=1">
+    <link rel="stylesheet" href="/css/contact-dark.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <script type="application/ld+json">
     {
@@ -140,10 +139,6 @@
                         <button type="button" class="hd-nav__link hd-nav__link--dropdown" aria-expanded="false">Solution<img src="/images/design/redesign/nav/chevron-down.svg" alt="" class="hd-nav__chevron"></button>
                         <div class="hd-nav__mega hd-nav__mega--solution">
                             <div class="hd-nav__mega-grid">
-                                <a href="/for-landlords/just-starting-out/" class="hd-nav__mega-item">
-                                    <span class="hd-nav__mega-title">Just starting out</span>
-                                    <span class="hd-nav__mega-desc">Your first 3 properties, free to learn</span>
-                                </a>
                                 <a href="/platform/hands-free/" class="hd-nav__mega-item">
                                     <span class="hd-nav__mega-title">Ready to go hands free</span>
                                     <span class="hd-nav__mega-desc">Hand operations to us as a partner</span>
@@ -182,7 +177,6 @@
             <a href="/platform/compliance/" class="hd-mobile-nav__link">Document Reminder</a>
             <a href="/platform/revenue-reporting/" class="hd-mobile-nav__link">Portfolio Growth &amp; Reporting</a>
             <p class="hd-mobile-nav__group-label">Solution</p>
-            <a href="/for-landlords/just-starting-out/" class="hd-mobile-nav__link">Just Starting Out</a>
             <a href="/platform/hands-free/" class="hd-mobile-nav__link">Ready to go Hands Free</a>
             <a href="/for-landlords/coming-from-spreadsheets/" class="hd-mobile-nav__link">Coming from Spreadsheet</a>
             <a href="/for-landlords/managing-for-owners/" class="hd-mobile-nav__link">Managing for Owner</a>
@@ -201,14 +195,17 @@
         <div class="ct-hero__copy">
           <div class="hd-label"><span class="hd-label__num">02</span><span class="hd-label__rule"></span><span class="hd-label__text">Contact</span></div>
           <h1 class="ct-hero__heading">Tell us where you're <span class="muted">starting from.</span></h1>
-          <p class="ct-hero__desc">Pick whichever fits, and the form below will already know what to ask you.</p>
+          <p class="ct-hero__desc">Pick a time that works for you — no forms, no back-and-forth.</p>
         </div>
 
         <div class="ct-grid">
-          <div class="ct-form-card ct-hs">
-            <h2>Send us a message</h2>
-            <div class="hs-form-frame" data-region="eu1" data-form-id="10b60377-1c78-4f3f-936d-c54e3de1fdb5" data-portal-id="147879634"></div>
-            <p class="ct-form-note">We aim to reply within one working day. No obligation.</p>
+          <div class="ct-form-card ct-calendly" id="form">
+            <h2>Book a call</h2>
+            <div class="ct-calendly__body">
+              <p class="ct-calendly__desc">Whether you're just getting started or already growing, book a quick call with our team and let's explore how PropertyFlow can support you.</p>
+              <a href="https://calendly.com/vibhor-propertyflowltd/30min" target="_blank" rel="noopener" class="hd-pill hd-pill--light">Book a call →</a>
+            </div>
+            <p class="ct-form-note">Free · 30 minutes · no obligation.</p>
           </div>
 
           <aside class="ct-aside">
@@ -236,12 +233,6 @@
                 </div>
               </div>
             </div>
-
-            <div class="ct-card ct-audit">
-              <h3>Book a property audit</h3>
-              <p>We'll analyse your location, market demand and income potential. Twenty minutes, free, no obligation.</p>
-              <a href="/contact/#form" class="hd-pill hd-pill--ghost">Book a time →</a>
-            </div>
           </aside>
         </div>
       </div>
@@ -264,24 +255,22 @@
             <div>
               <p class="hd-footer__col-title">Platform</p>
               <ul class="hd-footer__links">
-                <li><a href="/platform/">Overview</a></li>
-                <li><a href="/platform/channel-management/">Channel Manager</a></li>
-                <li><a href="/platform/ai-pricing/">AI Pricing</a></li>
+                <li><a href="/platform/ai-pricing/">Smart Pricing</a></li>
                 <li><a href="/platform/unified-inbox/">Unified Inbox</a></li>
-                <li><a href="/platform/multi-calendar/">Multi-Calendar</a></li>
-                <li><a href="/platform/turnovers-team/">Turnover & Teams</a></li>
-                <li><a href="/platform/financials-xero/">Financials</a></li>
-                <li><a href="/platform/compliance/">Document Reminder</a></li>
-                <li><a href="/platform/revenue-reporting/">Portfolio Growth & Reporting</a></li>
+                <li><a href="/platform/multi-calendar/">Multi Calendar</a></li>
+                <li><a href="/platform/turnovers-team/">Team Operation</a></li>
+                <li><a href="/platform/financials-xero/">Financial & Payouts</a></li>
+                <li><a href="/platform/compliance/">Compliance Tracking</a></li>
+                <li><a href="/platform/revenue-reporting/">Reporting & Insights</a></li>
+                <li><a href="/platform/channel-management/">Channel management</a></li>
               </ul>
             </div>
             <div>
               <p class="hd-footer__col-title">Solutions</p>
               <ul class="hd-footer__links">
-                <li><span class="hd-footer__legal-text">Just Starting Out</span></li>
-                <li><span class="hd-footer__legal-text">Managing for Owners</span></li>
-                <li><span class="hd-footer__legal-text">Coming from Spreadsheets</span></li>
-                <li><span class="hd-footer__legal-text">Hands-Free Partner</span></li>
+                <li><a href="/for-landlords/managing-for-owners/">Managing a Portfolio</a></li>
+                <li><a href="/for-landlords/coming-from-spreadsheets/">Switching to PropertyFlow</a></li>
+                <li><a href="/platform/hands-free/">Hands-Free Operations</a></li>
               </ul>
             </div>
             <div>
@@ -295,8 +284,6 @@
             <div>
               <p class="hd-footer__col-title">Legal</p>
               <ul class="hd-footer__links">
-                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/terms.html">Terms of Service</a></li>
                 <li><span class="hd-footer__legal-text">ICO Registration ZC088419</span></li>
               </ul>
             </div>
@@ -312,7 +299,7 @@
       </div>
     </footer>
 <script src="/js/nav-dropdown.js"></script>
-<script src="/js/propertyflow.js?v=10"></script>
+<script src="/js/propertyflow.js?v=13"></script>
 <!-- HubSpot Tracking Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147879634.js"></script>
 <script src="/js/cookie-consent.js"></script>

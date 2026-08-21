@@ -171,4 +171,58 @@
         if (!dsHeroVideo.paused) markHeroPlaying();
     }
 
+    // ─── Partner program card: close via the bottom "Read more" footer ───
+    document.querySelectorAll('.hd-partner__card-foot--open').forEach(function (foot) {
+        foot.addEventListener('click', function () {
+            var card = foot.closest('details');
+            if (card) card.open = false;
+        });
+    });
+
+    // ─── Pricing page: interactive property-count slider ───
+    var prpSlider = document.getElementById('prp-calc-slider');
+    if (prpSlider) {
+        var prpCount = document.getElementById('prp-calc-count');
+        var prpPlanLabel = document.getElementById('prp-calc-plan-label');
+        var prpPlanDetail = document.getElementById('prp-calc-plan-detail');
+        var prpPrice = document.getElementById('prp-calc-price');
+        var prpUpdate = function () {
+            var n = parseInt(prpSlider.value, 10);
+            var min = parseInt(prpSlider.min, 10);
+            var max = parseInt(prpSlider.max, 10);
+            var pct = ((n - min) / (max - min)) * 100;
+            prpSlider.style.setProperty('--fill', pct + '%');
+            prpCount.textContent = n + (n === 1 ? ' Property' : ' Properties');
+            if (n <= 3) {
+                prpPlanLabel.textContent = "You'd be on free";
+                prpPlanDetail.textContent = n + (n === 1 ? ' property free' : ' properties free');
+                prpPrice.innerHTML = '£0<span> / month</span>';
+            } else {
+                var extra = n - 3;
+                var total = (extra * 9.99).toFixed(2);
+                prpPlanLabel.textContent = "You'd be on premium";
+                prpPlanDetail.textContent = '3 free + ' + extra + ' extra at £9.99';
+                prpPrice.innerHTML = '£' + total + '<span> / month</span>';
+            }
+        };
+        prpSlider.addEventListener('input', prpUpdate);
+        prpUpdate();
+    }
+
+    // ─── Channel management: FeatureTabs left list swaps the right panel ───
+    var cmTabItems = document.querySelectorAll('.cm-tabs__item');
+    if (cmTabItems.length) {
+        cmTabItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                var target = item.getAttribute('data-tab');
+                cmTabItems.forEach(function (el) {
+                    el.classList.toggle('cm-tabs__item--active', el === item);
+                });
+                document.querySelectorAll('.cm-panel').forEach(function (panel) {
+                    panel.classList.toggle('cm-panel--active', panel.getAttribute('data-panel') === target);
+                });
+            });
+        });
+    }
+
 })();
