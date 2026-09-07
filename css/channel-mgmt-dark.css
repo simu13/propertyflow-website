@@ -322,7 +322,6 @@ body.hd-page .cm-channels__footnote { text-align: center; font-family: "Krub", s
   body.hd-page .cm-channel__logo { height: 26px; max-width: 80%; }
 }
 /* 7 logos in a 4-col / 2-col grid: let the last tile fill the row so no empty slot shows */
-body.hd-page .cm-channel:last-child { grid-column: span 2; }
 @media (max-width: 480px) {
   body.hd-page .cm-channel { height: 96px; }
   body.hd-page .cm-channel__logo { height: 22px; max-width: 74%; }
@@ -374,3 +373,7 @@ body.hd-page section.hd-stats .hd-stats__label {
   body.hd-page section.hd-stats .hd-stats__cell { min-width: 0; padding: 28px 12px; }
   body.hd-page section.hd-stats .hd-stats__value { font-size: 36px; line-height: 40px; }
 }
+
+/* Direct booking wordmark cell (eighth channel) */
+body.hd-page .cm-channel__word { display: inline-flex; align-items: center; gap: 10px; font-family: "Krub", sans-serif; font-weight: 600; font-size: 19px; letter-spacing: -0.01em; color: var(--text-primary); white-space: nowrap; }
+@media (max-width: 720px) { body.hd-page .cm-channel__word { font-size: 16px; } body.hd-page .cm-channel__word svg { width: 18px; height: 18px; } }
