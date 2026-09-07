@@ -215,7 +215,7 @@
             prpFill(prpSlider);
             if (prpBookings) prpFill(prpBookings);
 
-            if (prpCount) prpCount.textContent = n + (n === 1 ? ' Property' : ' Properties');
+            if (prpCount) prpCount.textContent = n + (n === 1 ? ' property' : ' properties');
             if (prpBookingsValue) prpBookingsValue.textContent = prpPounds(bookings, 0);
 
             var platformFee = n > PRP_FREE_LIMIT ? n * PRP_PREMIUM_PER_PROPERTY : 0;

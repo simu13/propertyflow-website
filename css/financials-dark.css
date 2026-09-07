@@ -2,7 +2,7 @@
    PropertyFlow — Financials page dark redesign (Figma file AfDgwLGK6PWvMXXcqqtZUb,
    frame 586:1294 "Financials")
 
-   Loaded ONLY by platform/financials-xero/index.html, after home-dark.css (nav,
+   Loaded ONLY by platform/financials/index.html, after home-dark.css (nav,
    labels, headings, stats grid, CTA2, footer pattern are reused from there).
    Component classes below use the `fin-` prefix to avoid any collision with
    home-dark.css or the other redesigned pages' CSS files. Scoped under
