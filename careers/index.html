@@ -63,10 +63,11 @@
         @media (max-width: 1023px) { .ds-section--dark .ds-stat-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 639px) { .ds-section--dark .ds-stat-grid { grid-template-columns: 1fr; } }
         /* Value cards: give the outlined cards a raised surface */
+        .ds-section--cream { background: #101014; }
         .ds-value-card { background: #131316; border-color: #26262b; }
         .ds-career-row { background: #131316; border-color: #26262b; }
-        .ds-career-row a { border-radius: 9999px; }
-        .ds-career-row a:hover { border-color: rgba(255,255,255,0.28); }
+        .ds-career-row a { border-radius: 9999px; border-color: rgba(255,255,255,0.28); color: #f0f0f5; transition: border-color 0.2s, background 0.2s; }
+        .ds-career-row a:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.06); }
         /* Banner CTA: secondary outlined pill on the pink banner (shared hover turned it white-on-white) */
         .ds-banner .ds-btn-white { background: transparent; border: 1px solid rgba(255,255,255,0.55); color: #fff; border-radius: 9999px; display: inline-block; }
         .ds-banner .ds-btn-white:hover { background: rgba(255,255,255,0.12); border-color: #fff; color: #fff; }

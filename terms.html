@@ -54,6 +54,8 @@
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     
     <style>
+      /* Page ground: home-ds.css forces .ds-page to #131316 !important, which flattens the #131316 TOC and CTA cards; restore the #0c0c0f page background on this page. */
+      body.ds-page { background: #0c0c0f !important; }
       .pf-legal .ds-legal-block p, .pf-legal .ds-legal-block li { line-height: 1.65; color: #d9d9e0; }
       .pf-legal .ds-legal-block h2 { scroll-margin-top: 6rem; }
       .pf-legal .ds-legal-block strong { color: var(--ds-ink); }
