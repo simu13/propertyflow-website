@@ -23,21 +23,21 @@
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Calendar | PropertyFlow</title>
-    <meta name="description" content="Every booking, block and gap across every channel and every property in one synced calendar. Free for up to 3 properties on your own channels.">
-    <meta property="og:title" content="Multi-Calendar | PropertyFlow">
-    <meta property="og:description" content="Every booking, block and gap across every channel and every property in one synced calendar. Free for up to 3 properties on your own channels.">
+    <title>Financials &amp; Payouts | PropertyFlow</title>
+    <meta name="description" content="Owner statements, payout tracking and expenses tied to each stay, tallied as bookings happen. Month-end stops being a project.">
+    <meta property="og:title" content="Financials &amp; Payouts | PropertyFlow">
+    <meta property="og:description" content="Owner statements, payout tracking and expenses tied to each stay, tallied as bookings happen. Month-end stops being a project.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.propertyflow.uk/platform/multi-calendar/">
+    <meta property="og:url" content="https://www.propertyflow.uk/platform/financials/">
         <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="canonical" href="https://www.propertyflow.uk/platform/multi-calendar/">
+    <link rel="canonical" href="https://www.propertyflow.uk/platform/financials/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Multi-Calendar | PropertyFlow">
-    <meta name="twitter:description" content="Every booking, block and gap across every channel and every property in one synced calendar. Free for up to 3 properties on your own channels.">
+    <meta name="twitter:title" content="Financials &amp; Payouts | PropertyFlow">
+    <meta name="twitter:description" content="Owner statements, payout tracking and expenses tied to each stay, tallied as bookings happen. Month-end stops being a project.">
     <meta property="og:image" content="https://www.propertyflow.uk/images/og-default.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -48,16 +48,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
     <link rel="stylesheet" href="/css/home-dark.css?v=1">
-    <link rel="stylesheet" href="/css/multi-calendar-dark.css?v=2">
-    <style>
-      /* Page-local rules: the app block */
-      body.hd-page .pf-app-block { border-top: 0.8px solid var(--border-subtle); }
-      body.hd-page .pf-app-block__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px 48px; flex-wrap: wrap; }
-      body.hd-page .pf-app-block__copy { flex: 1 1 420px; max-width: 640px; }
-      body.hd-page .pf-app-block__badges { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-      body.hd-page .pf-app-block__badges img { display: block; height: 48px; width: auto; }
-      body.hd-page .pf-app-block__badges img.pf-app-block__gp { height: 72px; margin: -12px; }
-    </style>
+    <link rel="stylesheet" href="/css/financials-xero-dark.css?v=1">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -66,7 +57,7 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertyflow.uk/"},
-        {"@type": "ListItem", "position": 2, "name": "Multi-Calendar", "item": "https://www.propertyflow.uk/platform/multi-calendar/"}
+        {"@type": "ListItem", "position": 2, "name": "Financials & Payouts", "item": "https://www.propertyflow.uk/platform/financials/"}
       ]
     }
     </script>
@@ -75,7 +66,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Multi-Property Calendar for Short-Term Lets",
+      "name": "Financials and Payouts for Short-Term Lets",
       "provider": {
         "@type": "Organization",
         "name": "PropertyFlow Technologies Ltd",
@@ -85,7 +76,7 @@
         "@type": "Country",
         "name": "United Kingdom"
       },
-      "description": "A single, always-synced calendar showing every booking, block and gap across every channel and every property in the portfolio."
+      "description": "Owner statements, payout tracking and expenses tied to each stay, tallied automatically as bookings happen."
     }
     </script>
 
@@ -206,85 +197,108 @@
 <main>
 
     <!-- Hero -->
-    <section class="mc-hero">
+    <section class="fin-hero">
       <div class="hd-wrap">
-        <div class="mc-hero__copy">
-          <div class="hd-label"><span class="hd-label__num">01</span><span class="hd-label__rule"></span><span class="hd-label__text">Multi calendar</span></div>
-          <h1 class="mc-hero__heading"><span>One calendar. Every</span><span class="muted">booking</span></h1>
-          <p class="mc-hero__desc">Bookings from every connected channel come together in one calendar, with availability automatically kept in sync. So you always know what's booked, what's available and what's coming next.</p>
-          <div class="mc-hero__ctas">
-            <a href="https://app.propertyflow.uk/register" class="hd-pill hd-pill--light">Try it free →</a>
+        <div class="fin-hero__copy">
+          <div class="hd-label"><span class="hd-label__num">01</span><span class="hd-label__rule"></span><span class="hd-label__text">Financials &amp; payouts</span></div>
+          <h1 class="fin-hero__heading"><span>Your financials stay </span><span>organised, <span class="muted">even when </span></span><span class="muted">bookings move fast.</span></h1>
+          <p class="fin-hero__desc">As your portfolio grows, keeping track of every payout and booking gets harder. PropertyFlow keeps the financial side organised in one place so you're not untangling everything at the end of the month.</p>
+          <div class="fin-hero__ctas">
+            <a href="https://app.propertyflow.uk/register" class="hd-pill hd-pill--light">Get started free →</a>
             <a href="#how-it-works" class="hd-pill hd-pill--ghost">See how it works</a>
           </div>
+          <div class="fin-hero__stats">
+            <div><span class="fin-hero__stat-value">Statements</span><p class="fin-hero__stat-label">one per property, built from real bookings</p></div>
+            <div class="fin-hero__stat-divider"></div>
+            <div><span class="fin-hero__stat-value">Payouts</span><p class="fin-hero__stat-label">tracked per channel and per stay</p></div>
+            <div class="fin-hero__stat-divider"></div>
+            <div><span class="fin-hero__stat-value">Expenses</span><p class="fin-hero__stat-label">tied to the stay that caused them</p></div>
+          </div>
         </div>
-        <div class="mc-hero__visual">
-          <img src="/images/design/redesign/multi-calendar/hero-calendar.webp" alt="PropertyFlow booking calendar showing every channel's bookings synced into one property Gantt view">
+        <div class="fin-hero__visual">
+          <img src="/images/design/redesign/financials-xero/hero-dashboard.webp" alt="PropertyFlow financials dashboard showing reconciled totals, owner payouts due and channel payouts matched to bookings">
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
+    <!-- Three things you stop doing -->
     <section class="hd-section" id="how-it-works">
       <div class="hd-wrap">
-        <div class="mc-section-head">
-          <div class="hd-label"><span class="hd-label__num">02</span><span class="hd-label__rule"></span><span class="hd-label__text">How it works</span></div>
-          <h2 class="mc-h2">One update. Every booking <span class="muted">calendar stays in sync.</span></h2>
-          <p class="mc-lede">Move a booking, block a date or update your availability in PropertyFlow. Your connected calendars update automatically, so you don't have to repeat the same job across every platform.</p>
+        <div class="fin-section-head">
+          <div class="hd-label"><span class="hd-label__num">02</span><span class="hd-label__rule"></span><span class="hd-label__text">Three things you stop doing</span></div>
+          <h2 class="fin-h2">Nobody builds a statement. <span class="muted">Nobody re-types a payout.</span></h2>
+          <p class="fin-lede">Every payout, expense and statement tied to the stay it belongs to.</p>
         </div>
-        <div class="mc-tiles">
-          <div class="mc-tile">
-            <p class="mc-tile__num">01</p>
-            <h3 class="mc-tile__title">Seamless adjustment</h3>
-            <p class="mc-tile__desc">Need to move a booking or close a few nights? Make the change in PropertyFlow and we'll keep your connected calendars aligned.</p>
+        <div class="fin-tiles">
+          <div class="fin-tile">
+            <p class="fin-tile__num">01</p>
+            <h3 class="fin-tile__title">Owner statements</h3>
+            <p class="fin-tile__desc">Each property gets its own owner statement, built from the bookings and costs that actually happened. Never a shared template with the wrong numbers in it.</p>
           </div>
-          <div class="mc-tile">
-            <p class="mc-tile__num">02</p>
-            <h3 class="mc-tile__title">Bookings at a glance</h3>
-            <p class="mc-tile__desc">Airbnb, Booking.com, Vrbo, direct bookings and other connected channels are easy to spot, so you always know where each reservation came from.</p>
+          <div class="fin-tile">
+            <p class="fin-tile__num">02</p>
+            <h3 class="fin-tile__title">Payout tracking</h3>
+            <p class="fin-tile__desc">Every channel payout is logged against the stays it covers, so you can see what has been paid, what is still pending and what each booking actually netted.</p>
           </div>
-          <div class="mc-tile">
-            <p class="mc-tile__num">03</p>
-            <h3 class="mc-tile__title">Customisable viewing</h3>
-            <p class="mc-tile__desc">Switch between day, week and month views to see what's happening across your portfolio without losing track of a single property.</p>
+          <div class="fin-tile">
+            <p class="fin-tile__num">03</p>
+            <h3 class="fin-tile__title">Expenses tied to stays</h3>
+            <p class="fin-tile__desc">A cleaning bill or a channel fee is attached to the stay that caused it, instead of sitting in a folder waiting to be matched up by hand.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="hd-stats">
+    <!-- Every source of money reconciled -->
+    <section class="hd-section">
       <div class="hd-wrap">
-        <div class="hd-stats__grid">
-          <div class="hd-stats__cell"><span class="hd-stats__value">150+</span><p class="hd-stats__label">properties live</p></div>
-          <div class="hd-stats__cell"><span class="hd-stats__value">1,500</span><p class="hd-stats__label">bookings a month</p></div>
-          <div class="hd-stats__cell"><span class="hd-stats__value">6,000+</span><p class="hd-stats__label">bookings processed</p></div>
-          <div class="hd-stats__cell"><span class="hd-stats__value">8+</span><p class="hd-stats__label">booking channels</p></div>
+        <div class="fin-section-head--center">
+          <div class="hd-label"><span class="hd-label__num">03</span><span class="hd-label__rule"></span><span class="hd-label__text">Every payout in one place</span></div>
+          <h2 class="fin-h2">Every payout and cost, <span class="muted">in one place.</span></h2>
+          <p class="fin-lede">Channel payouts and supplier costs sit alongside the bookings they belong to, so your records are easy to check, understand and keep up to date.</p>
+        </div>
+        <div class="fin-integrations">
+          <div class="fin-integration">
+            <span class="fin-integration__icon"><img src="/images/design/redesign/financials-xero/hopper.svg" alt=""></span>
+            <div><p class="fin-integration__name">Hopper</p><p class="fin-integration__sub">Payouts</p></div>
+          </div>
+          <div class="fin-integration">
+            <span class="fin-integration__icon"><img src="/images/design/redesign/financials-xero/airbnb.svg" alt=""></span>
+            <div><p class="fin-integration__name">Airbnb</p><p class="fin-integration__sub">Payouts</p></div>
+          </div>
+          <div class="fin-integration">
+            <span class="fin-integration__icon"><img src="/images/design/redesign/financials-xero/booking.svg" alt=""></span>
+            <div><p class="fin-integration__name">Booking.com</p><p class="fin-integration__sub">Payouts</p></div>
+          </div>
+          <div class="fin-integration">
+            <span class="fin-integration__icon"><img src="/images/design/redesign/financials-xero/suppliers.svg" alt=""></span>
+            <div><p class="fin-integration__name">Suppliers</p><p class="fin-integration__sub">Cleaning & linen bills</p></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- The app -->
-    <section class="hd-section--tight pf-app-block">
-      <div class="hd-wrap pf-app-block__inner">
-        <div class="mc-section-head pf-app-block__copy">
-          <div class="hd-label"><span class="hd-label__num">03</span><span class="hd-label__rule"></span><span class="hd-label__text">The app</span></div>
-          <h2 class="mc-h2"><span>Run it from your phone.</span></h2>
-          <p class="mc-lede">Booking alerts and guest messages on the PropertyFlow app for iPhone and Android.</p>
+    <!-- Month-end made easier -->
+    <section class="hd-section">
+      <div class="hd-wrap">
+        <div class="fin-section-head">
+          <div class="hd-label"><span class="hd-label__num">04</span><span class="hd-label__rule"></span><span class="hd-label__text">Month-end, made easier</span></div>
+          <h2 class="fin-h2">A little less to sort out at <span class="muted">the end of every month.</span></h2>
+          <p class="fin-lede">As bookings, payouts and costs come in, PropertyFlow keeps them connected and organised so there's less to untangle when month-end comes around.</p>
         </div>
-        <div class="pf-app-block__badges">
-          <a href="https://apps.apple.com/gb/app/propertyflow/id6776260840" target="_blank" rel="noopener noreferrer"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-gb?releaseDate=1784160000" alt="Download on the App Store"></a>
-          <a href="https://play.google.com/store/apps/details?id=app.propertyflow.uk" target="_blank" rel="noopener noreferrer"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="pf-app-block__gp"></a>
+        <div class="fin-compare-chart">
+          <img src="/images/design/redesign/financials-xero/compare-chart.webp" alt="Comparison chart showing workload spiking at month-end without PropertyFlow, versus staying level throughout the month with PropertyFlow">
         </div>
       </div>
     </section>
 
     <!-- Final CTA -->
     <section class="hd-section hd-cta2">
-      <div class="hd-wrap hd-cta2__inner" style="max-width:1030px;">
-        <h2 class="hd-cta2__heading">All your bookings together.<br><span class="hd-h2--muted-line2">No more juggling between calendars</span></h2>
+      <div class="hd-wrap hd-cta2__inner" style="max-width:950px;">
+        <h2 class="hd-cta2__heading">Spend less time sorting numbers.<br><span class="hd-h2--muted-line2">More time growing your portfolio</span></h2>
         <p class="hd-cta2__desc">Included on every plan. Free for up to 3 properties on your own channels. No credit card required.</p>
         <div class="hd-cta2__actions">
-          <a href="https://app.propertyflow.uk/register" class="hd-pill hd-pill--light">Try it free →</a>
+          <a href="https://app.propertyflow.uk/register" class="hd-pill hd-pill--light">Get started free →</a>
           <a href="/contact/" class="hd-pill hd-pill--ghost">Book a walkthrough</a>
         </div>
       </div>
