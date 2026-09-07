@@ -63,7 +63,9 @@ body.hd-page .mc-hero__visual {
   margin-top: 80px;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 50px 120px rgba(0, 0, 0, 0.85);
+  border: 1px solid #26262b;
+  background: #131316;
+  box-shadow: 0 50px 120px rgba(0, 0, 0, 0.85);
 }
 body.hd-page .mc-hero__visual img { display: block; width: 100%; }
 
@@ -80,7 +82,7 @@ body.hd-page .mc-h2 {
   margin: 28px 0 0;
 }
 body.hd-page .mc-h2 span.muted { color: #87878f; }
-body.hd-page .mc-lede { font-family: "Krub", sans-serif; font-size: 17px; line-height: 1.65; color: #b5b5b5; max-width: 648px; margin: 24px 0 0; }
+body.hd-page .mc-lede { font-family: "Krub", sans-serif; font-size: 17px; line-height: 1.65; color: #a0a0aa; max-width: 648px; margin: 24px 0 0; }
 
 body.hd-page .mc-tiles {
   display: grid;

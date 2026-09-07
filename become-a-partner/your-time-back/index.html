@@ -47,26 +47,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <style>
       .pf-pink-orb{background: linear-gradient(135deg,#FF0257,#d90048)!important;animation: pf-pink-orb-pulse 2.8s ease-out infinite;}
-      @keyframes pf-pink-orb-pulse{0%{box-shadow: 0 0 0 0 rgba(255,56,92,0.42);}60%{box-shadow: 0 0 0 9px rgba(255,56,92,0);}100%{box-shadow: 0 0 0 0 rgba(255,56,92,0);}}
+      @keyframes pf-pink-orb-pulse{0%{box-shadow: 0 0 0 0 rgba(255,2,87,0.42);}60%{box-shadow: 0 0 0 9px rgba(255,2,87,0);}100%{box-shadow: 0 0 0 0 rgba(255,2,87,0);}}
       .ds-ytb-hero{position: relative;width: 100%;height: 86vh;min-height: 37.5rem;max-height: 51.25rem;overflow: hidden;background: #26262b;border-radius: 0 0 1.625rem 1.625rem;}
       .ds-ytb-hero img{position: absolute;inset: 0;width: 100%;height: 100%;object-fit: cover;}
       .ds-ytb-hero__overlay{position: absolute;inset: 0;background: linear-gradient(90deg,rgba(14,14,17,0.85) 0%,rgba(14,14,17,0.5) 45%,rgba(14,14,17,0.2) 100%);}
       .ds-ytb-hero__content{position: absolute;inset: 0;display: flex;align-items: center;}
       .ds-ytb-hero__inner{max-width: var(--ds-max);width: 100%;margin: 0 auto;padding: 0 var(--ds-pad);}
       .ds-ytb-hero__box{max-width: 37.5rem;}
-      .ds-ytb-hero__kicker{font-size: 0.75rem;font-weight: 600;letter-spacing: 0.0375em;text-transform: uppercase;color: #FF8A94;}
-      .ds-ytb-hero__title{margin: 1rem 0 0;font-size: clamp(2.5rem,5vw,4rem);font-weight: 700;line-height: 1.02;letter-spacing: -0.05em;color: #fff;text-shadow: 0 2px 26px rgba(0,0,0,0.5);}
-      .ds-ytb-hero__lead{margin: 1.375rem 0 0;font-size: 1.1875rem;line-height: 1.55;color: rgba(255,255,255,0.88);max-width: 28.75rem;text-shadow: 0 1px 12px rgba(0,0,0,0.4);}
+      .ds-ytb-hero__kicker{font-size: 0.75rem;font-weight: 600;letter-spacing: 0.0375em;text-transform: uppercase;color: #ff5c8a;}
+      .ds-ytb-hero__title{margin: 1rem 0 0;font-size: clamp(2.5rem,5vw,4rem);font-weight: 700;line-height: 1.02;letter-spacing: -0.05em;color: #f0f0f5;text-shadow: 0 2px 26px rgba(0,0,0,0.5);}
+      .ds-ytb-hero__lead{margin: 1.375rem 0 0;font-size: 1.1875rem;line-height: 1.55;color: rgba(240,240,245,0.9);max-width: 28.75rem;text-shadow: 0 1px 12px rgba(0,0,0,0.4);}
       .ds-ytb-contrast{display: grid;grid-template-columns: repeat(3,1fr);gap: 1.5rem;}
-      .ds-ytb-contrast__cell{border: 1px solid var(--ds-border);border-radius: 1rem;padding: 2.125rem;}
-      .ds-ytb-contrast__label{font-size: 0.9375rem;font-weight: 600;color: #a0a0aa;}
-      .ds-ytb-contrast__label--on{color: #FF0257;}
+      .ds-ytb-contrast__cell{background: #131316;border: 1px solid #26262b;border-radius: 1rem;padding: 2.125rem;transition: border-color .25s ease;}
+      .ds-ytb-contrast__cell:hover{border-color: rgba(255,255,255,0.2);}
+      .ds-ytb-contrast__label{font-size: 0.8125rem;font-weight: 600;letter-spacing: 0.04em;text-transform: uppercase;color: #a0a0aa;}
+      .ds-ytb-contrast__label--on{color: #ff5c8a;}
       .ds-ytb-contrast__cell h2{margin: 0.625rem 0 0;font-size: 1.25rem;font-weight: 600;letter-spacing: -0.025em;color: var(--ds-ink);}
       .ds-ytb-contrast__cell p{margin: 0.625rem 0 0;font-size: 0.9375rem;line-height: 1.6;color: #a0a0aa;}
       .ds-ytb-hero__title{text-wrap: balance;}

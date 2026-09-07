@@ -47,49 +47,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <style>
       /* Own a property: report form and page-only helpers */
-      .pf-form{display: grid;grid-template-columns: 1fr 1fr;gap: 1rem 1.25rem;margin-top: 1.75rem;}
+      .pf-form{display: grid;grid-template-columns: 1fr 1fr;gap: 1rem 1.25rem;margin-top: 1.75rem;color-scheme: dark;}
       .pf-form__field{display: flex;flex-direction: column;gap: 0.4rem;min-width: 0;}
       .pf-form__field--full{grid-column: 1 / -1;}
       .pf-form label,.pf-form legend{font-size: 0.875rem;font-weight: 600;color: var(--ds-ink);}
-      .pf-form input,.pf-form select,.pf-form textarea{font: inherit;font-size: 0.9375rem;color: var(--ds-ink);background: #131316;border: 1px solid rgba(255, 255, 255, 0.18);border-radius: 12px;padding: 0.8rem 0.95rem;width: 100%;box-sizing: border-box;}
+      .pf-form input,.pf-form select,.pf-form textarea{font: inherit;font-size: 0.9375rem;color: var(--ds-ink);background: #1a1a1e;border: 1px solid #26262b;border-radius: 12px;padding: 0.8rem 0.95rem;width: 100%;box-sizing: border-box;}
       .pf-form textarea{min-height: 5.5rem;resize: vertical;}
-      .pf-form select: focus-visible{outline: none;box-shadow: 0 0 0 3px rgba(230,90,56,0.25);}
+      .pf-form input::placeholder,.pf-form textarea::placeholder{color: #7c7c86;opacity: 1;}
+      .pf-form select option{background: #1a1a1e;color: var(--ds-ink);}
+      .pf-form input:focus-visible,.pf-form select:focus-visible,.pf-form textarea:focus-visible{outline: none;border-color: rgba(255,2,87,0.6);box-shadow: 0 0 0 3px rgba(255,2,87,0.22);}
       .sr-only{position: absolute;left: -9999px;}
       .pf-form fieldset{border: 0;padding: 0;margin: 0;}
       .pf-form__choices{display: flex;gap: 0.6rem;flex-wrap: wrap;margin-top: 0.4rem;}
-      .pf-form__choice{display: inline-flex;align-items: center;gap: 0.5rem;font-size: 0.9375rem;font-weight: 500;color: var(--ds-ink);background: #131316;border: 1px solid rgba(255, 255, 255, 0.18);border-radius: 9999px;padding: 0.6rem 1rem;cursor: pointer;}
+      .pf-form__choice{display: inline-flex;align-items: center;gap: 0.5rem;font-size: 0.9375rem;font-weight: 500;color: var(--ds-ink);background: #1a1a1e;border: 1px solid #26262b;border-radius: 9999px;padding: 0.6rem 1rem;cursor: pointer;}
       .pf-form__choice input{width: auto;padding: 0;margin: 0;accent-color: var(--ds-orange);}
-      .pf-form__choice: has(input:checked){border-color: var(--ds-orange);background: var(--ds-orange-soft);}
+      .pf-form__choice:has(input:checked){border-color: var(--ds-orange);background: var(--ds-orange-soft);}
       .pf-form__hint{font-size: 0.8125rem;line-height: 1.5;color: #a0a0aa;margin: 0;}
-      .pf-form__estimate{grid-column: 1 / -1;margin: 0.25rem 0 0;padding: 0.9rem 1.1rem;background: #131316;border: 1px solid var(--ds-border);border-radius: 12px;font-size: 0.9375rem;font-weight: 600;color: var(--ds-ink);}
+      .pf-form__estimate{grid-column: 1 / -1;margin: 0.25rem 0 0;padding: 0.9rem 1.1rem;background: #1a1a1e;border: 1px solid #26262b;border-radius: 12px;font-size: 0.9375rem;font-weight: 600;color: var(--ds-ink);}
       .pf-form__actions{grid-column: 1 / -1;display: flex;align-items: flex-start;gap: 1.25rem;flex-wrap: wrap;margin-top: 0.25rem;}
       .pf-form button.ds-cta{border: 0;cursor: pointer;font-family: inherit;padding: 0.9375rem 1.625rem;}
       .pf-form button.ds-cta[disabled]{opacity: 0.6;cursor: default;transform: none;}
       .pf-form__status{grid-column: 1 / -1;margin: 0;font-size: 0.9375rem;line-height: 1.5;color: var(--ds-ink);}
-      .pf-form__status[data-state="error"]{color: #b42318;}
+      .pf-form__status[data-state="error"]{color: #ff5c8a;}
       .pf-form a{color: var(--ds-ink);}
       .pf-step__num{display: inline-flex;align-items: center;justify-content: center;width: 2rem;height: 2rem;border-radius: 9999px;background: var(--ds-orange-soft);color: var(--ds-orange);font-weight: 700;font-size: 0.875rem;margin-bottom: 0.9rem;}
       .pf-list{display: flex;flex-direction: column;gap: 9px;margin-top: 0.75rem;}
-      .pf-list div{display: flex;gap: 10px;font-size: 0.875rem;color: #3f3f3f;line-height: 1.45;}
+      .pf-list div{display: flex;gap: 10px;font-size: 0.875rem;color: #a0a0aa;line-height: 1.45;}
       .pf-list span{color: var(--ds-orange);flex-shrink: 0;}
       .ds-table th.ds-table__label{text-align: left;font-size: 0.8125rem;letter-spacing: 0.04em;text-transform: uppercase;color: #a0a0aa;}
       .ds-table td.ds-table__label{width: 11rem;}
+      .ds-table thead th{background: #131316;border-bottom: 1px solid #26262b;}
+      .ds-table thead th:first-child{border-radius: 10px 0 0 0;}
+      .ds-table thead th:last-child{border-radius: 0 10px 0 0;}
+      .ds-table td{border-bottom-color: #26262b;}
       .pf-two{display: grid;grid-template-columns: 1fr 1fr;gap: 2.5rem;}
       .pf-legal-links{display: flex;gap: 1.5rem;flex-wrap: wrap;margin-top: 1.75rem;font-size: 0.9375rem;}
       .pf-legal-links a{color: var(--ds-ink);font-weight: 600;}
       /* Hero + CTA band buttons: no arrow orb on this page, so give them even padding to match the form button */
       .ds-phero-split__actions .ds-cta,.ds-cta-band__actions .ds-cta{padding: 0.9375rem 1.625rem;}
-      /* Ghost button sits on a light hero here, so use the dark outline treatment */
+      /* Ghost button on the dark hero: outlined secondary */
       .ds-phero-split__actions .ds-btn-ghost{color: var(--ds-ink);background: transparent;border-color: rgba(255, 255, 255, 0.23);backdrop-filter: none;}
-      .ds-phero-split__actions .ds-btn-ghost: hover{color: var(--ds-ink);background: rgba(255, 255, 255, 0.05);}
+      .ds-phero-split__actions .ds-btn-ghost:hover{color: var(--ds-ink);background: rgba(255, 255, 255, 0.05);}
       .ds-cta-band h2{text-wrap: balance;}
-      .pf-dark-band{border-radius: 24px;padding: clamp(1.5rem,5vw,2.75rem);}
+      .pf-dark-band{border-radius: 24px;padding: clamp(1.5rem,5vw,2.75rem);border: 1px solid #26262b;}
       @media (max-width: 900px){.pf-two{grid-template-columns: 1fr;}}
       @media (max-width: 720px){
         .pf-form{grid-template-columns: 1fr;}
@@ -99,13 +105,13 @@
         .ds-table{min-width: 0;display: block;}
         .ds-table thead{display: none;}
         .ds-table tbody{display: flex;flex-direction: column;gap: 0.75rem;}
-        .ds-table tr{display: block;border: 1px solid var(--ds-border);border-radius: 16px;overflow: hidden;background: #131316;}
+        .ds-table tr{display: block;border: 1px solid #26262b;border-radius: 16px;overflow: hidden;background: #131316;}
         .ds-table tr.ds-table__row--alt{background: #131316;}
         .ds-table td{display: block;border-bottom: 0;}
         .ds-table td.ds-table__label{width: auto;padding: 1rem 1.125rem 0.25rem;font-size: 1rem;}
         .ds-table td.ds-table__cell{padding: 0.625rem 1.125rem;}
-        .ds-table td.ds-table__cell: last-child{padding-bottom: 1.125rem;}
-        .ds-table td.ds-table__cell: :before{content: attr(data-col);display: block;font-size: 0.75rem;font-weight: 600;letter-spacing: 0.05em;text-transform: uppercase;color: var(--ds-orange);margin-bottom: 0.2rem;}
+        .ds-table td.ds-table__cell:last-child{padding-bottom: 1.125rem;}
+        .ds-table td.ds-table__cell::before{content: attr(data-col);display: block;font-size: 0.75rem;font-weight: 600;letter-spacing: 0.05em;text-transform: uppercase;color: var(--ds-orange);margin-bottom: 0.2rem;}
       }
     </style>
     <!-- Schema Markup: BreadcrumbList -->

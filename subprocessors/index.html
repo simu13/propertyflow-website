@@ -48,9 +48,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     
     <style>
@@ -58,13 +58,14 @@
       .pf-legal .ds-legal-block h2 { scroll-margin-top: 6rem; }
       .pf-legal .pf-cl { font-weight: 600; color: var(--ds-ink); margin-right: .4em; }
       .pf-legal .pf-intro { font-size: 1.0625rem; margin: 0 0 2rem; }
-      .pf-legal a: not(.ds-cta) { color: var(--ds-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ds-orange); }
-      .pf-legal a: not(.ds-cta):hover { color: var(--ds-orange); }
+      .pf-legal a:not(.ds-cta) { color: var(--ds-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ds-orange); }
+      .pf-legal a:not(.ds-cta):hover { color: #ff5c8a; }
       .pf-legal .ds-table th, .pf-legal .ds-table td { text-align: left; }
       .pf-legal .ds-table__head { padding: .875rem 1rem; border-bottom: 2px solid var(--ds-orange); font-weight: 600; color: var(--ds-ink); }
-      .pf-legal .pf-tbc { color: #7a7670; font-style: italic; }
-      .pf-legal .pf-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.4rem; border-radius: 9999px; background: var(--ds-ink); color: #fff; font-weight: 600; font-size: .9375rem; border: none; cursor: pointer; font-family: inherit; }
-      .pf-legal .pf-btn: hover { background: #1a1a1e; }
+      .pf-legal .pf-tbc { color: #7c7c86; font-style: italic; }
+      .pf-legal .ds-table caption { font-size: .875rem; color: #a0a0aa; }
+      .pf-legal .pf-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.4rem; border-radius: 9999px; background: #FF0257; color: #fff; font-weight: 600; font-size: .9375rem; border: none; cursor: pointer; font-family: inherit; }
+      .pf-legal .pf-btn:hover { background: #d90048; }
       .pf-legal .ds-toc h2 { border-bottom: none; margin: 0 0 .75rem; padding: 0; font-size: 1.125rem; }
       .pf-legal .ds-toc ol { columns: 2; column-gap: 2rem; }
       .pf-legal .ds-toc li { break-inside: avoid; margin: 0 0 .3rem; font-size: .95rem; }
@@ -79,13 +80,13 @@
         .pf-legal .ds-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
         .pf-legal .ds-table tbody, .pf-legal .ds-table tr, .pf-legal .ds-table td { display: block; width: 100%; box-sizing: border-box; }
         .pf-legal .ds-table tr { padding: .875rem 1rem; border-bottom: 1px solid var(--ds-border); }
-        .pf-legal .ds-table tbody tr: first-child { border-top: 2px solid var(--ds-orange); }
+        .pf-legal .ds-table tbody tr:first-child { border-top: 2px solid var(--ds-orange); }
         .pf-legal .ds-table td { padding: 0; border: 0; }
-        .pf-legal .ds-table td: nth-child(1) { font-weight: 600; color: var(--ds-ink); margin-bottom: .25rem; }
-        .pf-legal .ds-table td: nth-child(1) .pf-tbc { font-weight: 400; }
-        .pf-legal .ds-table td: nth-child(2) { color: #57534e; line-height: 1.55; }
-        .pf-legal .ds-table td: nth-child(3) { margin-top: .5rem; font-size: .875rem; }
-        .pf-legal .ds-table td: nth-child(3)::before { content: "Location: "; font-weight: 600; font-style: normal; color: var(--ds-ink); }
+        .pf-legal .ds-table td:nth-child(1) { font-weight: 600; color: var(--ds-ink); margin-bottom: .25rem; }
+        .pf-legal .ds-table td:nth-child(1) .pf-tbc { font-weight: 400; }
+        .pf-legal .ds-table td:nth-child(2) { color: #d9d9e0; line-height: 1.55; }
+        .pf-legal .ds-table td:nth-child(3) { margin-top: .5rem; font-size: .875rem; }
+        .pf-legal .ds-table td:nth-child(3)::before { content: "Location: "; font-weight: 600; font-style: normal; color: var(--ds-ink); }
       }
     </style>
     <script type="application/ld+json">
@@ -234,21 +235,25 @@
                 <h2>Sub-processors</h2>
                 <div class="ds-table-wrap">
                     <table class="ds-table">
-                        <caption class="ds-article__fine" style="text-align: left;caption-side: bottom;padding-top: .5rem;">Locations show where the provider is established. Where a location is to be confirmed, personal data may be processed in the UK, the EU or the US under the safeguards in the Privacy Notice.</caption>
+                        <caption class="ds-article__fine" style="text-align: left;caption-side: bottom;padding-top: .5rem;">Locations show where the provider is established. The AI model providers are still to be confirmed; until then, that processing may take place in the UK, the EU or the US under the safeguards in the Privacy Notice.</caption>
                         <thead>
                             <tr class="ds-table__head-row"><th class="ds-table__head" scope="col">Sub-processor</th><th class="ds-table__head" scope="col">Purpose</th><th class="ds-table__head" scope="col">Location</th></tr>
                         </thead>
                         <tbody>
                             <tr><td class="ds-table__cell">Channex</td><td class="ds-table__cell">Channel connectivity: syncing listings, rates, availability, bookings and guest messages with the booking channels you connect or that we list you on</td><td class="ds-table__cell">UK</td></tr>
                             <tr class="ds-table__row--alt"><td class="ds-table__cell">PriceLabs</td><td class="ds-table__cell">Pricing and market data for AI Cognito Pricing</td><td class="ds-table__cell">US</td></tr>
-                            <tr><td class="ds-table__cell">Payment processor <span class="pf-tbc">(name to be confirmed)</span></td><td class="ds-table__cell">Card and direct debit payments for subscriptions; collection and payout of booking money on PropertyFlow channels</td><td class="ds-table__cell"><span class="pf-tbc">To be confirmed</span></td></tr>
-                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Cloud hosting provider <span class="pf-tbc">(name to be confirmed)</span></td><td class="ds-table__cell">Storage and infrastructure for the platform, the apps and their databases</td><td class="ds-table__cell"><span class="pf-tbc">To be confirmed</span></td></tr>
+                            <tr><td class="ds-table__cell">Stripe</td><td class="ds-table__cell">Card and direct debit payments for subscriptions and PropertyFlow-channel bookings</td><td class="ds-table__cell">United States and Ireland (Stripe Payments Europe)</td></tr>
+                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Microsoft Azure</td><td class="ds-table__cell">Cloud hosting of the platform, its database and file storage</td><td class="ds-table__cell">United Kingdom</td></tr>
+                            <tr><td class="ds-table__cell">Azure Application Insights (Microsoft)</td><td class="ds-table__cell">Performance monitoring of the platform</td><td class="ds-table__cell">United Kingdom</td></tr>
+                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Sentry</td><td class="ds-table__cell">Error monitoring. Error reports can carry personal data incidentally; payment and bank fields are stripped before sending</td><td class="ds-table__cell">United States</td></tr>
+                            <tr><td class="ds-table__cell">Xero</td><td class="ds-table__cell">Accounting and bank reconciliation</td><td class="ds-table__cell">United States</td></tr>
+                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Trustpilot</td><td class="ds-table__cell">Review invitations sent to a guest's email address after a direct booking</td><td class="ds-table__cell">Denmark</td></tr>
                             <tr><td class="ds-table__cell">AI model providers</td><td class="ds-table__cell">Processing property information and guest messages to produce AI Cognito Pricing suggestions and AI messaging drafts</td><td class="ds-table__cell"><span class="pf-tbc">To be confirmed</span></td></tr>
                             <tr class="ds-table__row--alt"><td class="ds-table__cell">HubSpot</td><td class="ds-table__cell">CRM, website forms, demo bookings and support</td><td class="ds-table__cell">US (EU data centre)</td></tr>
                             <tr><td class="ds-table__cell">GitHub</td><td class="ds-table__cell">Hosting of the propertyflow.uk website</td><td class="ds-table__cell">US</td></tr>
                             <tr class="ds-table__row--alt"><td class="ds-table__cell">Google</td><td class="ds-table__cell">Google Analytics, Google Ads conversion measurement, Search Console and business tools</td><td class="ds-table__cell">US</td></tr>
-                            <tr><td class="ds-table__cell">Meta</td><td class="ds-table__cell">Advertising measurement (Meta Pixel), with your consent</td><td class="ds-table__cell">US</td></tr>
-                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Email delivery provider <span class="pf-tbc">(name to be confirmed)</span></td><td class="ds-table__cell">Sending account, booking and notification emails</td><td class="ds-table__cell"><span class="pf-tbc">To be confirmed</span></td></tr>
+                            <tr><td class="ds-table__cell">Meta</td><td class="ds-table__cell">Advertising measurement (Meta Pixel), with your consent. Present but not active: no Pixel ID is configured, so it loads nothing and sets no cookies</td><td class="ds-table__cell">US</td></tr>
+                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Brevo, with Resend as fallback</td><td class="ds-table__cell">Transactional email: signing links, portal invites, reminders and statements</td><td class="ds-table__cell">France (Brevo); United States (Resend)</td></tr>
                         </tbody>
                     </table>
                 </div>

@@ -109,7 +109,7 @@
     transition: color 0.2s ease;
 }
 
-.ds-mega-panel__cta: hover {
+.ds-mega-panel__cta:hover {
     color: var(--ds-orange);
 }
 
@@ -137,7 +137,7 @@
     margin: 0;
 }
 
-.ds-mega__col-label: :before {
+.ds-mega__col-label::before {
     content: '';
     width: 7px;
     height: 7px;
@@ -162,7 +162,7 @@
     transition: background 0.18s ease, color 0.18s ease;
 }
 
-.ds-mega__link: hover {
+.ds-mega__link:hover {
     background: var(--ds-cream);
     color: var(--ds-orange);
 }
@@ -238,7 +238,7 @@
     transition: border-color 0.2s, color 0.2s;
 }
 
-.ds-footer__ai-btn: hover {
+.ds-footer__ai-btn:hover {
     border-color: #ccc;
     color: var(--ds-ink);
 }
@@ -358,7 +358,7 @@
 }
 
 .ds-section--dark {
-    background: var(--ds-ink);
+    background: #131316;
     color: #fff;
 }
 
@@ -397,7 +397,7 @@
     overflow: hidden;
     background: var(--ds-cream-dark);
     border: 1px solid var(--ds-border);
-    box-shadow: 0 20px 50px -24px rgba(17, 17, 17, 0.18);
+    box-shadow: 0 20px 50px -24px rgba(0, 0, 0, 0.5);
 }
 
 .ds-media-frame--hero {
@@ -455,7 +455,7 @@
 }
 
 .ds-stat-cell {
-    background: var(--ds-ink);
+    background: #131316;
     padding: 2.125rem 1.875rem;
 }
 
@@ -561,8 +561,8 @@
     transition: background 0.2s;
 }
 
-.ds-btn-white: hover {
-    background: #f5f5f5;
+.ds-btn-white:hover {
+    background: #1a1a1e;
 }
 
 .ds-btn-ghost-white {
@@ -725,19 +725,19 @@
     background: #131316;
 }
 
-.ds-path-card: hover {
+.ds-path-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 16px 34px -18px rgba(17, 17, 17, 0.16);
 }
 
 .ds-path-card--accent {
-    border-color: rgba(255, 56, 92, 0.35);
+    border-color: rgba(255, 2, 87, 0.35);
     background: var(--ds-orange-soft);
 }
 
 .ds-path-card--dark {
-    background: var(--ds-ink);
-    border-color: var(--ds-ink);
+    background: #131316;
+    border-color: #26262b;
     color: #fff;
 }
 
@@ -781,7 +781,7 @@
     border-radius: 26px;
     padding: 4rem 3.5rem;
     color: #fff;
-    background: linear-gradient(#1a1a1e, #1a1a1e), url('/images/showcase/edinburgh-aerial-hd.webp') center / cover;
+    background: linear-gradient(rgba(16, 16, 19, 0.84), rgba(16, 16, 19, 0.84)), url('/images/showcase/edinburgh-aerial-hd.webp') center / cover;
 }
 
 .ds-partner-band__tag {
@@ -822,9 +822,9 @@ body.ds-page .btn-primary {
     font-family: inherit;
 }
 
-body.ds-page .btn-primary: hover {
+body.ds-page .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(255, 56, 92, 0.25);
+    box-shadow: 0 8px 20px rgba(255, 2, 87, 0.25);
 }
 
 body.ds-page .hero-bg-section {
@@ -988,7 +988,7 @@ body.ds-page main article h2 {
     margin-bottom: 1rem;
 }
 
-.ds-contact-link: last-of-type {
+.ds-contact-link:last-of-type {
     margin-bottom: 0;
 }
 
@@ -1017,7 +1017,7 @@ body.ds-page main article h2 {
 }
 
 .ds-contact-audit {
-    background: linear-gradient(#1a1a1e, #1a1a1e), url('/images/showcase/apartment-interior-hd.webp') center / cover;
+    background: linear-gradient(rgba(16, 16, 19, 0.84), rgba(16, 16, 19, 0.84)), url('/images/showcase/apartment-interior-hd.webp') center / cover;
     color: #fff;
     border-radius: 20px;
     padding: 1.875rem;
@@ -1077,7 +1077,7 @@ body.ds-page main article h2 {
 }
 
 .ds-partner-col--dark {
-    background: var(--ds-ink);
+    background: #131316;
     color: #fff;
 }
 
@@ -1103,7 +1103,7 @@ body.ds-page main article h2 {
     margin-bottom: 1rem;
 }
 
-.ds-partner-item: last-child {
+.ds-partner-item:last-child {
     margin-bottom: 0;
 }
 
@@ -1217,13 +1217,13 @@ body.ds-page main article h2 {
     border-right: 1px solid rgba(255, 255, 255, 0.10);
 }
 
-.ds-stat-row__cell: last-child {
+.ds-stat-row__cell:last-child {
     border-right: none;
     padding-right: 0;
     padding-left: 2rem;
 }
 
-.ds-stat-row__cell: nth-child(2) {
+.ds-stat-row__cell:nth-child(2) {
     padding-left: 2rem;
 }
 
@@ -1284,7 +1284,7 @@ body.ds-page main article h2 {
 }
 
 .ds-step-card {
-    border-top: 2px solid var(--ds-ink);
+    border-top: 2px solid #26262b;
     padding: 1.625rem 0.25rem 0;
 }
 
@@ -1429,7 +1429,7 @@ body.ds-page main article h2 {
     color: inherit;
 }
 
-.ds-cross-link: hover {
+.ds-cross-link:hover {
     background: var(--ds-cream);
 }
 
@@ -1468,7 +1468,7 @@ body.ds-page main article h2 {
 }
 
 .ds-cta-band--dark {
-    background: linear-gradient(155deg, #26262b, #141417);
+    background: linear-gradient(155deg, #26262b, #1a1a1e);
     color: #fff;
 }
 
@@ -1568,7 +1568,7 @@ body.ds-page main article h2 {
 }
 
 .ds-highlight-card {
-    background: linear-gradient(#1a1a1e, #1a1a1e), url('/images/showcase/apartment-interior-hd.webp') center / cover;
+    background: linear-gradient(rgba(16, 16, 19, 0.84), rgba(16, 16, 19, 0.84)), url('/images/showcase/apartment-interior-hd.webp') center / cover;
     color: #fff;
     border-radius: 16px;
     padding: 2.375rem;
@@ -1632,8 +1632,8 @@ body.ds-page main article h2 {
     white-space: nowrap;
 }
 
-.ds-career-row a: hover {
-    border-color: var(--ds-ink);
+.ds-career-row a:hover {
+    border-color: #26262b;
 }
 
 /* ─── Blog / legal article layout ─── */
@@ -1652,7 +1652,7 @@ body.ds-page main article h2 {
     margin-bottom: 1.25rem;
 }
 
-.ds-article-header a.ds-article-back: hover {
+.ds-article-header a.ds-article-back:hover {
     color: var(--ds-orange-dark);
 }
 
@@ -1771,7 +1771,7 @@ body.ds-page main article h2 {
     text-decoration: none;
 }
 
-.ds-article a.ds-article__link: hover,
+.ds-article a.ds-article__link:hover,
 .ds-article .ds-article__link:hover {
     text-decoration: underline;
 }
@@ -1818,22 +1818,22 @@ body.ds-page main article h2 {
 }
 
 .ds-callout--teal {
-    background: rgba(255, 56, 92, 0.1);
-    border-color: rgba(255, 56, 92, 0.25);
+    background: rgba(255, 2, 87, 0.1);
+    border-color: rgba(255, 2, 87, 0.25);
 }
 
 .ds-callout--yellow {
-    background: rgba(238, 169, 70, 0.1);
-    border-color: rgba(238, 169, 70, 0.25);
+    background: rgba(255, 2, 87, 0.1);
+    border-color: rgba(255, 2, 87, 0.25);
 }
 
 .ds-callout--orange {
-    background: rgba(255, 56, 92, 0.08);
-    border-color: rgba(255, 56, 92, 0.25);
+    background: rgba(255, 2, 87, 0.08);
+    border-color: rgba(255, 2, 87, 0.25);
 }
 
 .ds-callout--rust {
-    background: rgba(230, 90, 56, 0.1);
+    background: rgba(255, 2, 87, 0.1);
     border-left: 4px solid #FF0257;
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
@@ -1855,7 +1855,7 @@ body.ds-page main article h2 {
 
 .ds-callout--ink {
     background: rgba(255, 255, 255, 0.05);
-    border-left: 4px solid var(--ds-ink);
+    border-left: 4px solid #FF0257;
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
     margin: 1.5rem 0;
@@ -1921,7 +1921,7 @@ body.ds-page main article h2 {
 }
 
 .ds-article--guide .ds-table__head-row {
-    background: var(--ds-ink);
+    background: #131316;
     color: #fff;
 }
 
@@ -1981,7 +1981,7 @@ body.ds-page main article h2 {
     width: 1.375rem;
     height: 1.375rem;
     border-radius: 9999px;
-    background: rgba(255, 56, 92, 0.15);
+    background: rgba(255, 2, 87, 0.15);
     color: #2fd4a8;
     font-size: 0.75rem;
     font-weight: 700;
@@ -1992,7 +1992,7 @@ body.ds-page main article h2 {
 }
 
 .ds-callout--yellow .ds-checklist__mark {
-    background: rgba(238, 169, 70, 0.2);
+    background: rgba(255, 2, 87, 0.2);
     color: #8B6914;
 }
 
@@ -2035,7 +2035,7 @@ body.ds-page main article h2 {
 .ds-info-card {
     background: #131316;
     border: 1px solid var(--ds-border);
-    border-left: 4px solid var(--ds-ink);
+    border-left: 4px solid #FF0257;
     border-radius: 16px;
     padding: 1.5rem;
 }
@@ -2097,7 +2097,7 @@ body.ds-page main article h2 {
 }
 
 .ds-table__row--alt {
-    background: var(--ds-cream);
+    background: #101014;
 }
 
 .ds-table__label {
@@ -2165,12 +2165,12 @@ body.ds-page main article h2 {
 }
 
 .ds-toc__list a {
-    color: var(--ds-teal, #FF0257);
+    color: #d9d9e0;
     text-decoration: none;
     font-weight: 500;
 }
 
-.ds-toc__list a: hover {
+.ds-toc__list a:hover {
     color: var(--ds-orange);
 }
 
@@ -2242,8 +2242,8 @@ body.ds-page main article h2 {
 }
 
 .ds-blog-cat--active {
-    background: var(--ds-ink);
-    border-color: var(--ds-ink);
+    background: #131316;
+    border-color: #26262b;
     color: #fff;
 }
 
@@ -2260,7 +2260,7 @@ body.ds-page main article h2 {
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.ds-blog-featured: hover {
+.ds-blog-featured:hover {
     box-shadow: 0 12px 40px rgba(17, 17, 17, 0.08);
     transform: translateY(-2px);
 }
@@ -2339,7 +2339,7 @@ body.ds-page main article h2 {
     transition: transform 0.3s ease;
 }
 
-.ds-blog-card: hover .ds-blog-card__media img {
+.ds-blog-card:hover .ds-blog-card__media img {
     transform: scale(1.03);
 }
 
@@ -2424,7 +2424,7 @@ body.ds-page main article h2 {
     white-space: nowrap;
 }
 
-.ds-blog-newsletter__form button: disabled {
+.ds-blog-newsletter__form button:disabled {
     opacity: 0.7;
     cursor: wait;
 }
@@ -2538,7 +2538,7 @@ body.ds-page main article h2 {
         padding: 1.5rem 0 !important;
     }
 
-    .ds-stat-row__cell: last-child {
+    .ds-stat-row__cell:last-child {
         border-bottom: none;
     }
 }
@@ -2565,12 +2565,12 @@ body.ds-page main article h2 {
 .rounded { border-radius: 0.25rem; }
 .rounded-lg { border-radius: 0.5rem; }
 .border { border-width: 1px; border-style: solid; }
-.border-gray-200 { border-color: #e5e7eb; }
-.bg-gray-50 { background-color: #f9fafb; }
+.border-gray-200 { border-color: #26262b; }
+.bg-gray-50 { background-color: #101014; }
 .text-\[\#FF0257\] { color: #FF0257; }
 .text-\[\#ff5c8a\] { color: #ff5c8a; }
 .text-\[\#141A23\] { color: #f0f0f5; }
-.bg-\[rgba\(230\,90\,56\,0\.1\)\] { background: rgba(255, 56, 92, 0.1); }
+.bg-\[rgba\(230\,90\,56\,0\.1\)\] { background: rgba(255, 2, 87, 0.1); }
 .border-\[\#FF0257\] { border-color: #FF0257; }
 .border-l-4 { border-left-width: 4px; border-left-style: solid; }
 .underline { text-decoration: underline; }
@@ -2581,15 +2581,15 @@ body.ds-page main article h2 {
     color: #FF0257;
 }
 
-button: focus-visible,
+button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 56, 92, 0.25);
+    box-shadow: 0 0 0 3px rgba(255, 2, 87, 0.25);
 }
 
-button: focus:not(:focus-visible),
+button:focus:not(:focus-visible),
 a:focus:not(:focus-visible),
 input:focus:not(:focus-visible),
 textarea:focus:not(:focus-visible) {
@@ -2599,4 +2599,4 @@ textarea:focus:not(:focus-visible) {
 
 /* Inline links inside lead paragraphs (Sept 2026): inherit the text colour, subtle underline */
 .ds-section__lead a, .ds-prose a { color: inherit; text-decoration: underline; text-decoration-color: rgba(240, 240, 245, 0.35); text-underline-offset: 2px; }
-.ds-section__lead a: hover, .ds-prose a:hover { color: #FF0257; text-decoration-color: currentColor; }
+.ds-section__lead a:hover, .ds-prose a:hover { color: #FF0257; text-decoration-color: currentColor; }

@@ -13,7 +13,7 @@
 body.hd-page {
   --bg: #0c0c0f;
   --text-primary: #f0f0f5;
-  --text-secondary: #87878f;
+  --text-secondary: #a0a0aa;
   --border-subtle: #26262b;
   --sidebar-bg: #131316;
   --panel-bg: #1a1a1e;
@@ -63,7 +63,7 @@ body.hd-page .herobar__title {
 
 body.hd-page .herobar__title-line { display: block; }
 body.hd-page .herobar__title-line--strong { color: var(--text-primary); }
-body.hd-page .herobar__title-line--muted { color: #87878f; }
+body.hd-page .herobar__title-line--muted { color: #a0a0aa; }
 
 body.hd-page .herobar__subtitle {
   max-width: 610px;
@@ -356,7 +356,7 @@ body.hd-page .hd-h2 {
   color: var(--text-primary);
   margin: 0;
 }
-body.hd-page .hd-h2--muted-line2 { color: var(--muted-blue-dim); color: #87878f; }
+body.hd-page .hd-h2--muted-line2 { color: var(--muted-blue-dim); color: #a0a0aa; }
 
 body.hd-page .hd-lede {
   font-family: "Krub", sans-serif;
@@ -383,7 +383,7 @@ body.hd-page .hd-pill {
 }
 body.hd-page .hd-pill--light { background: #FF0257; color: #ffffff; }
 body.hd-page .hd-pill--light:hover { background: #d90048; color: #ffffff; }
-body.hd-page .hd-pill--ghost { background: transparent; color: var(--text-primary); border: 0.8px solid rgba(240,240,245,0.18); padding: 12.2px 25.2px; }
+body.hd-page .hd-pill--ghost { background: transparent; color: var(--text-primary); border: 1px solid rgba(255,255,255,0.28); padding: 12.2px 25.2px; }
 
 /* Nav + footer rules moved to css/pf-nav.css (shared by every page) */
 
@@ -449,7 +449,7 @@ body.hd-page .hd-compare__col {
   border-radius: 16px;
   overflow: hidden;
 }
-body.hd-page .hd-compare__col--old { border: 1px solid rgba(32,32,32,0.5); }
+body.hd-page .hd-compare__col--old { border: 1px solid #26262b; }
 body.hd-page .hd-compare__col--new {
   border: 1px solid var(--border-subtle);
   box-shadow: 0 0 32px rgba(240,240,246,0.1), 0 0 18px rgba(239,239,239,0.2), 0 0 0 1px rgba(244,244,244,0.06);
@@ -468,7 +468,7 @@ body.hd-page .hd-compare__badge {
   flex-shrink: 0;
 }
 body.hd-page .hd-compare__badge--old { background: rgba(239,68,68,0.12); border: 0.8px solid rgba(239,68,68,0.25); }
-body.hd-page .hd-compare__badge--new { background: rgba(99,102,241,0.1); border: 0.8px solid rgba(99,102,241,0.25); }
+body.hd-page .hd-compare__badge--new { background: rgba(255, 2, 87,0.1); border: 0.8px solid rgba(255, 2, 87,0.25); }
 body.hd-page .hd-compare__badge img { width: 7px; height: 7px; }
 body.hd-page .hd-compare__col-title {
   font-family: "Krub", sans-serif;
@@ -597,14 +597,14 @@ body.hd-page .hd-plan {
 }
 body.hd-page .hd-plan--featured {
   background: var(--panel-bg);
-  border: 1px solid #868686;
-  box-shadow: 1.69px 1.69px 16px rgba(255,255,255,0.25), -1.69px -1.69px 16px rgba(25,25,25,0.25);
+  border: 1px solid rgba(255, 2, 87, 0.45);
+  box-shadow: 1.69px 1.69px 16px rgba(255, 2, 87, 0.22), -1.69px -1.69px 16px rgba(25,25,25,0.25);
 }
 body.hd-page .hd-plan__badge {
   position: absolute;
   top: 14px; right: 25px;
-  background: rgba(99,102,241,0.1);
-  border: 0.8px solid rgba(99,102,241,0.25);
+  background: rgba(255, 2, 87,0.1);
+  border: 0.8px solid rgba(255, 2, 87,0.25);
   border-radius: 999px;
   padding: 4px 9px;
   font-family: "Krub", sans-serif;
@@ -612,7 +612,7 @@ body.hd-page .hd-plan__badge {
   font-size: 9.5px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #6366f1;
+  color: #FF0257;
 }
 body.hd-page .hd-plan__label {
   font-family: "Krub", sans-serif;
@@ -645,7 +645,7 @@ body.hd-page .hd-plan__cta {
   text-decoration: none;
   white-space: nowrap;
 }
-body.hd-page .hd-plan__cta--ghost { border: 0.8px solid rgba(240,240,245,0.18); color: var(--text-primary); }
+body.hd-page .hd-plan__cta--ghost { border: 1px solid rgba(255,255,255,0.28); color: var(--text-primary); }
 body.hd-page .hd-plan__cta--light { background: #FF0257; color: #ffffff; }
 body.hd-page .hd-plan__cta--light:hover { background: #d90048; color: #ffffff; }
 body.hd-page .hd-plan__divider { border: none; border-top: 1px solid var(--border-subtle); margin: 24px 0 22px; }
@@ -667,7 +667,7 @@ body.hd-page .hd-partner::before {
   position: absolute;
   top: 0; right: 0;
   width: 500px; height: 400px;
-  background: radial-gradient(ellipse at 70% 30%, rgba(99,102,241,0.14), transparent 65%);
+  background: radial-gradient(ellipse at 70% 30%, rgba(255, 2, 87,0.14), transparent 65%);
   pointer-events: none;
 }
 body.hd-page .hd-partner__grid {
@@ -771,7 +771,7 @@ body.hd-page .hd-cta2::before {
   top: 0; left: 50%;
   transform: translateX(-50%);
   width: 800px; height: 400px;
-  background: radial-gradient(ellipse at 50% 30%, rgba(99,102,241,0.1), transparent 65%);
+  background: radial-gradient(ellipse at 50% 30%, rgba(255, 2, 87,0.1), transparent 65%);
   pointer-events: none;
 }
 body.hd-page .hd-cta2__inner { max-width: 720px; margin: 0 auto; position: relative; }

@@ -87,9 +87,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Outfit:wght@500&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
-    <link rel="stylesheet" href="/css/home-dark.css?v=8">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
+    <link rel="stylesheet" href="/css/home-dark.css?v=9">
     <style>
       /* Home-only additions: app block, PropertyFlow channels block, Partner steps */
       body.hd-page .hd-app__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
@@ -127,6 +127,27 @@
         body.hd-page .hd-compare .hd-h2 br::after { content: " "; }
         body.hd-page .hd-compare .hd-h2, body.hd-page .hd-pricing__head .hd-h2, body.hd-page .hd-cta2__heading { text-wrap: balance; }
       }
+
+      /* Dark palette QA (home only): bring shared tokens/accents onto the approved dark palette */
+      body.hd-page { --text-secondary: #a0a0aa; }
+      /* 13px tertiary body copy is below the 14px floor for #7c7c86: lift size and colour */
+      body.hd-page .hd-compare__item { font-size: 14px; }
+      body.hd-page .hd-compare__col--old .hd-compare__item { color: #7c7c86; }
+      body.hd-page .hd-compare__col--new .hd-compare__item { color: #a0a0aa; }
+      body.hd-page .hd-compare__col--old { border: 1px solid #26262b; }
+      body.hd-page .hd-compare__col--new { border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 0 0 1px rgba(255,2,87,0.12), 0 24px 60px rgba(0,0,0,0.5); }
+      body.hd-page .hd-compare__badge--new { background: rgba(255,2,87,0.14); border: 0.8px solid rgba(255,2,87,0.35); }
+      body.hd-page .hd-plan__desc { font-size: 14px; color: #a0a0aa; }
+      body.hd-page .hd-plan__price-sub { font-size: 13px; color: #a0a0aa; }
+      body.hd-page .hd-plan__features li { font-size: 14px; color: #a0a0aa; }
+      body.hd-page .hd-plan__features li.hd-plan__feature--excluded { color: #7c7c86; }
+      body.hd-page .hd-pricing__footnote, body.hd-page .hd-cta2__footnote { font-size: 13px; color: #a0a0aa; }
+      /* Featured plan: grey border + white glow read as a light-theme leftover; use a pink-edged dark card */
+      body.hd-page .hd-plan--featured { background: #1a1a1e; border: 1px solid rgba(255,2,87,0.45); box-shadow: 0 0 0 1px rgba(255,2,87,0.12), 0 24px 60px rgba(0,0,0,0.5); }
+      body.hd-page .hd-plan__badge { background: rgba(255,2,87,0.14); border: 0.8px solid rgba(255,2,87,0.35); color: #ff5c8a; font-size: 11px; }
+      /* Indigo (#6366F1) tick/dot SVGs are shared assets: rotate them onto brand pink */
+      body.hd-page .hd-compare__col--new .hd-compare__item img, body.hd-page .hd-compare__badge--new img,
+      body.hd-page .hd-plan__features img[src*="icon-check-light"] { filter: hue-rotate(100deg) saturate(1.8) brightness(1.05); }
     </style>
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
 

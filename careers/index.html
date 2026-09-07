@@ -47,16 +47,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <style>
         /* Careers page-scoped fixes */
         .ds-section__lead a { color: var(--ds-orange); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; font-weight: 500; }
-        .ds-section__lead a: hover { color: var(--ds-orange-dark); }
-        .ds-section--dark .ds-stat-grid { grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 0; }
+        .ds-section__lead a:hover { color: var(--ds-orange-dark); }
+        /* Stat band: --ds-ink is now the light text token, so the shared dark section/cells inherit a light fill */
+        .ds-section--dark { background: #101014; color: #f0f0f5; }
+        .ds-section--dark .ds-stat-grid { grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 0; background: #26262b; border: 1px solid #26262b; }
+        .ds-section--dark .ds-stat-cell { background: #131316; }
+        .ds-section--dark .ds-stat-cell__val { color: #f0f0f5; }
+        .ds-section--dark .ds-stat-cell__label { color: #a0a0aa; }
         @media (max-width: 1023px) { .ds-section--dark .ds-stat-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 639px) { .ds-section--dark .ds-stat-grid { grid-template-columns: 1fr; } }
+        /* Value cards: give the outlined cards a raised surface */
+        .ds-value-card { background: #131316; border-color: #26262b; }
+        .ds-career-row { background: #131316; border-color: #26262b; }
+        .ds-career-row a { border-radius: 9999px; }
+        .ds-career-row a:hover { border-color: rgba(255,255,255,0.28); }
+        /* Banner CTA: secondary outlined pill on the pink banner (shared hover turned it white-on-white) */
+        .ds-banner .ds-btn-white { background: transparent; border: 1px solid rgba(255,255,255,0.55); color: #fff; border-radius: 9999px; display: inline-block; }
+        .ds-banner .ds-btn-white:hover { background: rgba(255,255,255,0.12); border-color: #fff; color: #fff; }
+        .ds-media-frame { border-radius: 14px; border: 1px solid #26262b; overflow: hidden; }
     </style>
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <script type="application/ld+json">

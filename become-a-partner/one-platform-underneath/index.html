@@ -47,18 +47,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <style>
       .pf-pink-orb{background: linear-gradient(135deg,#FF0257,#d90048)!important;animation: pf-pink-orb-pulse 2.8s ease-out infinite;}
-      @keyframes pf-pink-orb-pulse{0%{box-shadow: 0 0 0 0 rgba(255,56,92,0.42);}60%{box-shadow: 0 0 0 9px rgba(255,56,92,0);}100%{box-shadow: 0 0 0 0 rgba(255,56,92,0);}}
+      @keyframes pf-pink-orb-pulse{0%{box-shadow: 0 0 0 0 rgba(255,2,87,0.42);}60%{box-shadow: 0 0 0 9px rgba(255,2,87,0);}100%{box-shadow: 0 0 0 0 rgba(255,2,87,0);}}
       .ds-opu-shot{position: relative;width: 100%;border-radius: 1.5rem;overflow: hidden;background: #101014;border: 1px solid var(--ds-border);}
       .ds-opu-shot > img{width: 100%;height: 100%;object-fit: cover;display: block;}
       .ds-opu-recap{display: grid;grid-template-columns: repeat(auto-fit,minmax(220px,1fr));gap: 1.25rem;margin-top: 3rem;}
       .ds-opu-card{text-decoration: none;display: block;border: 1px solid var(--ds-border);border-radius: 1rem;padding: 1.875rem;transition: background 0.2s ease;}
-      .ds-opu-card: hover{background: var(--ds-cream-dark);}
+      .ds-opu-card{background: #131316;}
+      .ds-opu-card:hover{background: #1a1a1e;border-color: rgba(255,255,255,0.18);}
+      /* dark overrides for the shared dashboard mockup (light remnants in home-ds.css) */
+      .pfd-scope .pfd-side{background: #131316;}
+      .pfd-scope .pfd-nav--on{background: rgba(255,2,87,0.14);color: #FF0257;}
+      .pfd-scope .pfd-search{background: #1a1a1e;border: 1px solid #26262b;color: #7c7c86;}
       .ds-opu-card__title{font-size: 1.125rem;font-weight: 600;letter-spacing: -0.025em;color: var(--ds-ink);}
       .ds-opu-card__body{margin: 0.5rem 0 1rem;font-size: 0.90625rem;line-height: 1.55;color: #a0a0aa;}
       .ds-opu-card__open{display: inline-flex;align-items: center;gap: 0.4375rem;font-size: 0.875rem;font-weight: 600;color: #FF0257;}
