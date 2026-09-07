@@ -88,7 +88,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Outfit:wght@500&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site-ds.css?v=21">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=5">
     <link rel="stylesheet" href="/css/home-dark.css?v=9">
     <style>
       /* Home-only additions: app block, PropertyFlow channels block, Partner steps */
@@ -111,8 +111,8 @@
       @media (max-width: 900px) { body.hd-page .hd-channels { grid-template-columns: 1fr; gap: 18px; } }
 
       /* Visual QA fixes (home only) */
-      /* Logo strip has 7 logos in a 4-col (2-col on mobile) grid: fill the empty slot so it does not read as a broken block */
-      body.hd-page .logo-strip__grid::after { content: ""; display: block; background: var(--bg); }
+      body.hd-page .logo-strip__word { display: inline-flex; align-items: center; gap: 10px; font-family: "Krub", sans-serif; font-weight: 600; font-size: 19px; letter-spacing: -0.01em; color: #f0f0f5; white-space: nowrap; }
+      @media (max-width: 720px) { body.hd-page .logo-strip__word { font-size: 16px; } body.hd-page .logo-strip__word svg { width: 18px; height: 18px; } }
       /* Partner grid: 1fr resolves to minmax(auto,1fr), so the nowrap pill forced the column past the wrap padding on narrow screens */
       body.hd-page .hd-partner__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
       @media (max-width: 900px) { body.hd-page .hd-partner__grid { grid-template-columns: minmax(0, 1fr); } }
@@ -391,6 +391,9 @@
             </div>
             <div class="logo-strip__cell">
               <img class="logo-strip__logo" src="/images/design/redesign/hero/logo-hopper.webp" alt="Hopper" />
+            </div>
+            <div class="logo-strip__cell">
+              <span class="logo-strip__word" aria-label="Direct booking"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#FF0257" stroke-width="2"/><path d="M10 8.5v7l5.5-3.5L10 8.5z" fill="#FF0257"/></svg>Direct booking</span>
             </div>
           </div>
         </div>
