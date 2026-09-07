@@ -15,7 +15,7 @@
   --nav-border: #26262b;
   --nav-text: #f0f0f5;
   --nav-muted: #9a9aa3;
-  --nav-dim: #6b6b74;
+  --nav-dim: #7c7c86;
   --nav-mega-bg: #17171b;
   --nav-mega-border: #26262b;
   --nav-mega-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
@@ -28,7 +28,7 @@
   --foot-bg: #131316;
   --foot-text: #f0f0f5;
   --foot-muted: #9a9aa3;
-  --foot-dim: #6b6b74;
+  --foot-dim: #7c7c86;
   --foot-border: #26262b;
 }
 .hd-nav--light, .hd-footer--light {
@@ -250,14 +250,21 @@ body.ds-page main { background: transparent; }
 .ds-legal-wrap, .ds-legal-wrap .ds-prose-section { color: #d9d9e0; }
 .ds-legal-wrap .ds-prose, .ds-legal-wrap .ds-prose-section p, .ds-legal-wrap li { font-size: 17px; line-height: 1.7; max-width: 70ch; }
 /* Primary action: pink filled pill everywhere; secondary stays outline */
-.ds-cta--dark, .ds-cta--white, .ds-tier__btn--dark, .ds-btn-primary, .pf-wwlf-cta, .ntps-cta {
+.ds-cta--dark, .ds-cta--white, .ds-tier__btn--dark, .ds-btn-primary {
   background: #FF0257 !important; color: #ffffff !important; border-color: transparent !important;
 }
 .ds-cta--dark:hover, .ds-cta--white:hover, .ds-tier__btn--dark:hover, .ds-btn-primary:hover { background: #d90048 !important; color: #ffffff !important; }
 .ds-cta--dark .ds-cta__orb, .ds-cta--white .ds-cta__orb { background: rgba(255, 255, 255, 0.18) !important; color: #ffffff !important; }
 .ds-cta--dark .ds-cta__arrow, .ds-cta--white .ds-cta__arrow { color: #ffffff !important; stroke: #ffffff; }
-.ds-btn-ghost, .ds-btn-white, .ds-btn-ghost-white { background: transparent !important; color: #f0f0f5 !important; border: 1px solid rgba(255, 255, 255, 0.28) !important; }
+.ds-btn-ghost, .ds-btn-white, .ds-btn-ghost-white, .ds-tier__btn--white { background: transparent !important; color: #f0f0f5 !important; border: 1px solid rgba(255, 255, 255, 0.28) !important; }
 .ds-btn-ghost:hover, .ds-btn-white:hover, .ds-btn-ghost-white:hover { border-color: rgba(255, 255, 255, 0.6) !important; }
 /* Selection + focus ring in brand pink */
 ::selection { background: rgba(255, 2, 87, 0.35); color: #ffffff; }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #FF0257; outline-offset: 2px; }
+
+/* Tables and gradient cards (dark QA follow-ups) */
+.ds-table th, .ds-table__head, .ds-table thead tr { background: #131316; }
+.ds-table__row--alt { background: #101014 !important; }
+.ds-table td, .ds-table th, .ds-table__cell { border-color: #26262b !important; }
+.ds-cta-card .ds-btn-white { background: #ffffff !important; color: #FF0257 !important; border-color: transparent !important; }
+.ds-cta-card .ds-btn-white:hover { background: #fff0f5 !important; }

@@ -47,9 +47,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -123,9 +123,11 @@
     <style>
     /* For hosts page: small layout helpers on top of the design system */
     .pfh-plans-2{grid-template-columns: repeat(2,1fr);}
-    .pfh-channels{grid-column: 1/-1;display: grid;grid-template-columns: 1.5fr 1fr;gap: 2rem;align-items: center;background: var(--ds-ink);color: #fff;border: none;}
-    .pfh-channels .ds-tier__name,.pfh-channels .ds-tier__price{color: #fff;}
-    .pfh-channels .ds-tier__tag,.pfh-channels .ds-tier__sub,.pfh-channels .ds-tier__note,.pfh-channels .ds-tier__price span{color: rgba(255,255,255,.65);}
+    .pfh-channels{grid-column: 1/-1;display: grid;grid-template-columns: 1.5fr 1fr;gap: 2rem;align-items: center;background: #1a1a1e;color: #f0f0f5;border: 1px solid #26262b;}
+    .pfh-channels .ds-tier__btn--white{background: transparent;color: #f0f0f5;border: 1px solid rgba(255,255,255,0.28);border-radius: 9999px;}
+    .pfh-channels .ds-tier__btn--white:hover{border-color: rgba(255,255,255,0.5);color: #f0f0f5;}
+    .pfh-channels .ds-tier__name,.pfh-channels .ds-tier__price{color: #f0f0f5;}
+    .pfh-channels .ds-tier__tag,.pfh-channels .ds-tier__sub,.pfh-channels .ds-tier__note,.pfh-channels .ds-tier__price span{color: #a0a0aa;}
     .pfh-channels .ds-tier__price{margin-top: 0;}
     .pfh-no{background: #26262b!important;color: #a0a0aa!important;}
     .pfh-tour{grid-template-columns: repeat(4,1fr);}
@@ -133,14 +135,14 @@
     .pfh-tour .ds-value-card a{display: inline-block;margin-top: 0.875rem;font-size: 0.875rem;font-weight: 600;color: var(--ds-orange);text-decoration: none;}
     .pfh-paths{display: grid;grid-template-columns: repeat(5,1fr);gap: 1rem;}
     .pfh-path{display: block;text-decoration: none;border: 1px solid var(--ds-border);border-radius: 16px;padding: 1.25rem 1.375rem;background: #131316;color: var(--ds-ink);transition: transform .25s ease,box-shadow .25s ease;}
-    .pfh-path: hover{transform: translateY(-3px);box-shadow: 0 12px 28px -12px rgba(17,17,17,.14);}
+    .pfh-path:hover{transform: translateY(-3px);border-color: rgba(255,255,255,0.2);box-shadow: 0 12px 28px -12px rgba(0,0,0,.6);}
     .pfh-path strong{display: block;font-size: 1rem;font-weight: 600;letter-spacing: -0.02em;}
     .pfh-path span{display: block;margin-top: .375rem;font-size: .875rem;line-height: 1.5;color: #a0a0aa;}
     .pfh-row{display: flex;align-items: center;justify-content: space-between;gap: 2rem;flex-wrap: wrap;}
     .pfh-row > div{max-width: 38rem;}
     .pfh-row h3{margin: 0;}
     .pfh-list{display: flex;flex-direction: column;gap: 10px;margin-top: 16px;}
-    .pfh-list div{display: flex;gap: 10px;font-size: 15px;color: #3f3f3f;}
+    .pfh-list div{display: flex;gap: 10px;font-size: 15px;color: #a0a0aa;}
     .pfh-list div span{color: var(--ds-orange);}
     @media (max-width: 1100px){.pfh-tour{grid-template-columns: repeat(2,1fr);}.pfh-paths{grid-template-columns: repeat(3,1fr);}}
     @media (max-width: 900px){.ds-plans-3.pfh-plans-2{grid-template-columns: 1fr;}.pfh-channels{grid-template-columns: 1fr;}.pfh-paths{grid-template-columns: 1fr 1fr;}}
@@ -278,7 +280,7 @@
                         <svg class="ds-cta__arrow ds-cta__arrow--main" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
                     </span>
                 </a>
-                <a href="#pricing" class="ds-btn-ghost" style="border: 1px solid rgba(255, 255, 255, 0.18);border-radius: 9999px;padding: 0.8125rem 1.5rem;text-decoration: none;color: var(--ds-ink);font-weight: 600;background: transparent;">See pricing</a>
+                <a href="#pricing" class="ds-btn-ghost" style="border: 1px solid rgba(255, 255, 255, 0.28);border-radius: 9999px;padding: 0.8125rem 1.5rem;text-decoration: none;color: #f0f0f5;font-weight: 600;background: transparent;">See pricing</a>
             </div>
         </div>
         <div class="ds-phero-split__media">
@@ -286,22 +288,22 @@
             .pfh-scope{container-type: inline-size;position: relative;}
             .pfh{position: relative;font-family: 'Hanken Grotesk',sans-serif;color: #f0f0f5;padding: 5cqw 0 3cqw;pointer-events: none;user-select: none;}
             .pfh-pill{position: absolute;top: 0;left: 50%;transform: translateX(-50%);display: flex;align-items: center;gap: 1.2cqw;background: #1a1a1e;color: #fff;border-radius: 999px;padding: 1.5cqw 2.4cqw;font-size: 1.9cqw;font-weight: 700;box-shadow: 0 3cqw 6cqw -2.5cqw rgba(25,25,25,.55);z-index: 3;white-space: nowrap;}
-            .pfh-pill b{color: #FF8A94;}
+            .pfh-pill b{color: #ff5c8a;}
             .pfh-grid{display: grid;grid-template-columns: 1fr 1fr;gap: 2.2cqw;}
             .pfh-card{background: #131316;border: 1px solid rgba(255, 255, 255, 0.10);border-radius: 2.6cqw;box-shadow: 0 4cqw 9cqw -4cqw rgba(25,25,25,.3);padding: 2.8cqw 2.8cqw 2.4cqw;}
-            .pfh-card--dark{background: #1a1a1e;color: #fff;border-color: #1a1a1e;}
+            .pfh-card--dark{background: #1a1a1e;color: #f0f0f5;border-color: #26262b;}
             .pfh-tag{display: inline-flex;font-size: 1.5cqw;font-weight: 800;letter-spacing: .07em;text-transform: uppercase;border-radius: 999px;padding: .7cqw 1.6cqw;margin-bottom: 1.8cqw;background: var(--ds-orange-soft);color: var(--ds-orange);}
-            .pfh-card--dark .pfh-tag{background: rgba(255,138,148,.16);color: #FF8A94;}
+            .pfh-card--dark .pfh-tag{background: rgba(255,2,87,.14);color: #ff5c8a;}
             .pfh-card h4{margin: 0 0 .8cqw;font-size: 2.7cqw;font-weight: 800;letter-spacing: -.01em;}
             .pfh-card p{margin: 0 0 2cqw;font-size: 1.85cqw;color: #a0a0aa;font-weight: 500;}
-            .pfh-card--dark p{color: rgba(255,255,255,.6);}
+            .pfh-card--dark p{color: #a0a0aa;}
             .pfh-li{display: flex;align-items: center;gap: 1.3cqw;padding: 1.35cqw 0;border-top: 1px solid rgba(255, 255, 255, 0.08);font-size: 1.95cqw;font-weight: 600;}
             .pfh-card--dark .pfh-li{border-top-color: rgba(255,255,255,.1);}
-            .pfh-li svg{width: 2.1cqw;height: 2.1cqw;color: #16A34A;flex: 0 0 auto;}
-            .pfh-card--dark .pfh-li svg{color: #FF8A94;}
+            .pfh-li svg{width: 2.1cqw;height: 2.1cqw;color: #FF0257;flex: 0 0 auto;}
+            .pfh-card--dark .pfh-li svg{color: #ff5c8a;}
             .pfh-foot{margin-top: 2cqw;font-size: 2cqw;font-weight: 800;display: flex;align-items: baseline;gap: 1cqw;}
             .pfh-foot em{font-style: normal;font-size: 1.65cqw;font-weight: 600;color: #a0a0aa;}
-            .pfh-card--dark .pfh-foot em{color: rgba(255,255,255,.6);}
+            .pfh-card--dark .pfh-foot em{color: #a0a0aa;}
             .pfh-or{position: absolute;left: 50%;top: 56%;transform: translate(-50%,-50%);width: 6cqw;height: 6cqw;border-radius: 999px;background: #131316;border: 1px solid rgba(255, 255, 255, 0.13);box-shadow: 0 2cqw 5cqw -2cqw rgba(25,25,25,.4);display: flex;align-items: center;justify-content: center;font-size: 1.8cqw;font-weight: 800;color: #a0a0aa;z-index: 2;}
             /* Narrow containers (phones): stack the two cards and scale type up so it stays legible */
             @container (max-width: 560px){
@@ -451,7 +453,7 @@
             <div class="ds-value-card"><h3 style="color: var(--ds-orange);font-size: 1.75rem;">Planned</h3><p><strong style="color: var(--ds-ink);">England</strong><br>A national registration scheme is planned. No national licence yet; local rules apply, including London's 90-night limit.</p></div>
             <div class="ds-value-card"><h3 style="color: var(--ds-orange);font-size: 1.75rem;">Oct 2026</h3><p><strong style="color: var(--ds-ink);">Wales</strong><br>Registration opens October 2026. Register by 31 March 2027.</p></div>
         </div>
-        <div style="background: var(--ds-cream,#f7f6f3);border-radius: 20px;padding: 30px;margin-top: 20px;">
+        <div style="background: #131316;border: 1px solid #26262b;border-radius: 20px;padding: 30px;margin-top: 20px;">
             <div style="font-size: 16px;font-weight: 600;color: var(--ds-ink,#f0f0f5);">What PropertyFlow does</div>
             <div class="pfh-list">
                 <div><span>•</span>Licence and certificate reminders, set once per document</div>

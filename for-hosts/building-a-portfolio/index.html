@@ -47,12 +47,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <style>
         /* Page-scoped polish: building-a-portfolio */
         .ds-feat-hero h1, .ds-cta-band h2 { text-wrap: balance; }
+        /* Dashboard mockup: dark sidebar to match the dark dashboard chrome (shared .pfd-side is still cream) */
+        .ds-media-frame .pfd-scope .pfd-side { background: #131316; border-right: 1px solid #26262b; }
+        .ds-media-frame .pfd-scope .pfd-nav { color: #a0a0aa; }
+        .ds-media-frame .pfd-scope .pfd-nav--on { background: rgba(255, 2, 87, 0.14); color: #ff5c8a; }
+        /* Hero secondary pill: same border weight as the CTA band secondary */
+        .ds-feat-hero .ds-btn-ghost { border-color: rgba(255, 255, 255, 0.28) !important; }
         @media (max-width: 640px) {
             .ds-cta-band.ds-cta-band--dark { padding: 3.25rem 1.5rem !important; }
             .ds-cta-band__actions .ds-btn-ghost { text-align: center; }

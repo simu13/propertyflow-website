@@ -48,9 +48,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     
     <style>
@@ -58,13 +58,25 @@
       .pf-legal .ds-legal-block h2 { scroll-margin-top: 6rem; }
       .pf-legal .pf-cl { font-weight: 600; color: var(--ds-ink); margin-right: .4em; }
       .pf-legal .pf-intro { font-size: 1.0625rem; margin: 0 0 2rem; }
-      .pf-legal a: not(.ds-cta) { color: var(--ds-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ds-orange); }
-      .pf-legal a: not(.ds-cta):hover { color: var(--ds-orange); }
+      .pf-legal a:not(.ds-cta):not(.ds-toc__list a) { color: #f0f0f5; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #FF0257; }
+      .pf-legal a:not(.ds-cta):hover { color: #ff5c8a; }
+      .pf-legal .ds-legal-block p, .pf-legal .ds-legal-block li, .pf-legal .ds-table__cell { color: #d9d9e0; }
+      .pf-legal .ds-legal-block h2, .pf-legal .ds-legal-block h3, .pf-legal .ds-toc h2 { color: #f0f0f5; }
+      .pf-legal .ds-legal-block li::marker, .pf-legal .ds-toc li::marker { color: #7c7c86; }
+      .pf-legal .ds-table-wrap { border: 1px solid #26262b; border-radius: 14px; background: #101014; }
+      .pf-legal .ds-table { min-width: 0; }
+      .pf-legal .ds-table__head-row { background: #131316; }
+      .pf-legal .ds-table__row--alt { background: transparent; }
+      .pf-legal .ds-table__cell { border-bottom: 1px solid #26262b; }
+      .pf-legal .ds-table tbody tr:last-child .ds-table__cell { border-bottom: none; }
+      .pf-legal .ds-table__head:first-child, .pf-legal .ds-table__cell:first-child { padding-left: 1.25rem; }
+      .pf-legal .ds-table__head:last-child, .pf-legal .ds-table__cell:last-child { padding-right: 1.25rem; }
+      .pf-legal .ds-toc { background: #131316; border: 1px solid #26262b; }
       .pf-legal .ds-table th, .pf-legal .ds-table td { text-align: left; }
-      .pf-legal .ds-table__head { padding: .875rem 1rem; border-bottom: 2px solid var(--ds-orange); font-weight: 600; color: var(--ds-ink); }
-      .pf-legal .pf-tbc { color: #7a7670; font-style: italic; }
-      .pf-legal .pf-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.4rem; border-radius: 9999px; background: var(--ds-ink); color: #fff; font-weight: 600; font-size: .9375rem; border: none; cursor: pointer; font-family: inherit; }
-      .pf-legal .pf-btn: hover { background: #1a1a1e; }
+      .pf-legal .ds-table__head { padding: .875rem 1rem; border-bottom: 1px solid #26262b; font-weight: 600; color: #f0f0f5; font-size: .8125rem; letter-spacing: .02em; }
+      .pf-legal .pf-tbc { color: #7c7c86; font-style: italic; }
+      .pf-legal .pf-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.4rem; border-radius: 9999px; background: #FF0257; color: #fff; font-weight: 600; font-size: .9375rem; border: none; cursor: pointer; font-family: inherit; }
+      .pf-legal .pf-btn:hover { background: #d90048; }
       .pf-legal .ds-toc h2 { border-bottom: none; margin: 0 0 .75rem; padding: 0; font-size: 1.125rem; }
       .pf-legal .ds-toc ol { columns: 2; column-gap: 2rem; }
       .pf-legal .ds-toc li { break-inside: avoid; margin: 0 0 .3rem; font-size: .95rem; }
@@ -75,7 +87,8 @@
         .pf-legal .ds-toc ol { columns: 1; }
         .pf-legal .ds-table { min-width: 0; font-size: .875rem; }
         .pf-legal .ds-table__head, .pf-legal .ds-table__cell { padding: .75rem .625rem; }
-        .pf-legal .ds-table__cell: first-child, .pf-legal .ds-table__head:first-child { padding-left: .75rem; }
+        .pf-legal .ds-table__cell:first-child, .pf-legal .ds-table__head:first-child { padding-left: .875rem; }
+        .pf-legal .ds-table__cell:last-child, .pf-legal .ds-table__head:last-child { padding-right: .875rem; }
       }
       .pf-legal .ds-cta-band p a { color: inherit; }
     </style>
@@ -326,7 +339,7 @@
                 <p>We share personal data only as needed to run the platform and meet our obligations, with:</p>
                 <ul class="ds-article__list">
                     <li>Booking channels you connect or that we list you on, to publish listings and take bookings.</li>
-                    <li>Our sub-processors: Channex (channel connectivity), PriceLabs (pricing and market data), our payment processor (payments and payouts), our cloud hosting provider (storage and infrastructure), our AI model providers (AI Cognito Pricing and AI messaging), HubSpot (CRM, forms and support), GitHub (website hosting), Google (Analytics, Search Console and business tools), Meta (advertising measurement) and our email delivery provider. The current list, with the name of the hosting provider and the payment processor, is at <a href="/subprocessors/">propertyflow.uk/subprocessors</a>.</li>
+                    <li>Our sub-processors: Channex (channel connectivity), PriceLabs (pricing and market data), Stripe (payments, United States and Ireland), Microsoft Azure including Application Insights (hosting and performance monitoring, United Kingdom), Sentry (error monitoring, United States), Xero (accounting and bank reconciliation, United States), Trustpilot (review invitations after direct bookings, Denmark), Brevo with Resend as fallback (transactional email, France and United States), our AI model providers (AI Cognito Pricing and AI messaging), HubSpot (CRM, forms and support), GitHub (website hosting), Google (Analytics, Search Console and business tools) and Meta (advertising measurement, present but not active). The current list is at <a href="/subprocessors/">propertyflow.uk/subprocessors</a>.</li>
                     <li>Our group company PropertyFlow Management Partners Ltd, for managed properties and the Partner Programme, and Partners in the Partner Programme, who receive the details of landlords and property enquiries routed to them for their area.</li>
                     <li>Our staff and contractors, including our team in India, under confidentiality and access controls.</li>
                     <li>HM Revenue and Customs, for platform reporting, and councils, for tourist tax where the law requires.</li>
@@ -351,8 +364,8 @@
                         <tbody>
                             <tr><td class="ds-table__cell">Account, property and team data</td><td class="ds-table__cell">While your account is open, then 12 months, then deleted or anonymised</td></tr>
                             <tr class="ds-table__row--alt"><td class="ds-table__cell">Bookings, statements, payouts, invoices and other financial records</td><td class="ds-table__cell">Six years after the end of the financial year they relate to</td></tr>
-                            <tr><td class="ds-table__cell">HMRC platform reporting records</td><td class="ds-table__cell">Five years after the end of the reportable period, as the regulations require</td></tr>
-                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Guest messages and booking details for a stay</td><td class="ds-table__cell">24 months after check-out, or longer where a claim or dispute is open</td></tr>
+                            <tr><td class="ds-table__cell">HMRC platform reporting records</td><td class="ds-table__cell">Five years after the end of the reportable period, as required by Regulation 3(3) of the Platform Operators (Due Diligence and Reporting Requirements) Regulations 2023</td></tr>
+                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Guest messages and booking details for a stay</td><td class="ds-table__cell">24 months from check-out; where a claim or dispute is open, the conversation is held until it closes and deleted after that</td></tr>
                             <tr><td class="ds-table__cell">Partner Programme applications (unsuccessful)</td><td class="ds-table__cell">12 months from decision</td></tr>
                             <tr class="ds-table__row--alt"><td class="ds-table__cell">Partner agreements and commission records</td><td class="ds-table__cell">Six years after the agreement ends</td></tr>
                             <tr><td class="ds-table__cell">Own a property report requests</td><td class="ds-table__cell">24 months from the request, or while the enquiry is open</td></tr>

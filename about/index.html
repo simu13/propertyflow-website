@@ -47,9 +47,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <script type="application/ld+json">
     {
@@ -92,6 +92,55 @@
         .ds-split--2 { align-items: stretch; }
         .ds-split--2 .ds-info-card { border-radius: 22px; padding: 2.25rem; }
         @media (max-width: 640px) { .ds-split--2 .ds-info-card, .ds-split--2 .ds-cta-card { padding: 1.75rem; } }
+
+        /* Dark theme reconciliation (page-scoped) */
+        .ds-section--dark { background: #101014; color: #f0f0f5; }
+        .ds-section--dark .ds-stat-grid { background: #26262b; border: 1px solid #26262b; border-radius: 20px; overflow: hidden; }
+        .ds-section--dark .ds-stat-cell { background: #131316; }
+        .ds-section--dark .ds-stat-cell__val { color: #f0f0f5; }
+        .ds-section--dark .ds-stat-cell__label { color: #a0a0aa; }
+
+        .ds-split--2 .ds-info-card { background: #131316; border: 1px solid #26262b; }
+        .ds-split--2 .ds-info-card__title { color: #f0f0f5; }
+        .ds-split--2 .ds-info-row__label { color: #a0a0aa; }
+        .ds-split--2 .ds-info-row__val { color: #f0f0f5; }
+
+        /* CTA card: raised dark surface with a soft brand glow; one pink primary + one outlined secondary */
+        .ds-split--2 .ds-cta-card {
+            position: relative;
+            background: #131316;
+            border: 1px solid #26262b;
+            color: #f0f0f5;
+            overflow: hidden;
+        }
+        .ds-split--2 .ds-cta-card::before {
+            content: "";
+            position: absolute;
+            inset: auto -30% -50% auto;
+            width: 70%;
+            padding-top: 70%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 2, 87, 0.28) 0%, rgba(255, 2, 87, 0) 70%);
+            pointer-events: none;
+        }
+        .ds-split--2 .ds-cta-card > * { position: relative; }
+        .ds-split--2 .ds-cta-card h3 { color: #f0f0f5; }
+        .ds-split--2 .ds-cta-card p { color: #a0a0aa; }
+        .ds-split--2 .ds-btn-white,
+        .ds-split--2 .ds-btn-ghost-white {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 0.8125rem 1.5rem;
+            font-weight: 600;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .ds-split--2 .ds-btn-white { background: #FF0257; color: #ffffff; }
+        .ds-split--2 .ds-btn-white:hover { background: #d90048; color: #ffffff; }
+        .ds-split--2 .ds-btn-ghost-white { background: transparent; color: #f0f0f5; border: 1px solid rgba(255, 255, 255, 0.28); }
+        .ds-split--2 .ds-btn-ghost-white:hover { border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.04); }
+
+        .ds-media-frame--hero { border: 1px solid #26262b; box-shadow: none; }
     </style>
 </head>
 <body class="ds-page ds-grain">

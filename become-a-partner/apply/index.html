@@ -47,21 +47,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <style>
       .pf-pink-orb{background: linear-gradient(135deg,#FF0257,#d90048)!important;animation: pf-pink-orb-pulse 2.8s ease-out infinite;}
-      @keyframes pf-pink-orb-pulse{0%{box-shadow: 0 0 0 0 rgba(255,56,92,0.42);}60%{box-shadow: 0 0 0 9px rgba(255,56,92,0);}100%{box-shadow: 0 0 0 0 rgba(255,56,92,0);}}
+      @keyframes pf-pink-orb-pulse{0%{box-shadow: 0 0 0 0 rgba(255,2,87,0.42);}60%{box-shadow: 0 0 0 9px rgba(255,2,87,0);}100%{box-shadow: 0 0 0 0 rgba(255,2,87,0);}}
       .ds-apply-hero{display: grid;grid-template-columns: 1fr 1fr;gap: 4rem;align-items: center;}
       .ds-apply-steps{display: flex;flex-direction: column;gap: 0.875rem;}
-      .ds-apply-step{display: flex;gap: 1.125rem;align-items: flex-start;border: 1px solid var(--ds-border);border-radius: 1rem;padding: 1.5rem 1.75rem;}
-      .ds-apply-step__num{flex: 0 0 auto;width: 2.125rem;height: 2.125rem;border-radius: 0.625rem;background: var(--ds-ink);color: #fff;display: flex;align-items: center;justify-content: center;font-weight: 700;font-size: 0.875rem;}
+      .ds-apply-step{display: flex;gap: 1.125rem;align-items: flex-start;background: #131316;border: 1px solid #26262b;border-radius: 1rem;padding: 1.5rem 1.75rem;}
+      .ds-apply-step__num{flex: 0 0 auto;width: 2.125rem;height: 2.125rem;border-radius: 0.625rem;background: rgba(255,2,87,0.14);border: 1px solid rgba(255,2,87,0.3);color: #ff5c8a;font-feature-settings: 'tnum';display: flex;align-items: center;justify-content: center;font-weight: 700;font-size: 0.875rem;}
       .ds-apply-step__title{font-size: 1.0625rem;font-weight: 600;color: var(--ds-ink);}
       .ds-apply-step__body{font-size: 0.90625rem;color: #a0a0aa;margin-top: 0.1875rem;}
       .pf-field{display: flex;flex-direction: column;gap: 0.375rem;font-size: 0.875rem;font-weight: 600;color: var(--ds-ink);}
-      .pf-field input,.pf-field textarea{font: inherit;font-weight: 400;padding: 0.75rem 0.875rem;border: 1px solid var(--ds-border);border-radius: 0.625rem;background: #131316;color: var(--ds-ink);}
+      .pf-field input,.pf-field textarea{font: inherit;font-weight: 400;padding: 0.75rem 0.875rem;border: 1px solid #26262b;border-radius: 0.625rem;background: #1a1a1e;color: #f0f0f5;transition: border-color 0.2s ease, box-shadow 0.2s ease;}
+      .pf-field input::placeholder,.pf-field textarea::placeholder{color: #7c7c86;opacity: 1;}
+      .pf-field input:focus-visible,.pf-field textarea:focus-visible{outline: none!important;border-color: #FF0257;box-shadow: 0 0 0 3px rgba(255,2,87,0.2)!important;}
+      .pf-field textarea{resize: vertical;}
       @media (max-width: 900px){.ds-apply-hero{grid-template-columns: 1fr;}.pf-partner-form{grid-template-columns: 1fr!important;}}
     </style>
     <!-- Schema Markup: BreadcrumbList -->

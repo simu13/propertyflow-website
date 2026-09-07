@@ -48,31 +48,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     
     <style>
-      .pf-legal .ds-legal-block p, .pf-legal .ds-legal-block li { line-height: 1.65; }
+      .pf-legal .ds-legal-block p, .pf-legal .ds-legal-block li { line-height: 1.65; color: #d9d9e0; }
       .pf-legal .ds-legal-block h2 { scroll-margin-top: 6rem; }
+      .pf-legal .ds-legal-block strong { color: var(--ds-ink); }
       .pf-legal .pf-cl { font-weight: 600; color: var(--ds-ink); margin-right: .4em; }
-      .pf-legal .pf-intro { font-size: 1.0625rem; margin: 0 0 2rem; }
-      .pf-legal a: not(.ds-cta) { color: var(--ds-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ds-orange); }
-      .pf-legal a: not(.ds-cta):hover { color: var(--ds-orange); }
+      .pf-legal .pf-intro { font-size: 1.0625rem; margin: 0 0 2rem; color: #d9d9e0; }
+      .pf-legal .ds-legal-block a, .pf-legal .pf-intro a { color: var(--ds-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ds-orange); text-decoration-thickness: 1px; }
+      .pf-legal .ds-legal-block a:hover, .pf-legal .pf-intro a:hover { color: var(--ds-orange); }
       .pf-legal .ds-table th, .pf-legal .ds-table td { text-align: left; }
-      .pf-legal .ds-table__head { padding: .875rem 1rem; border-bottom: 2px solid var(--ds-orange); font-weight: 600; color: var(--ds-ink); }
-      .pf-legal .pf-tbc { color: #7a7670; font-style: italic; }
-      .pf-legal .pf-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.4rem; border-radius: 9999px; background: var(--ds-ink); color: #fff; font-weight: 600; font-size: .9375rem; border: none; cursor: pointer; font-family: inherit; }
-      .pf-legal .pf-btn: hover { background: #1a1a1e; }
-      .pf-legal .ds-toc h2 { border-bottom: none; margin: 0 0 .75rem; padding: 0; font-size: 1.125rem; }
+      .pf-legal .ds-table__head { padding: .875rem 1rem; background: #131316; border-bottom: 2px solid var(--ds-orange); font-weight: 600; color: var(--ds-ink); }
+      .pf-legal .ds-table td { border-bottom: 1px solid #26262b; }
+      .pf-legal .pf-tbc { color: #7c7c86; font-style: italic; }
+      .pf-legal .pf-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.4rem; border-radius: 9999px; background: var(--ds-orange); color: #fff; font-weight: 600; font-size: .9375rem; border: none; cursor: pointer; font-family: inherit; }
+      .pf-legal .pf-btn:hover { background: var(--ds-orange-dark); }
+      .pf-legal .ds-toc { background: #131316; border: 1px solid #26262b; }
+      .pf-legal .ds-toc h2 { border-bottom: none; margin: 0 0 .75rem; padding: 0; font-size: 1.125rem; color: var(--ds-ink); }
       .pf-legal .ds-toc ol { columns: 2; column-gap: 2rem; }
       .pf-legal .ds-toc li { break-inside: avoid; margin: 0 0 .3rem; font-size: .95rem; }
-      .pf-legal .ds-toc a { text-decoration: none; }
+      .pf-legal .ds-toc li::marker { color: #7c7c86; font-weight: 500; }
+      .pf-legal .ds-toc__list a { color: #d9d9e0; text-decoration: none; font-weight: 500; transition: color .15s ease; }
+      .pf-legal .ds-toc__list a:hover { color: var(--ds-orange); }
       @media (max-width: 640px) { .pf-legal .ds-toc ol { columns: 1; } }
       .pf-legal .ds-cta-band p a { color: inherit; }
       .pf-legal .ds-legal-wrap { padding-top: 0; padding-bottom: 3rem; }
-      .pf-legal .ds-legal-wrap > .ds-prose-section: first-child { padding-top: 1rem; }
+      .pf-legal .ds-legal-wrap > .ds-prose-section:first-child { padding-top: 1rem; }
       .pf-legal .ds-legal-wrap .ds-toc { margin-top: 0; }
       .pf-legal .ds-legal-wrap .ds-section { padding-top: 3rem; padding-bottom: 0; }
     </style>
@@ -406,7 +411,7 @@
                 <p><span class="pf-cl">S1.5</span> <strong>Booking money.</strong> Booking money paid by Guests or settled by Channels for your Property is received by PropertyFlow as your agent and held for you as client money in a bank account separate from PropertyFlow's own funds, pending payout under clause S1.7. It is your money, less the Fees and any amounts due under this Schedule, and it does not form part of PropertyFlow's assets. No interest is paid on client money.</p>
                 <p><span class="pf-cl">S1.6</span> <strong>Fees and Channel commission.</strong> For each Booking through PropertyFlow channels: the Channel deducts its own commission before settling to us, and that commission is passed through to you at the actual amount the Channel deducted, with no mark-up; PropertyFlow's fee is 5% of the Gross Booking Amount plus VAT; and any subscription fee due under clause 4 that has not been collected by card may be deducted. Your statement shows, for each Booking, the Gross Booking Amount, the Channel's commission, PropertyFlow's fee, VAT and the amount paid to you.</p>
                 <p><span class="pf-cl">S1.7</span> <strong>Payouts.</strong> We pay the balance to your nominated bank account within five Business Days after the Channel has settled the Booking funds to us, together with a statement for the period. Where a Channel settles after the Guest's stay, the payout follows that settlement. We may hold back from a payout an amount reasonably needed to cover a pending refund, chargeback, dispute or Channel adjustment, and we release it as soon as the matter is settled.</p>
-                <p><span class="pf-cl">S1.8</span> <strong>Cancellations, refunds and chargebacks.</strong> Cancellations by Guests are handled under the cancellation policy on the listing and any refund is made from the Booking money. If you cancel or refuse a Booking made through PropertyFlow channels, or make the Property unavailable for it, the Channel's cancellation charges and any Guest relocation cost imposed by the Channel are charged to your account at cost, together with an administration fee of £25 per Booking, and we may deduct them from your next payout or charge your payment method. Where a Guest obtains a refund or chargeback after we have paid you, you must repay the amount refunded and we may deduct it from your next payout.</p>
+                <p><span class="pf-cl">S1.8</span> <strong>Cancellations, refunds and chargebacks.</strong> Cancellations by Guests are handled under the cancellation policy on the listing and any refund is made from the Booking money. If you cancel or refuse a Booking made through PropertyFlow channels, or make the Property unavailable for it, the Channel's cancellation charges and any Guest relocation cost imposed by the Channel are charged to your account at cost, together with an administration fee of £25 per Booking, and we may deduct them from your next payout or charge your payment method. Where a Guest obtains a refund or chargeback after we have paid you, you must repay the amount refunded and we may deduct it from your next payout. The £25 administration fee applies only where you cancel a confirmed booking; it is not charged where the Guest cancels.</p>
                 <p><span class="pf-cl">S1.9</span> <strong>Guest damage and claims.</strong> Damage caused by Guests is dealt with under the damage protection or deposit process of the Channel through which the Booking was made. For Bookings through PropertyFlow channels we raise and pursue the claim with the Channel on your behalf, using the evidence you give us within the Channel's time limits, and pay you what the Channel pays out. We do not insure your Property or its contents and we do not guarantee the outcome of a claim.</p>
                 <p><span class="pf-cl">S1.10</span> <strong>Reviews.</strong> Reviews and ratings for Bookings through PropertyFlow channels are published on the PropertyFlow listing. You can see them in the Platform and reply to them through us. Clause 8.4 applies.</p>
                 <p><span class="pf-cl">S1.11</span> <strong>Tourist tax.</strong> Where a tourist tax applies, the amount calculated by the Platform is shown on your statement. Unless the Property is managed by PropertyFlow Management Partners Ltd, you remain responsible for paying it to the council.</p>

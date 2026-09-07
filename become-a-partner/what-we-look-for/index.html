@@ -47,14 +47,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home-ds.css?v=14">
-    <link rel="stylesheet" href="/css/site-ds.css?v=20">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=3">
+    <link rel="stylesheet" href="/css/home-ds.css?v=15">
+    <link rel="stylesheet" href="/css/site-ds.css?v=21">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=4">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <style>
-      .pf-pink-orb{background: linear-gradient(135deg,#FF0257,#d90048)!important;animation: pf-pink-orb-pulse 2.8s ease-out infinite;}
+      /* Dark CTA band: raised surface + border; the button is the single pink primary. */
+      .ds-cta-band.pf-wwlf-cta{background: #131316!important;border: 1px solid #26262b!important;color: #f0f0f5!important;}
+      .pf-wwlf-cta h2{color: #f0f0f5;}
+      .pf-wwlf-cta .ds-cta.ds-cta--white{background: #FF0257!important;color: #ffffff!important;border-color: transparent!important;}
+      .pf-wwlf-cta .ds-cta.ds-cta--white:hover{background: #d90048!important;}
+      .pf-pink-orb{background: rgba(255,255,255,0.2)!important;color: #ffffff!important;animation: pf-pink-orb-pulse 2.8s ease-out infinite;}
       @media (max-width: 640px){.pf-wwlf-cta{padding: 3rem 1.25rem!important;}.pf-wwlf-cta .ds-cta{white-space: nowrap;}}
-      @keyframes pf-pink-orb-pulse{0%{box-shadow: 0 0 0 0 rgba(255,56,92,0.42);}60%{box-shadow: 0 0 0 9px rgba(255,56,92,0);}100%{box-shadow: 0 0 0 0 rgba(255,56,92,0);}}
+      @keyframes pf-pink-orb-pulse{0%{box-shadow: 0 0 0 0 rgba(255,255,255,0.35);}60%{box-shadow: 0 0 0 9px rgba(255,255,255,0);}100%{box-shadow: 0 0 0 0 rgba(255,255,255,0);}}
     </style>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
