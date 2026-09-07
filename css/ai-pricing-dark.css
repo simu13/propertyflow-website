@@ -87,8 +87,8 @@ body.hd-page .aip-booking__top { display: flex; align-items: flex-start; justify
 body.hd-page .aip-booking__property { font-family: "Outfit", "Inter", sans-serif; font-weight: 600; font-size: 1.05cqw; letter-spacing: 0.1em; text-transform: uppercase; color: #555870; margin: 0; }
 body.hd-page .aip-booking__date { font-family: "Outfit", "Inter", sans-serif; font-weight: 500; font-size: 1.23cqw; color: #8b8fa8; margin: 0.18cqw 0 0; }
 body.hd-page .aip-booking__badge { display: flex; align-items: center; gap: 0.53cqw; background: rgba(255, 90, 95, 0.18); border: 0.8px solid rgba(255, 90, 95, 0.35); border-radius: 999px; padding: 0.53cqw 1.05cqw; }
-body.hd-page .aip-booking__badge-dot { width: 0.53cqw; height: 0.53cqw; border-radius: 50%; background: #ff5a5f; box-shadow: 0 0 5px #ff5a5f; }
-body.hd-page .aip-booking__badge span { font-family: "Outfit", "Inter", sans-serif; font-weight: 600; font-size: 1.05cqw; color: #ff5a5f; }
+body.hd-page .aip-booking__badge-dot { width: 0.53cqw; height: 0.53cqw; border-radius: 50%; background: #FF0257; box-shadow: 0 0 5px #FF0257; }
+body.hd-page .aip-booking__badge span { font-family: "Outfit", "Inter", sans-serif; font-weight: 600; font-size: 1.05cqw; color: #FF0257; }
 
 body.hd-page .aip-booking__price-row { display: flex; align-items: baseline; gap: 0.70cqw; margin-top: 1.41cqw; }
 body.hd-page .aip-booking__price { font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 4.57cqw; letter-spacing: -0.025em; color: #f0f2f8; }
@@ -103,32 +103,32 @@ body.hd-page .aip-booking__confidence-row { display: flex; align-items: center; 
 body.hd-page .aip-booking__confidence-row span:first-child { font-family: "Outfit", "Inter", sans-serif; font-size: 1.05cqw; color: #555870; }
 body.hd-page .aip-booking__confidence-row span:last-child { font-family: "JetBrains Mono", monospace; font-size: 1.05cqw; color: #f0f2f8; }
 body.hd-page .aip-booking__confidence-bar { height: 0.44cqw; background: rgba(255, 255, 255, 0.07); border-radius: 999px; margin-top: 0.70cqw; overflow: hidden; }
-body.hd-page .aip-booking__confidence-fill { height: 100%; width: 96%; border-radius: 999px; background: linear-gradient(90deg, #ff5a5f, #ff8f70); box-shadow: 0 0 8px rgba(255, 90, 95, 0.5); }
+body.hd-page .aip-booking__confidence-fill { height: 100%; width: 96%; border-radius: 999px; background: linear-gradient(90deg, #FF0257, #ff8f70); box-shadow: 0 0 8px rgba(255, 90, 95, 0.5); }
 
 body.hd-page .aip-booking__events { margin-top: 2.11cqw; }
 body.hd-page .aip-booking__events-label { font-family: "Outfit", "Inter", sans-serif; font-weight: 600; font-size: 0.88cqw; letter-spacing: 0.11em; text-transform: uppercase; color: #3d4055; margin: 0; }
 body.hd-page .aip-booking__event { display: flex; align-items: center; gap: 1.05cqw; margin-top: 1.05cqw; }
 body.hd-page .aip-booking__event-dot { width: 0.53cqw; height: 0.53cqw; border-radius: 50%; flex-shrink: 0; background: #555870; }
-body.hd-page .aip-booking__event--top .aip-booking__event-dot { background: #ff5a5f; box-shadow: 0 0 5px rgba(255, 90, 95, 0.6); }
+body.hd-page .aip-booking__event--top .aip-booking__event-dot { background: #FF0257; box-shadow: 0 0 5px rgba(255, 90, 95, 0.6); }
 body.hd-page .aip-booking__event-label { flex: 1; min-width: 0; font-family: "Outfit", "Inter", sans-serif; font-size: 1.05cqw; color: #555870; }
 body.hd-page .aip-booking__event--top .aip-booking__event-label { color: #c0c4d6; }
 body.hd-page .aip-booking__event-bar { width: 7.03cqw; height: 0.26cqw; border-radius: 999px; background: rgba(255, 255, 255, 0.06); overflow: hidden; flex-shrink: 0; }
 body.hd-page .aip-booking__event-bar-fill { height: 100%; border-radius: 999px; background: rgba(255, 255, 255, 0.2); }
-body.hd-page .aip-booking__event--top .aip-booking__event-bar-fill { background: linear-gradient(90deg, #ff5a5f, #ff8f70); }
+body.hd-page .aip-booking__event--top .aip-booking__event-bar-fill { background: linear-gradient(90deg, #FF0257, #ff8f70); }
 body.hd-page .aip-booking__event-value { width: 3.52cqw; text-align: right; font-family: "JetBrains Mono", monospace; font-size: 1.05cqw; color: #555870; flex-shrink: 0; }
-body.hd-page .aip-booking__event--top .aip-booking__event-value { color: #ff5a5f; }
+body.hd-page .aip-booking__event--top .aip-booking__event-value { color: #FF0257; }
 
 body.hd-page .aip-week { padding: 2.11cqw; }
 body.hd-page .aip-week__label { font-family: "Outfit", "Inter", sans-serif; font-weight: 600; font-size: 0.88cqw; letter-spacing: 0.11em; text-transform: uppercase; color: #3d4055; margin: 0 0 1.05cqw; }
 body.hd-page .aip-week__row { display: flex; align-items: center; gap: 1.05cqw; padding: 0.88cqw 1.05cqw; border-radius: 1.05cqw; margin-top: 0.18cqw; }
 body.hd-page .aip-week__row.is-active { background: #131316; }
 body.hd-page .aip-week__dot { width: 0.53cqw; height: 0.53cqw; border-radius: 50%; border: 0.8px solid rgba(255, 255, 255, 0.1); flex-shrink: 0; }
-body.hd-page .aip-week__row.is-active .aip-week__dot { border: none; background: #ff5a5f; }
+body.hd-page .aip-week__row.is-active .aip-week__dot { border: none; background: #FF0257; }
 body.hd-page .aip-week__day { width: 4.92cqw; font-family: "Outfit", "Inter", sans-serif; font-weight: 500; font-size: 1.05cqw; color: #555870; flex-shrink: 0; }
 body.hd-page .aip-week__row.is-active .aip-week__day { color: #f0f2f8; }
 body.hd-page .aip-week__bar { flex: 1; height: 0.26cqw; border-radius: 999px; background: rgba(255, 255, 255, 0.05); overflow: hidden; }
 body.hd-page .aip-week__bar-fill { height: 100%; border-radius: 999px; background: rgba(255, 255, 255, 0.15); }
-body.hd-page .aip-week__row.is-active .aip-week__bar-fill { background: linear-gradient(90deg, #ff5a5f, #ff8f70); width: 100% !important; }
+body.hd-page .aip-week__row.is-active .aip-week__bar-fill { background: linear-gradient(90deg, #FF0257, #ff8f70); width: 100% !important; }
 body.hd-page .aip-week__price { width: 4.22cqw; text-align: right; font-family: "JetBrains Mono", monospace; font-size: 1.23cqw; color: #6b7094; flex-shrink: 0; }
 body.hd-page .aip-week__row.is-active .aip-week__price { color: #f0f2f8; }
 
@@ -327,7 +327,7 @@ body.hd-page .aip-chart { display: flex; align-items: flex-end; gap: 1.4%; heigh
 body.hd-page .aip-chart__group { flex: 1; display: flex; align-items: flex-end; justify-content: center; gap: 3px; height: 100%; min-width: 0; }
 body.hd-page .aip-chart__bar { flex: 1; max-width: 14px; border-radius: 2px 2px 0 0; }
 body.hd-page .aip-chart__bar--before { background: var(--border-subtle); }
-body.hd-page .aip-chart__bar--after { background: linear-gradient(180deg, #ff5a5f, #e83245); }
+body.hd-page .aip-chart__bar--after { background: linear-gradient(180deg, #FF0257, #e83245); }
 body.hd-page .aip-chart__months { display: flex; gap: 1.4%; padding: 8px 24px 16px; }
 body.hd-page .aip-chart__months span { flex: 1; text-align: center; font-family: "JetBrains Mono", monospace; font-size: 10.5px; color: #454545; }
 

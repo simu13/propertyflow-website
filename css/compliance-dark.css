@@ -136,7 +136,7 @@ body.hd-page .dr-accordion__desc--sm { font-family: "Krub", sans-serif; font-wei
 body.hd-page .dr-accordion__chevron { width: 24px; height: 24px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
 body.hd-page .dr-accordion__chevron img { width: 14px; height: auto; transition: transform 0.25s ease; }
 body.hd-page .dr-accordion__header[aria-expanded="true"] .dr-accordion__chevron img { transform: rotate(180deg); }
-body.hd-page .dr-accordion__note { font-family: "Krub", sans-serif; font-size: 16px; line-height: 24px; color: #c9c9c9; margin: 20px 0 0; padding-left: 14px; border-left: 2px solid #ff5a5f; }
+body.hd-page .dr-accordion__note { font-family: "Krub", sans-serif; font-size: 16px; line-height: 24px; color: #c9c9c9; margin: 20px 0 0; padding-left: 14px; border-left: 2px solid #FF0257; }
 
 /* Expand/collapse panel — collapsed via max-height:0 until JS sets an explicit
    pixel max-height on open (see inline script), so the transition can animate
