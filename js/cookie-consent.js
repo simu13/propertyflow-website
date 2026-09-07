@@ -59,9 +59,9 @@
     banner.setAttribute('aria-label', 'Cookie consent');
     banner.style.cssText =
       'position:fixed;bottom:0;left:0;right:0;z-index:9999;' +
-      'background:#141A23;color:#ffffff;font-family:inherit;' +
+      'background:#131316;color:#f0f0f5;font-family:inherit;border-top:1px solid #26262b;' +
       'padding:1rem 1.5rem;box-sizing:border-box;' +
-      'box-shadow:0 -2px 12px rgba(17,17,17,0.35);';
+      'box-shadow:0 -8px 32px rgba(0,0,0,0.45);';
 
     var inner = document.createElement('div');
     inner.style.cssText =
@@ -74,7 +74,7 @@
       'We use strictly necessary cookies to run the site. With your consent we also use ' +
       'analytics and marketing cookies to understand how the site is used. ' +
       'You can change your choice at any time from the Cookie settings link in the footer. ' +
-      '<a href="' + POLICY_URL + '" style="color:#eea946;text-decoration:underline;">Cookie&nbsp;Policy</a>';
+      '<a href="' + POLICY_URL + '" style="color:#ff5c8a;text-decoration:underline;">Cookie&nbsp;Policy</a>';
 
     var btnWrap = document.createElement('div');
     btnWrap.style.cssText = 'flex-shrink:0;display:flex;gap:0.6rem;flex-wrap:wrap;';
@@ -84,11 +84,11 @@
       b.type = 'button';
       b.textContent = label;
       b.style.cssText =
-        'padding:0.55rem 1.4rem;font-size:0.9rem;font-weight:600;border-radius:0.625rem;' +
+        'padding:0.55rem 1.4rem;font-size:0.9rem;font-weight:600;border-radius:999px;' +
         'cursor:pointer;font-family:inherit;transition:background 0.2s cubic-bezier(0.16,1,0.3,1);' +
-        (primary ? 'background:#E65A38;color:#ffffff;border:none;'
+        (primary ? 'background:#FF0257;color:#ffffff;border:none;'
                  : 'background:transparent;color:#ffffff;border:1px solid rgba(255,255,255,0.45);');
-      b.addEventListener('focus', function () { b.style.boxShadow = '0 0 0 3px rgba(230,90,56,0.45)'; });
+      b.addEventListener('focus', function () { b.style.boxShadow = '0 0 0 3px rgba(255,2,87,0.45)'; });
       b.addEventListener('blur', function () { b.style.boxShadow = 'none'; });
       return b;
     }

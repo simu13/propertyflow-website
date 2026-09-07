@@ -20,9 +20,9 @@
   --nav-mega-border: #26262b;
   --nav-mega-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
   --nav-backdrop: rgba(0, 0, 0, 0.55);
-  --nav-signup-bg: #f0f0f5;
-  --nav-signup-text: #0c0c0f;
-  --nav-signup-hover: #ffffff;
+  --nav-signup-bg: #FF0257;
+  --nav-signup-text: #ffffff;
+  --nav-signup-hover: #d90048;
   --nav-mobile-bg: rgba(12, 12, 15, 0.98);
   --nav-hover-bg: rgba(255, 255, 255, 0.06);
   --foot-bg: #131316;
@@ -44,7 +44,7 @@
   --nav-backdrop: rgba(20, 26, 35, 0.28);
   --nav-signup-bg: #141a23;
   --nav-signup-text: #ffffff;
-  --nav-signup-hover: #E65A38;
+  --nav-signup-hover: #FF0257;
   --nav-mobile-bg: rgba(255, 255, 255, 0.98);
   --nav-hover-bg: rgba(20, 26, 35, 0.05);
   --foot-bg: #f5f5f7;
@@ -58,7 +58,7 @@
 .hd-nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
+  z-index: 10000; /* above the cookie banner so the open mobile menu is never covered */
   background: var(--nav-bg);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
@@ -139,7 +139,7 @@
 .hd-nav__dropdown.is-open .hd-nav__mega { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
 .hd-nav__mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 56px; row-gap: 28px; }
 .hd-nav__mega-item { display: block; text-decoration: none; border-radius: 10px; }
-.hd-nav__mega-item:hover .hd-nav__mega-title { color: #E65A38; }
+.hd-nav__mega-item:hover .hd-nav__mega-title { color: #FF0257; }
 .hd-nav__mega-title { display: block; font-weight: 600; font-size: 15px; color: var(--nav-text); margin-bottom: 4px; transition: color 0.15s; }
 .hd-nav__mega-desc { display: block; font-size: 12.5px; line-height: 1.4; color: var(--nav-dim); }
 .hd-nav__mega--solution { width: min(760px, calc(100% - 56px)); }
@@ -167,10 +167,11 @@
   display: none;
   flex-direction: column;
   gap: 2px;
-  padding: 8px 20px 20px;
+  padding: 8px 20px calc(24px + env(safe-area-inset-bottom, 0px));
   background: var(--nav-mobile-bg);
   border-bottom: 1px solid var(--nav-border);
   max-height: calc(100vh - 64px);
+  max-height: calc(100dvh - 64px); /* phones: exclude the browser chrome so the last item stays reachable */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -236,3 +237,27 @@
   .hd-footer .hd-wrap { padding: 0 20px; }
   .hd-footer__top { gap: 36px; }
 }
+
+/* ==========================================================================
+   Dark base for the former light pages (Sept 2026): one palette site-wide.
+   Page #0c0c0f, raised #131316, panel #1a1a1e, border #26262b; text #f0f0f5 / #a0a0aa; accent #FF0257.
+   ========================================================================== */
+body.ds-page { background: #0c0c0f; color: #f0f0f5; }
+body.ds-page main { background: transparent; }
+.ds-section--alt, .ds-section--cream { background: #101014; }
+.ds-cta-band--cream, .ds-cta-band { background: #131316; border: 1px solid #26262b; }
+.ds-cta-band--dark, .ds-section--dark { background: #131316; }
+.ds-legal-wrap, .ds-legal-wrap .ds-prose-section { color: #d9d9e0; }
+.ds-legal-wrap .ds-prose, .ds-legal-wrap .ds-prose-section p, .ds-legal-wrap li { font-size: 17px; line-height: 1.7; max-width: 70ch; }
+/* Primary action: pink filled pill everywhere; secondary stays outline */
+.ds-cta--dark, .ds-cta--white, .ds-tier__btn--dark, .ds-btn-primary, .pf-wwlf-cta, .ntps-cta {
+  background: #FF0257 !important; color: #ffffff !important; border-color: transparent !important;
+}
+.ds-cta--dark:hover, .ds-cta--white:hover, .ds-tier__btn--dark:hover, .ds-btn-primary:hover { background: #d90048 !important; color: #ffffff !important; }
+.ds-cta--dark .ds-cta__orb, .ds-cta--white .ds-cta__orb { background: rgba(255, 255, 255, 0.18) !important; color: #ffffff !important; }
+.ds-cta--dark .ds-cta__arrow, .ds-cta--white .ds-cta__arrow { color: #ffffff !important; stroke: #ffffff; }
+.ds-btn-ghost, .ds-btn-white, .ds-btn-ghost-white { background: transparent !important; color: #f0f0f5 !important; border: 1px solid rgba(255, 255, 255, 0.28) !important; }
+.ds-btn-ghost:hover, .ds-btn-white:hover, .ds-btn-ghost-white:hover { border-color: rgba(255, 255, 255, 0.6) !important; }
+/* Selection + focus ring in brand pink */
+::selection { background: rgba(255, 2, 87, 0.35); color: #ffffff; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #FF0257; outline-offset: 2px; }
