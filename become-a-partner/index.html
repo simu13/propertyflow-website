@@ -47,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=1">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=2">
     <link rel="stylesheet" href="/css/home-dark.css?v=6">
     <link rel="stylesheet" href="/css/partner-platform-dark.css?v=2">
     <style>
@@ -56,8 +56,18 @@
       body.hd-page .pp-steps .pp-text-card { justify-content: flex-start; min-height: 200px; padding: 20px 16px; }
       body.hd-page .pp-lede a, body.hd-page .hd-faq__note a, body.hd-page .hd-cta2__footnote a { color: var(--text-primary); text-decoration: underline; text-underline-offset: 3px; }
       body.hd-page .pp-lede--links { margin-top: 28px; }
+      /* Guest-communication bubble: centre it in the visible photo area (above the caption bar), not the whole card */
+      @media (min-width: 901px) { body.hd-page .pp-widget--bubble { top: 27% !important; height: auto !important; } }
+      /* Keep a clear gap between floating widgets and the caption below on narrow screens */
+      @media (max-width: 900px) { body.hd-page .pp-widget:not(.pp-widget--bubble) { top: 6% !important; } body.hd-page .pp-widget--bubble { top: 28% !important; } }
       @media (max-width: 900px) { body.hd-page .pp-steps { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 560px) { body.hd-page .pp-steps { grid-template-columns: 1fr; } }
+      @media (max-width: 560px) { body.hd-page .pp-steps { grid-template-columns: 1fr; } body.hd-page .pp-steps .pp-text-card { min-height: 0; } }
+      /* Stacked capability row on narrow screens: the filler photo card had flex-basis 0 in the column direction and collapsed to a 1px sliver */
+      @media (max-width: 900px) {
+        body.hd-page .pp-cap-grid__row2 .pp-photo-card--filler { flex: none; aspect-ratio: auto; }
+        body.hd-page .pp-cap-grid__row2 .pp-photo-card--filler > img { aspect-ratio: 572 / 277; object-fit: cover; }
+        body.hd-page .pp-cap-grid__row2 .pp-text-card { flex: none; }
+      }
     </style>
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <script type="application/ld+json">

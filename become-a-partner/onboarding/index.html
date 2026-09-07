@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home-ds.css?v=13">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=1">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=2">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <style>
       .pf-pink-orb{background:linear-gradient(135deg,#FF5A5F,#E61E4D)!important;animation:pf-pink-orb-pulse 2.8s ease-out infinite;}
@@ -60,7 +60,13 @@
       .ds-onb-row__label{font-size:0.9375rem;font-weight:700;color:#FF385C;}
       .ds-onb-row h3{margin:0;font-size:1.3125rem;font-weight:600;letter-spacing:-0.03em;color:var(--ds-ink);}
       .ds-onb-row p{margin:0.5rem 0 0;font-size:1rem;line-height:1.6;color:#6a6a6a;}
-      @media (max-width:600px){.ds-onb-row{grid-template-columns:1fr;gap:0.375rem;}}
+      .ds-onb-hero{max-width:56.25rem;padding-top:5.5rem;padding-bottom:0;}
+      .ds-onb-hero__h1{margin:1.125rem 0 0;font-size:clamp(2.375rem,4.4vw,3.5rem);font-weight:700;line-height:1.05;letter-spacing:-0.0425em;color:var(--ds-ink);text-wrap:balance;}
+      .ds-onb-steps{max-width:56.25rem;padding-top:3.5rem;padding-bottom:0;}
+      .ds-onb-close{max-width:56.25rem;padding-top:4.5rem;padding-bottom:clamp(4.5rem,9vw,6rem);}
+      .ds-onb-band{text-align:center;padding:clamp(2.75rem,8vw,4rem) clamp(1.25rem,6vw,3rem);}
+      .ds-onb-band .ds-cta{max-width:100%;}
+      @media (max-width:600px){.ds-onb-row{grid-template-columns:1fr;gap:0.375rem;padding:1.5rem 0;}.ds-onb-hero{padding-top:3rem;}.ds-onb-steps{padding-top:2.75rem;}.ds-onb-close{padding-top:3.5rem;}}
     </style>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -190,12 +196,12 @@
     </nav>
     <div class="ds-nav-spacer" aria-hidden="true"></div>
 <main>
-    <section class="ds-section" style="max-width:53.75rem;padding-top:5.5rem;">
+    <section class="ds-section ds-onb-hero">
         <p style="margin:0;font-size:0.75rem;font-weight:600;letter-spacing:0.0375em;text-transform:uppercase;color:#FF385C;">Getting set up</p>
-        <h1 style="margin:1.125rem 0 0;font-size:clamp(2.375rem,4.4vw,3.5rem);font-weight:700;line-height:1.05;letter-spacing:-0.0425em;color:var(--ds-ink);">From application to your first introduction.</h1>
+        <h1 class="ds-onb-hero__h1">From application to your first introduction.</h1>
         <p style="margin:1.375rem 0 0;font-size:1.1875rem;line-height:1.6;color:#5c5a55;max-width:35rem;">Seven steps, one named Portfolio Manager from day one. Here is how the first weeks go.</p>
     </section>
-    <section class="ds-section" style="max-width:56.25rem;padding-top:4rem;">
+    <section class="ds-section ds-onb-steps">
         <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">The seven steps</h2>
         <div class="ds-onb-list">
             <div class="ds-onb-row">
@@ -229,9 +235,9 @@
         </div>
         <p style="margin:2.5rem 0 0;font-size:1.0625rem;line-height:1.6;color:#5c5a55;max-width:40rem;">You trade under your own name and keep the relationship; PropertyFlow is the contracting party and licence holder for every property. Once accepted, you earn 50% of PropertyFlow's management fee, excluding VAT, on every property you introduce, paid monthly on a self-billed statement.</p>
     </section>
-    <section class="ds-section" style="max-width:56.25rem;padding-top:7.5rem;margin-bottom:7.5rem;">
-        <div class="ds-cta-band ds-cta-band--cream" style="text-align:center;padding:4rem 3rem;">
-            <h2 style="margin:0 auto;max-width:31.25rem;">Your named Portfolio Manager runs it from day one.</h2>
+    <section class="ds-section ds-onb-close">
+        <div class="ds-cta-band ds-cta-band--cream ds-onb-band">
+            <h2 style="margin:0 auto;max-width:31.25rem;text-wrap:balance;">Your named Portfolio Manager runs it from day one.</h2>
             <div class="ds-cta-band__actions" style="margin-top:1.75rem;justify-content:center;">
                 <a href="/become-a-partner/apply/" class="ds-cta ds-cta--dark">Apply to the Partner Programme<span class="ds-cta__orb pf-pink-orb"><svg class="ds-cta__arrow ds-cta__arrow--main" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><svg class="ds-cta__arrow ds-cta__arrow--alt" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
             </div>

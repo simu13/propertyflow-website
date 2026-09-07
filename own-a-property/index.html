@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home-ds.css?v=13">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=1">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=2">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <style>
       /* Own a property: report form and page-only helpers */
@@ -83,8 +83,30 @@
       .pf-two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
       .pf-legal-links{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.75rem;font-size:0.9375rem;}
       .pf-legal-links a{color:var(--ds-ink);font-weight:600;}
+      /* Hero + CTA band buttons: no arrow orb on this page, so give them even padding to match the form button */
+      .ds-phero-split__actions .ds-cta,.ds-cta-band__actions .ds-cta{padding:0.9375rem 1.625rem;}
+      /* Ghost button sits on a light hero here, so use the dark outline treatment */
+      .ds-phero-split__actions .ds-btn-ghost{color:var(--ds-ink);background:transparent;border-color:rgba(17,17,17,0.18);backdrop-filter:none;}
+      .ds-phero-split__actions .ds-btn-ghost:hover{color:var(--ds-ink);background:rgba(17,17,17,0.04);}
+      .ds-cta-band h2{text-wrap:balance;}
+      .pf-dark-band{border-radius:24px;padding:clamp(1.5rem,5vw,2.75rem);}
       @media (max-width: 900px){.pf-two{grid-template-columns:1fr;}}
-      @media (max-width: 720px){.pf-form{grid-template-columns:1fr;}}
+      @media (max-width: 720px){
+        .pf-form{grid-template-columns:1fr;}
+        .ds-cta-band__actions .ds-cta{padding:0.875rem 1.125rem;white-space:nowrap;font-size:0.9rem;}
+        /* Comparison table stacks into one card per row so the short-let column is not hidden off-screen */
+        .ds-table-wrap{overflow:visible;}
+        .ds-table{min-width:0;display:block;}
+        .ds-table thead{display:none;}
+        .ds-table tbody{display:flex;flex-direction:column;gap:0.75rem;}
+        .ds-table tr{display:block;border:1px solid var(--ds-border);border-radius:16px;overflow:hidden;background:#fff;}
+        .ds-table tr.ds-table__row--alt{background:#fff;}
+        .ds-table td{display:block;border-bottom:0;}
+        .ds-table td.ds-table__label{width:auto;padding:1rem 1.125rem 0.25rem;font-size:1rem;}
+        .ds-table td.ds-table__cell{padding:0.625rem 1.125rem;}
+        .ds-table td.ds-table__cell:last-child{padding-bottom:1.125rem;}
+        .ds-table td.ds-table__cell::before{content:attr(data-col);display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--ds-orange);margin-bottom:0.2rem;}
+      }
     </style>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -432,12 +454,12 @@
                 <tr><th class="ds-table__label" scope="col"><span class="sr-only">Aspect</span></th><th class="ds-table__label" scope="col">Long let</th><th class="ds-table__label" scope="col">Short let with a PropertyFlow Partner</th></tr>
             </thead>
             <tbody>
-                <tr><td class="ds-table__label">Income</td><td class="ds-table__cell">One rent, fixed for the term of the tenancy. Steady, and set once, so it does not move with demand.</td><td class="ds-table__cell">Many stays, priced night by night with AI Cognito Pricing. Income follows demand and the season, so busy months and quiet months both show up.</td></tr>
-                <tr class="ds-table__row--alt"><td class="ds-table__label">Costs</td><td class="ds-table__cell">The tenant usually pays utilities and council tax. Letting agent fees, referencing and any void between tenancies sit with you.</td><td class="ds-table__cell">You pay utilities, broadband, cleaning, linen and consumables. Cleaning and maintenance are charged at cost with no mark-up. The management fee is agreed per property before you sign.</td></tr>
-                <tr><td class="ds-table__label">Getting the property back</td><td class="ds-table__cell">Tenancy law applies: notice periods, deposit rules and, if it comes to it, a court process before you can take possession.</td><td class="ds-table__cell">No tenancy, so no possession process. Your Landlord Agreement sets out the notice period for ending the arrangement and what happens to bookings already made.</td></tr>
-                <tr class="ds-table__row--alt"><td class="ds-table__label">Rules</td><td class="ds-table__cell">Landlord registration where the nation requires it, deposit protection, gas and electrical safety, an EPC and right-to-rent checks in England.</td><td class="ds-table__cell">A short-term let licence in Scotland, Tourism NI certification in Northern Ireland, registration in Wales from October 2026, a registration scheme planned for England and a 90-night limit in London. Tourist tax where a council levies one. On a Partner property PropertyFlow applies for and holds the licence or registration where the law requires one.</td></tr>
-                <tr><td class="ds-table__label">Furnishing and wear</td><td class="ds-table__cell">Often let unfurnished or part-furnished. Wear is spread over years and checked at the end of the tenancy.</td><td class="ds-table__cell">Fully furnished and equipped to the standard you choose. Cleaned and checked after every stay. More frequent wear on soft furnishings and kitchenware.</td></tr>
-                <tr class="ds-table__row--alt"><td class="ds-table__label">Your involvement</td><td class="ds-table__cell">Low once a tenant is in. Repairs and compliance renewals remain your responsibility, or your agent's.</td><td class="ds-table__cell">Low. Your Partner is your local contact, a named Portfolio Manager runs the day-to-day, the back office looks after guests and you get one itemised statement a month.</td></tr>
+                <tr><td class="ds-table__label">Income</td><td class="ds-table__cell" data-col="Long let">One rent, fixed for the term of the tenancy. Steady, and set once, so it does not move with demand.</td><td class="ds-table__cell" data-col="Short let with a PropertyFlow Partner">Many stays, priced night by night with AI Cognito Pricing. Income follows demand and the season, so busy months and quiet months both show up.</td></tr>
+                <tr class="ds-table__row--alt"><td class="ds-table__label">Costs</td><td class="ds-table__cell" data-col="Long let">The tenant usually pays utilities and council tax. Letting agent fees, referencing and any void between tenancies sit with you.</td><td class="ds-table__cell" data-col="Short let with a PropertyFlow Partner">You pay utilities, broadband, cleaning, linen and consumables. Cleaning and maintenance are charged at cost with no mark-up. The management fee is agreed per property before you sign.</td></tr>
+                <tr><td class="ds-table__label">Getting the property back</td><td class="ds-table__cell" data-col="Long let">Tenancy law applies: notice periods, deposit rules and, if it comes to it, a court process before you can take possession.</td><td class="ds-table__cell" data-col="Short let with a PropertyFlow Partner">No tenancy, so no possession process. Your Landlord Agreement sets out the notice period for ending the arrangement and what happens to bookings already made.</td></tr>
+                <tr class="ds-table__row--alt"><td class="ds-table__label">Rules</td><td class="ds-table__cell" data-col="Long let">Landlord registration where the nation requires it, deposit protection, gas and electrical safety, an EPC and right-to-rent checks in England.</td><td class="ds-table__cell" data-col="Short let with a PropertyFlow Partner">A short-term let licence in Scotland, Tourism NI certification in Northern Ireland, registration in Wales from October 2026, a registration scheme planned for England and a 90-night limit in London. Tourist tax where a council levies one. On a Partner property PropertyFlow applies for and holds the licence or registration where the law requires one.</td></tr>
+                <tr><td class="ds-table__label">Furnishing and wear</td><td class="ds-table__cell" data-col="Long let">Often let unfurnished or part-furnished. Wear is spread over years and checked at the end of the tenancy.</td><td class="ds-table__cell" data-col="Short let with a PropertyFlow Partner">Fully furnished and equipped to the standard you choose. Cleaned and checked after every stay. More frequent wear on soft furnishings and kitchenware.</td></tr>
+                <tr class="ds-table__row--alt"><td class="ds-table__label">Your involvement</td><td class="ds-table__cell" data-col="Long let">Low once a tenant is in. Repairs and compliance renewals remain your responsibility, or your agent's.</td><td class="ds-table__cell" data-col="Short let with a PropertyFlow Partner">Low. Your Partner is your local contact, a named Portfolio Manager runs the day-to-day, the back office looks after guests and you get one itemised statement a month.</td></tr>
             </tbody>
         </table>
         </div>
@@ -462,7 +484,7 @@
 
     <!-- ROUTING AND OVERSEAS OWNERS -->
     <section class="ds-section">
-        <div class="ds-section--dark" style="border-radius:24px;padding:2.75rem;">
+        <div class="ds-section--dark pf-dark-band">
             <div class="ds-section__inner pf-two" style="padding:0;">
                 <div>
                     <h3 style="margin:0 0 0.75rem;font-size:1.625rem;font-weight:600;letter-spacing:-0.03em;">Every enquiry goes to the Partner for that area.</h3>

@@ -337,3 +337,71 @@ body.hd-page .aip-chart-card__foot-uplift { display: flex; align-items: center; 
 body.hd-page .aip-chart-card__foot-uplift strong { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 13px; color: var(--text-primary); }
 body.hd-page .aip-chart-card__foot-uplift span.muted { font-size: 11px; color: #454545; }
 
+
+/* ---------- Mobile polish (visual QA) ---------- */
+
+/* Two-line headings: balance each line so a single word is never left orphaned. */
+body.hd-page .aip-hero__heading span,
+body.hd-page .aip-h2 span { text-wrap: balance; }
+
+/* Hero mockup: container-query units collapse to ~3px type on phones. Below 700px the
+   panel is already single-column, so switch its type and spacing to fixed pixel sizes. */
+@media (max-width: 700px) {
+  body.hd-page .aip-window { border-radius: 14px; }
+  body.hd-page .aip-window__chrome { padding: 10px 14px; }
+  body.hd-page .aip-window__dots { gap: 6px; }
+  body.hd-page .aip-window__dot { width: 9px; height: 9px; }
+  body.hd-page .aip-window__status { gap: 6px; }
+  body.hd-page .aip-window__status-dot { width: 6px; height: 6px; }
+  body.hd-page .aip-window__status span { font-size: 11px; }
+
+  body.hd-page .aip-panel { margin: 12px; border-radius: 12px; }
+  body.hd-page .aip-panel__head { padding: 10px 12px; flex-wrap: wrap; gap: 8px 12px; }
+  body.hd-page .aip-panel__tabs { gap: 2px; flex-wrap: wrap; }
+  body.hd-page .aip-panel__tab { font-size: 11px; padding: 5px 9px; border-radius: 7px; }
+  body.hd-page .aip-panel__badge { gap: 6px; }
+  body.hd-page .aip-panel__badge-dot { width: 6px; height: 6px; }
+  body.hd-page .aip-panel__badge span { font-size: 11px; }
+
+  body.hd-page .aip-booking,
+  body.hd-page .aip-week { padding: 16px; }
+  body.hd-page .aip-booking__top { gap: 10px; flex-wrap: wrap; }
+  body.hd-page .aip-booking__property { font-size: 10px; }
+  body.hd-page .aip-booking__date { font-size: 13px; margin-top: 2px; }
+  body.hd-page .aip-booking__badge { gap: 6px; padding: 5px 10px; }
+  body.hd-page .aip-booking__badge-dot { width: 6px; height: 6px; }
+  body.hd-page .aip-booking__badge span { font-size: 11px; }
+  body.hd-page .aip-booking__price-row { gap: 8px; margin-top: 14px; }
+  body.hd-page .aip-booking__price { font-size: 40px; }
+  body.hd-page .aip-booking__price-sub { font-size: 13px; }
+  body.hd-page .aip-booking__opportunity { gap: 10px; margin-top: 4px; }
+  body.hd-page .aip-booking__opportunity span:first-child { font-size: 13px; }
+  body.hd-page .aip-booking__rate-pill { font-size: 11px; padding: 2px 8px; border-radius: 4px; }
+  body.hd-page .aip-booking__confidence { margin-top: 16px; }
+  body.hd-page .aip-booking__confidence-row span:first-child,
+  body.hd-page .aip-booking__confidence-row span:last-child { font-size: 11px; }
+  body.hd-page .aip-booking__confidence-bar { height: 4px; margin-top: 6px; }
+  body.hd-page .aip-booking__events { margin-top: 18px; }
+  body.hd-page .aip-booking__events-label { font-size: 9px; }
+  body.hd-page .aip-booking__event { gap: 10px; margin-top: 10px; }
+  body.hd-page .aip-booking__event-dot { width: 6px; height: 6px; }
+  body.hd-page .aip-booking__event-label { font-size: 11px; }
+  body.hd-page .aip-booking__event-bar { width: 56px; height: 3px; }
+  body.hd-page .aip-booking__event-value { width: 40px; font-size: 11px; }
+
+  body.hd-page .aip-week__label { font-size: 9px; margin-bottom: 10px; }
+  body.hd-page .aip-week__row { gap: 10px; padding: 8px 10px; border-radius: 9px; margin-top: 2px; }
+  body.hd-page .aip-week__dot { width: 6px; height: 6px; }
+  body.hd-page .aip-week__day { width: 52px; font-size: 11px; }
+  body.hd-page .aip-week__bar { height: 3px; }
+  body.hd-page .aip-week__price { width: 44px; font-size: 12px; }
+  body.hd-page .aip-week__projected { margin-top: 14px; border-radius: 10px; padding: 14px; }
+  body.hd-page .aip-week__projected-label { font-size: 11px; }
+  body.hd-page .aip-week__projected-value { font-size: 22px; margin-top: 4px; }
+  body.hd-page .aip-week__projected-delta { font-size: 11px; margin-top: 4px; }
+}
+
+/* Final CTA heading: keep "Better pricing shouldn't" on one line on narrow phones. */
+@media (max-width: 420px) {
+  body.hd-page .hd-cta2__heading { font-size: 27px; }
+}

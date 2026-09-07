@@ -88,7 +88,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Outfit:wght@500&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=1">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=2">
     <link rel="stylesheet" href="/css/home-dark.css?v=6">
     <style>
       /* Home-only additions: app block, PropertyFlow channels block, Partner steps */
@@ -109,6 +109,24 @@
       body.hd-page .hd-partner__steps-title { font-family: "Krub", sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--link-muted); margin: 0 0 12px; }
       body.hd-page .hd-partner__expand { font-family: "Krub", sans-serif; font-size: 14px; line-height: 1.5; color: var(--link-muted); max-width: 420px; margin: 20px 0 0; }
       @media (max-width: 900px) { body.hd-page .hd-channels { grid-template-columns: 1fr; gap: 18px; } }
+
+      /* Visual QA fixes (home only) */
+      /* Logo strip has 7 logos in a 4-col (2-col on mobile) grid: fill the empty slot so it does not read as a broken block */
+      body.hd-page .logo-strip__grid::after { content: ""; display: block; background: var(--bg); }
+      /* Partner grid: 1fr resolves to minmax(auto,1fr), so the nowrap pill forced the column past the wrap padding on narrow screens */
+      body.hd-page .hd-partner__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      @media (max-width: 900px) { body.hd-page .hd-partner__grid { grid-template-columns: minmax(0, 1fr); } }
+      @media (max-width: 480px) {
+        body.hd-page .hd-partner .hd-pill--light { white-space: normal; text-align: center; font-size: 16px; }
+      }
+      @media (max-width: 720px) {
+        /* breathing room under the fixed 64px nav: the H1 was touching it */
+        body.hd-page .herobar { padding-top: 112px; }
+        /* the desktop line break produced a 4-line ragged centred heading on phones */
+        body.hd-page .hd-compare .hd-h2 br { content: ""; }
+        body.hd-page .hd-compare .hd-h2 br::after { content: " "; }
+        body.hd-page .hd-compare .hd-h2, body.hd-page .hd-pricing__head .hd-h2, body.hd-page .hd-cta2__heading { text-wrap: balance; }
+      }
     </style>
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
 

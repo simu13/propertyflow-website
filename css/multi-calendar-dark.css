@@ -129,3 +129,15 @@ body.hd-page section.hd-stats .hd-stats__label {
   color: #515159;
 }
 
+
+/* Mobile: keep the 48px stat values inside the 2-column grid (prevents page-wide horizontal overflow) */
+body.hd-page section.hd-stats .hd-stats__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 720px) {
+  body.hd-page section.hd-stats .hd-stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.hd-page section.hd-stats .hd-stats__cell { padding: 28px 16px; min-width: 0; }
+  body.hd-page section.hd-stats .hd-stats__value { font-size: clamp(30px, 9.5vw, 48px); line-height: 1.1; letter-spacing: -0.02em; }
+}
+@media (max-width: 640px) {
+  body.hd-page .mc-hero { padding: 128px 0 72px; }
+  body.hd-page .mc-hero__visual { margin-top: 56px; border-radius: 12px; }
+}
