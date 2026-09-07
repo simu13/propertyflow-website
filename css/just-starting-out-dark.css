@@ -99,7 +99,8 @@ body.hd-page .jso-feature__desc { font-family: "Krub", sans-serif; font-size: 14
 
 @media (max-width: 640px) {
   body.hd-page .jso-features { grid-template-columns: 1fr; }
-  body.hd-page .jso-feature { border-right: none; }
+  body.hd-page .jso-feature:not(:last-child) { border-right: none; border-bottom: 0.8px solid var(--border-subtle); }
+  body.hd-page .jso-feature:last-child { border-right: none; border-bottom: none; }
 }
 
 /* ---------- Section 04: before/after comparison ---------- */

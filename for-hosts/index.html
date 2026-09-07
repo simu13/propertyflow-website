@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home-ds.css?v=13">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=1">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=2">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -278,7 +278,7 @@
                         <svg class="ds-cta__arrow ds-cta__arrow--main" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
                     </span>
                 </a>
-                <a href="#pricing" class="ds-btn-ghost" style="border:1px solid #ddd;border-radius:12px;padding:0.9375rem 1.625rem;text-decoration:none;color:var(--ds-ink);font-weight:600;">See pricing</a>
+                <a href="#pricing" class="ds-btn-ghost" style="border:1px solid rgba(17,17,17,0.14);border-radius:9999px;padding:0.8125rem 1.5rem;text-decoration:none;color:var(--ds-ink);font-weight:600;background:transparent;">See pricing</a>
             </div>
         </div>
         <div class="ds-phero-split__media">
@@ -303,6 +303,21 @@
             .pfh-foot em{font-style:normal;font-size:1.65cqw;font-weight:600;color:#8a887f;}
             .pfh-card--dark .pfh-foot em{color:rgba(255,255,255,.6);}
             .pfh-or{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);width:6cqw;height:6cqw;border-radius:999px;background:#fff;border:1px solid rgba(17,17,17,.1);box-shadow:0 2cqw 5cqw -2cqw rgba(25,25,25,.4);display:flex;align-items:center;justify-content:center;font-size:1.8cqw;font-weight:800;color:#8a887f;z-index:2;}
+            /* Narrow containers (phones): stack the two cards and scale type up so it stays legible */
+            @container (max-width:560px){
+                .pfh{padding:13.5cqw 0 2cqw;}
+                .pfh-pill{display:block;width:max-content;max-width:92%;white-space:normal;text-align:center;font-size:3.1cqw;padding:2.2cqw 4cqw;line-height:1.4;border-radius:5cqw;}
+                .pfh-grid{grid-template-columns:1fr;gap:4cqw;}
+                .pfh-card{border-radius:4.5cqw;padding:5cqw 5cqw 4.5cqw;}
+                .pfh-tag{font-size:2.6cqw;padding:1.1cqw 2.6cqw;margin-bottom:3cqw;}
+                .pfh-card h4{font-size:4.6cqw;margin-bottom:1.4cqw;}
+                .pfh-card p{font-size:3.3cqw;margin-bottom:3cqw;}
+                .pfh-li{font-size:3.4cqw;gap:2.2cqw;padding:2.3cqw 0;}
+                .pfh-li svg{width:3.6cqw;height:3.6cqw;}
+                .pfh-foot{font-size:3.6cqw;margin-top:3.2cqw;gap:1.6cqw;}
+                .pfh-foot em{font-size:3cqw;}
+                .pfh-or{display:none;}
+            }
         </style>
         <div class="pfh-scope"><div class="pfh" aria-hidden="true">
             <div class="pfh-pill">⌂ Leith Walk Flat · <b>the same platform underneath, either way</b></div>

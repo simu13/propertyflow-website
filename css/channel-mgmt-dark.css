@@ -315,8 +315,11 @@ body.hd-page .cm-channels__footnote { text-align: center; font-family: "Krub", s
   body.hd-page .cm-channel { height: 114px; }
   body.hd-page .cm-channel__logo { height: 26px; max-width: 80%; }
 }
+/* 7 logos in a 4-col / 2-col grid: let the last tile fill the row so no empty slot shows */
+body.hd-page .cm-channel:last-child { grid-column: span 2; }
 @media (max-width: 480px) {
   body.hd-page .cm-channels__grid { grid-template-columns: 1fr; }
+  body.hd-page .cm-channel:last-child { grid-column: auto; }
 }
 
 
@@ -357,4 +360,11 @@ body.hd-page section.hd-stats .hd-stats__label {
 @media (max-width: 900px) {
   body.hd-page .cm-faq__grid { flex-direction: column; gap: 32px; }
   body.hd-page .cm-faq__head { width: 100%; }
+}
+
+/* Stats: 48px figures overflow a 2-col grid at 390px; shrink and allow columns to compress */
+@media (max-width: 720px) {
+  body.hd-page section.hd-stats .hd-stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.hd-page section.hd-stats .hd-stats__cell { min-width: 0; padding: 28px 12px; }
+  body.hd-page section.hd-stats .hd-stats__value { font-size: 36px; line-height: 40px; }
 }

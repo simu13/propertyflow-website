@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home-ds.css?v=13">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=1">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=2">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <style>
       .pf-pink-orb{background:linear-gradient(135deg,#FF5A5F,#E61E4D)!important;animation:pf-pink-orb-pulse 2.8s ease-out infinite;}
@@ -69,7 +69,9 @@
       .ds-ytb-contrast__label--on{color:#FF385C;}
       .ds-ytb-contrast__cell h2{margin:0.625rem 0 0;font-size:1.25rem;font-weight:600;letter-spacing:-0.025em;color:var(--ds-ink);}
       .ds-ytb-contrast__cell p{margin:0.625rem 0 0;font-size:0.9375rem;line-height:1.6;color:#6a6a6a;}
-      @media (max-width:700px){.ds-ytb-contrast{grid-template-columns:1fr;}}
+      .ds-ytb-hero__title{text-wrap:balance;}
+      @media (max-width:700px){.ds-ytb-contrast{grid-template-columns:1fr;gap:1rem;}.ds-ytb-contrast__cell{padding:1.5rem 1.375rem;}}
+      @media (max-width:640px){.ds-ytb-hero{height:78vh;min-height:32rem;}.ds-ytb-hero__lead{font-size:1.0625rem;}.ds-ytb-cta.ds-cta-band{padding:3rem 1.25rem!important;}.ds-ytb-cta .ds-cta{white-space:nowrap;}}
     </style>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -219,8 +221,8 @@
             <div class="ds-ytb-contrast__cell"><div class="ds-ytb-contrast__label ds-ytb-contrast__label--on">Still yours</div><h2>Your name, your landlords</h2><p>You trade under your own name and keep the relationship; PropertyFlow is the contracting party for every property you introduce and holds the licence where one is required. See everything on the platform whenever you want.</p></div>
         </div>
     </section>
-    <section class="ds-section" style="max-width:56.25rem;padding-top:7.5rem;margin-bottom:7.5rem;">
-        <div class="ds-cta-band ds-cta-band--cream" style="text-align:center;padding:4rem 3rem;">
+    <section class="ds-section" style="max-width:56.25rem;padding-top:1rem;margin-bottom:2rem;">
+        <div class="ds-cta-band ds-cta-band--cream ds-ytb-cta" style="text-align:center;padding:4rem 3rem;">
             <h2 style="margin:0 auto;max-width:31.25rem;">Spend your time winning landlords.</h2>
             <div class="ds-cta-band__actions" style="margin-top:1.75rem;justify-content:center;">
                 <a href="/become-a-partner/apply/" class="ds-cta ds-cta--dark">Apply to the Partner Programme<span class="ds-cta__orb pf-pink-orb"><svg class="ds-cta__arrow ds-cta__arrow--main" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><svg class="ds-cta__arrow ds-cta__arrow--alt" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>

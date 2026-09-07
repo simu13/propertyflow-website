@@ -49,7 +49,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home-ds.css?v=13">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
-    <link rel="stylesheet" href="/css/pf-nav.css?v=1">
+    <link rel="stylesheet" href="/css/pf-nav.css?v=2">
+    <style>
+        .ntps-panel { background: var(--ds-cream-dark); border: 1px solid var(--ds-border); border-radius: 24px; padding: 3.5rem; }
+        .ntps-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+        .ntps-card { background: #fff; border: 1px solid var(--ds-border); border-radius: 14px; padding: 1.5rem; min-width: 0; }
+        .ntps-cta { text-align: center; padding: 4.5rem 3.5rem; }
+        .ntps-cta > p, .ntps-cta > h2 { text-wrap: balance; }
+        @media (max-width: 1023px) {
+            .ntps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 767px) {
+            .ntps-panel { padding: 2rem 1.5rem; border-radius: 18px; }
+            .ntps-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+            .ntps-cta { padding: 3rem 1.5rem; }
+            .ntps-cta .ds-cta-band__actions { flex-direction: column; align-items: stretch; }
+            .ntps-cta .ds-cta-band__actions > a { justify-content: center; text-align: center; }
+        }
+    </style>
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -209,23 +226,23 @@
         <p style="margin:1.5rem auto 0;font-size:1.1875rem;line-height:1.6;color:#5c5a55;max-width:35rem;">A property management system is the one place your whole let runs from. If you're juggling channels, messages, cleaners and a spreadsheet, the honest answer is probably yes.</p>
     </section>
     <section class="ds-section" style="padding-top:5rem;">
-        <div style="background:var(--ds-cream-dark);border:1px solid var(--ds-border);border-radius:24px;padding:3.5rem;">
+        <div class="ntps-panel">
             <h2 class="ds-section__h2" style="max-width:none;">One login instead of ten.</h2>
             <p style="margin:0.5rem 0 2.25rem;font-size:1rem;line-height:1.6;color:#6a6a6a;max-width:32.5rem;">A PMS pulls the jobs you're doing by hand into a single system.</p>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
-                <div style="background:#fff;border:1px solid var(--ds-border);border-radius:14px;padding:1.5rem;">
+            <div class="ntps-grid">
+                <div class="ntps-card">
                     <div style="font-size:0.9375rem;font-weight:600;color:var(--ds-ink);">Channel manager</div>
                     <div style="font-size:0.8125rem;color:#8a887f;margin-top:0.25rem;">Instead of tabs</div>
                 </div>
-                <div style="background:#fff;border:1px solid var(--ds-border);border-radius:14px;padding:1.5rem;">
+                <div class="ntps-card">
                     <div style="font-size:0.9375rem;font-weight:600;color:var(--ds-ink);">AI Cognito Pricing</div>
                     <div style="font-size:0.8125rem;color:#8a887f;margin-top:0.25rem;">Instead of guessing. On Premium.</div>
                 </div>
-                <div style="background:#fff;border:1px solid var(--ds-border);border-radius:14px;padding:1.5rem;">
+                <div class="ntps-card">
                     <div style="font-size:0.9375rem;font-weight:600;color:var(--ds-ink);">Unified inbox</div>
                     <div style="font-size:0.8125rem;color:#8a887f;margin-top:0.25rem;">Instead of apps</div>
                 </div>
-                <div style="background:#fff;border:1px solid var(--ds-border);border-radius:14px;padding:1.5rem;">
+                <div class="ntps-card">
                     <div style="font-size:0.9375rem;font-weight:600;color:var(--ds-ink);">Document reminders</div>
                     <div style="font-size:0.8125rem;color:#8a887f;margin-top:0.25rem;">Instead of a folder</div>
                 </div>
@@ -250,7 +267,7 @@
         </div>
     </section>
     <section class="ds-section" style="margin-bottom:7.5rem;">
-        <div class="ds-cta-band ds-cta-band--cream" style="text-align:center;padding:4.5rem 3.5rem;">
+        <div class="ds-cta-band ds-cta-band--cream ntps-cta">
             <h2 style="margin:0 auto;max-width:32.5rem;">See it for yourself, free.</h2>
             <p style="margin:1.125rem auto 0;max-width:28.75rem;font-size:1.0625rem;line-height:1.6;color:#5c5a55;">The best way to understand a PMS is to run one property on it.</p>
             <div class="ds-cta-band__actions" style="margin-top:2rem;justify-content:center;">

@@ -96,8 +96,8 @@ body.hd-page .prp-lede { font-family: "Krub", sans-serif; font-size: 17px; line-
 
 /* ---------- Comparison table ---------- */
 
-body.hd-page .prp-table-wrap { margin-top: 56px; overflow-x: auto; }
-body.hd-page .prp-table { width: 100%; min-width: 760px; border-collapse: collapse; border: 0.8px solid #636363; border-radius: 12px; overflow: hidden; }
+body.hd-page .prp-table-wrap { margin-top: 56px; overflow-x: auto; border: 0.8px solid #636363; border-radius: 12px; -webkit-overflow-scrolling: touch; }
+body.hd-page .prp-table { width: 100%; min-width: 760px; border-collapse: collapse; border: none; }
 body.hd-page .prp-table thead th {
   font-family: "Krub", sans-serif; font-weight: 600; font-size: 17px; color: var(--text-primary);
   background: #0f0f11; border-bottom: 0.8px solid #636363; padding: 28px 16px; text-align: center;
@@ -129,6 +129,28 @@ body.hd-page .prp-partner__desc { font-family: "Krub", sans-serif; font-size: 14
 body.hd-page .prp-partner__tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 body.hd-page .prp-partner__tag { background: #070707; border: 0.8px solid #525252; border-radius: 8px; padding: 6px 8px; font-family: "Krub", sans-serif; font-weight: 500; font-size: 15px; color: var(--text-primary); }
 
+/* Sticky feature column so the plan columns can be scrolled on narrow screens without losing the row labels */
+body.hd-page .prp-table th:first-child,
+body.hd-page .prp-table td:first-child { position: sticky; left: 0; z-index: 1; }
+body.hd-page .prp-table thead th:first-child { background: #0f0f11; }
+body.hd-page .prp-table tbody tr:nth-child(odd) td:first-child { background: #0e0e0f; }
+body.hd-page .prp-table tbody tr:nth-child(even) td:first-child { background: #0a0a0b; }
+body.hd-page .prp-table tbody tr.prp-table__group td:first-child { background: #141416; }
+body.hd-page .prp-table tbody tr.prp-table__group td:first-child { position: static; }
+body.hd-page .prp-table__group-label { display: inline-block; position: sticky; left: 16px; }
+@media (max-width: 800px) {
+  body.hd-page .prp-table th:first-child:not([colspan]),
+  body.hd-page .prp-table td:first-child:not([colspan]) { box-shadow: 1px 0 0 #636363; }
+}
+
 @media (max-width: 640px) {
   body.hd-page .prp-partner { padding: 32px 24px; }
+  body.hd-page .prp-partner__top { flex-direction: column; align-items: stretch; }
+  body.hd-page .prp-partner__top .hd-pill { white-space: normal; text-align: center; max-width: 100%; box-sizing: border-box; }
+  body.hd-page .prp-table { min-width: 640px; }
+  body.hd-page .prp-table th:first-child:not([colspan]),
+  body.hd-page .prp-table td:first-child:not([colspan]) { width: 150px; min-width: 150px; max-width: 150px; }
+  body.hd-page .prp-table__group-label { left: 12px; }
+  body.hd-page .prp-table thead th,
+  body.hd-page .prp-table td { padding-left: 12px; padding-right: 12px; }
 }
