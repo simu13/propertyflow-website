@@ -23,21 +23,21 @@
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Calendar | PropertyFlow</title>
-    <meta name="description" content="Every booking, block and gap across every channel and every property in one synced calendar. Free for up to 3 properties on your own channels.">
-    <meta property="og:title" content="Multi-Calendar | PropertyFlow">
-    <meta property="og:description" content="Every booking, block and gap across every channel and every property in one synced calendar. Free for up to 3 properties on your own channels.">
+    <title>Platform | PropertyFlow</title>
+    <meta name="description" content="One platform for UK short-term let hosts: channel manager, multi-calendar, unified inbox, AI Cognito Pricing, turnovers, document reminders, reporting and payouts. Free for up to 3 properties on your own channels.">
+    <meta property="og:title" content="Platform | PropertyFlow">
+    <meta property="og:description" content="One platform for UK short-term let hosts: channel manager, multi-calendar, unified inbox, AI Cognito Pricing, turnovers, document reminders, reporting and payouts. Free for up to 3 properties on your own channels.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.propertyflow.uk/platform/multi-calendar/">
+    <meta property="og:url" content="https://www.propertyflow.uk/platform/">
         <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="canonical" href="https://www.propertyflow.uk/platform/multi-calendar/">
+    <link rel="canonical" href="https://www.propertyflow.uk/platform/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Multi-Calendar | PropertyFlow">
-    <meta name="twitter:description" content="Every booking, block and gap across every channel and every property in one synced calendar. Free for up to 3 properties on your own channels.">
+    <meta name="twitter:title" content="Platform | PropertyFlow">
+    <meta name="twitter:description" content="One platform for UK short-term let hosts: channel manager, multi-calendar, unified inbox, AI Cognito Pricing, turnovers, document reminders, reporting and payouts. Free for up to 3 properties on your own channels.">
     <meta property="og:image" content="https://www.propertyflow.uk/images/og-default.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -48,15 +48,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site-ds.css?v=18">
     <link rel="stylesheet" href="/css/home-dark.css?v=1">
-    <link rel="stylesheet" href="/css/multi-calendar-dark.css?v=2">
     <style>
-      /* Page-local rules: the app block */
-      body.hd-page .pf-app-block { border-top: 0.8px solid var(--border-subtle); }
-      body.hd-page .pf-app-block__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px 48px; flex-wrap: wrap; }
-      body.hd-page .pf-app-block__copy { flex: 1 1 420px; max-width: 640px; }
-      body.hd-page .pf-app-block__badges { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-      body.hd-page .pf-app-block__badges img { display: block; height: 48px; width: auto; }
-      body.hd-page .pf-app-block__badges img.pf-app-block__gp { height: 72px; margin: -12px; }
+      /* Platform hub: hero and feature grid (mirrors the multi-calendar hero and tile styles) */
+      body.hd-page .ph-hero { padding: 160px 0 100px; }
+      body.hd-page .ph-hero__copy { max-width: 800px; }
+      body.hd-page .ph-hero__heading { font-family: "Inter", sans-serif; font-weight: 700; font-size: clamp(34px, 5.6vw, 71.66px); line-height: 1.06; letter-spacing: -0.028em; color: var(--text-primary); margin: 28px 0 0; }
+      body.hd-page .ph-hero__heading span { display: block; }
+      body.hd-page .ph-hero__heading span.muted { color: #87878f; }
+      body.hd-page .ph-hero__desc { font-family: "Krub", sans-serif; font-size: 17px; line-height: 1.65; color: var(--text-secondary); max-width: 620px; margin: 24px 0 0; }
+      body.hd-page .ph-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+      body.hd-page .ph-section-head { max-width: 648px; }
+      body.hd-page .ph-lede { font-family: "Krub", sans-serif; font-size: 17px; line-height: 1.65; color: #b5b5b5; max-width: 648px; margin: 24px 0 0; }
+      body.hd-page .ph-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 0.8px solid var(--border-subtle); border-radius: 12px; overflow: hidden; margin-top: 48px; background: var(--bg); }
+      body.hd-page .ph-card { display: flex; flex-direction: column; padding: 36px 28px; border-right: 0.8px solid var(--border-subtle); border-bottom: 0.8px solid var(--border-subtle); text-decoration: none; color: inherit; transition: background 0.2s ease; }
+      body.hd-page .ph-card:hover, body.hd-page .ph-card:focus-visible { background: var(--sidebar-bg); outline: none; }
+      body.hd-page .ph-card:nth-child(4n) { border-right: none; }
+      body.hd-page .ph-card:nth-last-child(-n+4) { border-bottom: none; }
+      body.hd-page .ph-card__num { font-family: "Krub", sans-serif; font-size: 15px; color: var(--link-muted); margin: 0 0 20px; }
+      body.hd-page .ph-card__title { font-family: "Krub", sans-serif; font-weight: 600; font-size: 20px; color: var(--text-primary); margin: 0 0 8px; }
+      body.hd-page .ph-card__desc { font-family: "Krub", sans-serif; font-size: 14px; line-height: 1.5; color: #b5b5b5; margin: 0; flex: 1; }
+      body.hd-page .ph-card__more { font-family: "Krub", sans-serif; font-size: 14px; color: var(--text-primary); margin: 20px 0 0; }
+      body.hd-page .hd-cta2__desc a { color: var(--text-primary); text-decoration: underline; text-underline-offset: 3px; }
+      @media (max-width: 1024px) {
+        body.hd-page .ph-grid { grid-template-columns: repeat(2, 1fr); }
+        body.hd-page .ph-card { border-right: 0.8px solid var(--border-subtle); border-bottom: 0.8px solid var(--border-subtle); }
+        body.hd-page .ph-card:nth-child(2n) { border-right: none; }
+        body.hd-page .ph-card:nth-last-child(-n+2) { border-bottom: none; }
+      }
+      @media (max-width: 640px) {
+        body.hd-page .ph-grid { grid-template-columns: 1fr; }
+        body.hd-page .ph-card, body.hd-page .ph-card:nth-child(2n), body.hd-page .ph-card:nth-last-child(-n+2) { border-right: none; border-bottom: 0.8px solid var(--border-subtle); }
+        body.hd-page .ph-card:last-child { border-bottom: none; }
+      }
     </style>
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <!-- Schema Markup: BreadcrumbList -->
@@ -66,26 +89,26 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.propertyflow.uk/"},
-        {"@type": "ListItem", "position": 2, "name": "Multi-Calendar", "item": "https://www.propertyflow.uk/platform/multi-calendar/"}
+        {"@type": "ListItem", "position": 2, "name": "Platform", "item": "https://www.propertyflow.uk/platform/"}
       ]
     }
     </script>
-    <!-- Schema Markup: Service -->
+    <!-- Schema Markup: ItemList of platform features -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Multi-Property Calendar for Short-Term Lets",
-      "provider": {
-        "@type": "Organization",
-        "name": "PropertyFlow Technologies Ltd",
-        "url": "https://www.propertyflow.uk"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "United Kingdom"
-      },
-      "description": "A single, always-synced calendar showing every booking, block and gap across every channel and every property in the portfolio."
+      "@type": "ItemList",
+      "name": "PropertyFlow platform features",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Channel Manager", "url": "https://www.propertyflow.uk/platform/channel-management/"},
+        {"@type": "ListItem", "position": 2, "name": "Multi-Calendar", "url": "https://www.propertyflow.uk/platform/multi-calendar/"},
+        {"@type": "ListItem", "position": 3, "name": "Document Reminders", "url": "https://www.propertyflow.uk/platform/compliance/"},
+        {"@type": "ListItem", "position": 4, "name": "AI Cognito Pricing", "url": "https://www.propertyflow.uk/platform/ai-pricing/"},
+        {"@type": "ListItem", "position": 5, "name": "Turnovers & Team", "url": "https://www.propertyflow.uk/platform/turnovers-team/"},
+        {"@type": "ListItem", "position": 6, "name": "Revenue & Reporting", "url": "https://www.propertyflow.uk/platform/revenue-reporting/"},
+        {"@type": "ListItem", "position": 7, "name": "Unified Inbox", "url": "https://www.propertyflow.uk/platform/unified-inbox/"},
+        {"@type": "ListItem", "position": 8, "name": "Financials & Payouts", "url": "https://www.propertyflow.uk/platform/financials/"}
+      ]
     }
     </script>
 
@@ -206,47 +229,77 @@
 <main>
 
     <!-- Hero -->
-    <section class="mc-hero">
+    <section class="ph-hero">
       <div class="hd-wrap">
-        <div class="mc-hero__copy">
-          <div class="hd-label"><span class="hd-label__num">01</span><span class="hd-label__rule"></span><span class="hd-label__text">Multi calendar</span></div>
-          <h1 class="mc-hero__heading"><span>One calendar. Every</span><span class="muted">booking</span></h1>
-          <p class="mc-hero__desc">Bookings from every connected channel come together in one calendar, with availability automatically kept in sync. So you always know what's booked, what's available and what's coming next.</p>
-          <div class="mc-hero__ctas">
-            <a href="https://app.propertyflow.uk/register" class="hd-pill hd-pill--light">Try it free →</a>
-            <a href="#how-it-works" class="hd-pill hd-pill--ghost">See how it works</a>
+        <div class="ph-hero__copy">
+          <div class="hd-label"><span class="hd-label__num">01</span><span class="hd-label__rule"></span><span class="hd-label__text">Platform</span></div>
+          <h1 class="ph-hero__heading"><span>One platform for</span><span class="muted">the whole job.</span></h1>
+          <p class="ph-hero__desc">Bookings, guest messages, pricing, turnovers, documents and money for UK short-term let hosts, in one place. Connect your own channels, or let us list you on PropertyFlow channels. Free for up to 3 properties on your own channels. No setup fees. No lock-in.</p>
+          <div class="ph-hero__ctas">
+            <a href="https://app.propertyflow.uk/register" class="hd-pill hd-pill--light">Get started free →</a>
+            <a href="/pricing/" class="hd-pill hd-pill--ghost">See pricing</a>
           </div>
-        </div>
-        <div class="mc-hero__visual">
-          <img src="/images/design/redesign/multi-calendar/hero-calendar.webp" alt="PropertyFlow booking calendar showing every channel's bookings synced into one property Gantt view">
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section class="hd-section" id="how-it-works">
+    <!-- Feature grid -->
+    <section class="hd-section" id="features">
       <div class="hd-wrap">
-        <div class="mc-section-head">
-          <div class="hd-label"><span class="hd-label__num">02</span><span class="hd-label__rule"></span><span class="hd-label__text">How it works</span></div>
-          <h2 class="mc-h2">One update. Every booking <span class="muted">calendar stays in sync.</span></h2>
-          <p class="mc-lede">Move a booking, block a date or update your availability in PropertyFlow. Your connected calendars update automatically, so you don't have to repeat the same job across every platform.</p>
+        <div class="ph-section-head">
+          <div class="hd-label"><span class="hd-label__num">02</span><span class="hd-label__rule"></span><span class="hd-label__text">What's inside</span></div>
+          <h2 class="hd-h2">Eight tools. <span class="hd-h2--muted-line2">One login.</span></h2>
+          <p class="ph-lede">Everything below is included on every plan, except AI Cognito Pricing, which is on Premium. Pick a feature to see how it works.</p>
         </div>
-        <div class="mc-tiles">
-          <div class="mc-tile">
-            <p class="mc-tile__num">01</p>
-            <h3 class="mc-tile__title">Seamless adjustment</h3>
-            <p class="mc-tile__desc">Need to move a booking or close a few nights? Make the change in PropertyFlow and we'll keep your connected calendars aligned.</p>
-          </div>
-          <div class="mc-tile">
-            <p class="mc-tile__num">02</p>
-            <h3 class="mc-tile__title">Bookings at a glance</h3>
-            <p class="mc-tile__desc">Airbnb, Booking.com, Vrbo, direct bookings and other connected channels are easy to spot, so you always know where each reservation came from.</p>
-          </div>
-          <div class="mc-tile">
-            <p class="mc-tile__num">03</p>
-            <h3 class="mc-tile__title">Customisable viewing</h3>
-            <p class="mc-tile__desc">Switch between day, week and month views to see what's happening across your portfolio without losing track of a single property.</p>
-          </div>
+        <div class="ph-grid">
+          <a href="/platform/channel-management/" class="ph-card">
+            <p class="ph-card__num">01</p>
+            <h3 class="ph-card__title">Channel Manager</h3>
+            <p class="ph-card__desc">Connect your own Airbnb, Booking.com and Vrbo accounts, or let us list you on PropertyFlow channels. One calendar underneath.</p>
+            <p class="ph-card__more">Explore →</p>
+          </a>
+          <a href="/platform/multi-calendar/" class="ph-card">
+            <p class="ph-card__num">02</p>
+            <h3 class="ph-card__title">Multi-Calendar</h3>
+            <p class="ph-card__desc">Every booking, block and gap across every property and channel in a single synced view.</p>
+            <p class="ph-card__more">Explore →</p>
+          </a>
+          <a href="/platform/compliance/" class="ph-card">
+            <p class="ph-card__num">03</p>
+            <h3 class="ph-card__title">Document Reminders</h3>
+            <p class="ph-card__desc">Licences and certificates stored with a renewal date on each, and reminders before expiry. Five UK regimes tracked.</p>
+            <p class="ph-card__more">Explore →</p>
+          </a>
+          <a href="/platform/ai-pricing/" class="ph-card">
+            <p class="ph-card__num">04</p>
+            <h3 class="ph-card__title">AI Cognito Pricing</h3>
+            <p class="ph-card__desc">Nightly rates adjusted for demand, season and local events. Included on Premium.</p>
+            <p class="ph-card__more">Explore →</p>
+          </a>
+          <a href="/platform/turnovers-team/" class="ph-card">
+            <p class="ph-card__num">05</p>
+            <h3 class="ph-card__title">Turnovers &amp; Team</h3>
+            <p class="ph-card__desc">Cleaning and changeover tasks created from bookings and sent to your team the moment guests leave.</p>
+            <p class="ph-card__more">Explore →</p>
+          </a>
+          <a href="/platform/revenue-reporting/" class="ph-card">
+            <p class="ph-card__num">06</p>
+            <h3 class="ph-card__title">Revenue &amp; Reporting</h3>
+            <p class="ph-card__desc">Revenue, occupancy, bookings and payouts, per property and across the portfolio.</p>
+            <p class="ph-card__more">Explore →</p>
+          </a>
+          <a href="/platform/unified-inbox/" class="ph-card">
+            <p class="ph-card__num">07</p>
+            <h3 class="ph-card__title">Unified Inbox</h3>
+            <p class="ph-card__desc">Every guest message from every channel in one thread, with AI messaging and automated guest messages.</p>
+            <p class="ph-card__more">Explore →</p>
+          </a>
+          <a href="/platform/financials/" class="ph-card">
+            <p class="ph-card__num">08</p>
+            <h3 class="ph-card__title">Financials &amp; Payouts</h3>
+            <p class="ph-card__desc">Owner statements, payout tracking and expenses tied to each stay.</p>
+            <p class="ph-card__more">Explore →</p>
+          </a>
         </div>
       </div>
     </section>
@@ -263,28 +316,14 @@
       </div>
     </section>
 
-    <!-- The app -->
-    <section class="hd-section--tight pf-app-block">
-      <div class="hd-wrap pf-app-block__inner">
-        <div class="mc-section-head pf-app-block__copy">
-          <div class="hd-label"><span class="hd-label__num">03</span><span class="hd-label__rule"></span><span class="hd-label__text">The app</span></div>
-          <h2 class="mc-h2"><span>Run it from your phone.</span></h2>
-          <p class="mc-lede">Booking alerts and guest messages on the PropertyFlow app for iPhone and Android.</p>
-        </div>
-        <div class="pf-app-block__badges">
-          <a href="https://apps.apple.com/gb/app/propertyflow/id6776260840" target="_blank" rel="noopener noreferrer"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-gb?releaseDate=1784160000" alt="Download on the App Store"></a>
-          <a href="https://play.google.com/store/apps/details?id=app.propertyflow.uk" target="_blank" rel="noopener noreferrer"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="pf-app-block__gp"></a>
-        </div>
-      </div>
-    </section>
-
     <!-- Final CTA -->
     <section class="hd-section hd-cta2">
-      <div class="hd-wrap hd-cta2__inner" style="max-width:1030px;">
-        <h2 class="hd-cta2__heading">All your bookings together.<br><span class="hd-h2--muted-line2">No more juggling between calendars</span></h2>
-        <p class="hd-cta2__desc">Included on every plan. Free for up to 3 properties on your own channels. No credit card required.</p>
+      <div class="hd-wrap hd-cta2__inner" style="max-width:900px;">
+        <h2 class="hd-cta2__heading">Start on your own channels.<br><span class="hd-h2--muted-line2">Add PropertyFlow channels when you want more bookings.</span></h2>
+        <p class="hd-cta2__desc">Free for up to 3 properties on your own channels. No setup fees. No lock-in. No credit card required.</p>
+        <p class="hd-cta2__desc">Run it from your phone. Booking alerts and guest messages on the PropertyFlow app for <a href="https://apps.apple.com/gb/app/propertyflow/id6776260840" target="_blank" rel="noopener noreferrer">iPhone</a> and <a href="https://play.google.com/store/apps/details?id=app.propertyflow.uk" target="_blank" rel="noopener noreferrer">Android</a>.</p>
         <div class="hd-cta2__actions">
-          <a href="https://app.propertyflow.uk/register" class="hd-pill hd-pill--light">Try it free →</a>
+          <a href="https://app.propertyflow.uk/register" class="hd-pill hd-pill--light">Get started free →</a>
           <a href="/contact/" class="hd-pill hd-pill--ghost">Book a walkthrough</a>
         </div>
       </div>
