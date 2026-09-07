@@ -61,8 +61,11 @@
       .pf-legal a:not(.ds-cta):not(.pf-btn) { color: #f0f0f5; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #FF0257; }
       .pf-legal a:not(.ds-cta):not(.pf-btn):hover { color: #ff5c8a; }
       .pf-legal .ds-table th, .pf-legal .ds-table td { text-align: left; }
-      .pf-legal .ds-table__head-row { background: #131316; }
-      .pf-legal .ds-table__head { padding: .875rem 1rem; border-bottom: 2px solid #FF0257; font-weight: 600; color: #f0f0f5; }
+      .pf-legal .ds-table-wrap { border: 1px solid #26262b; border-radius: 14px; overflow: hidden; overflow-x: auto; background: #0c0c0f; }
+      .pf-legal .ds-table tbody tr:last-child .ds-table__cell { border-bottom: none; }
+      .pf-legal .ds-table__head-row { background: #1a1a1e; }
+      .pf-legal .ds-table__head { padding: .875rem 1rem; background: #1a1a1e; border-bottom: 1px solid #26262b; font-weight: 600; color: #f0f0f5; }
+      .pf-legal .ds-table__cell { padding: .875rem 1rem; }
       .pf-legal .ds-table__cell { color: #d9d9e0; border-bottom: 1px solid #26262b; }
       .pf-legal .ds-table__row--alt { background: #101014; }
       .pf-legal .pf-tbc { color: #7c7c86; font-style: italic; }
@@ -79,13 +82,14 @@
       @media (max-width: 640px) { .pf-legal .ds-toc ol { columns: 1; } }
       .pf-legal .ds-cta-band p a { color: inherit; }
       @media (max-width: 640px) {
+        .pf-legal .ds-table-wrap { border: none; border-radius: 0; background: transparent; overflow: visible; }
         .pf-legal .ds-table { min-width: 0; font-size: .9375rem; }
         .pf-legal .ds-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
         .pf-legal .ds-table tbody tr { display: block; padding: .25rem 0 .75rem; border-bottom: 1px solid #26262b; }
         .pf-legal .ds-table tbody tr:first-child { border-top: 2px solid #FF0257; }
         .pf-legal .ds-table .ds-table__row--alt { background: transparent; }
         .pf-legal .ds-table .ds-table__cell { display: grid; grid-template-columns: 6.5rem 1fr; gap: .75rem; padding: .5rem 0; border-bottom: none; }
-        .pf-legal .ds-table .ds-table__cell::before { content: attr(data-label); font-size: .75rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #a0a0aa; padding-top: .15em; }
+        .pf-legal .ds-table .ds-table__cell::before { content: attr(data-label); font-size: .8125rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #a0a0aa; padding-top: .15em; }
       }
     </style>
     <script type="application/ld+json">

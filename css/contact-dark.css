@@ -41,7 +41,7 @@ body.hd-page .ct-form-card h2 { font-family: "Inter", sans-serif; font-weight: 6
 body.hd-page .ct-form-note { font-family: "Krub", sans-serif; font-size: 14px; color: var(--link-muted); text-align: center; margin: 14px 0 0; }
 
 body.hd-page .ct-aside { display: flex; flex-direction: column; gap: 24px; }
-body.hd-page .ct-card { background: #0c0c0f; border: 0.8px solid var(--border-subtle); border-radius: 12px; padding: 40px 32px; }
+body.hd-page .ct-card { background: #131316; border: 0.8px solid var(--border-subtle); border-radius: 12px; padding: 40px 32px; }
 body.hd-page .ct-card__kicker { font-family: "Krub", sans-serif; font-size: 15px; color: var(--link-muted); margin: 0 0 10px; }
 
 body.hd-page .ct-direct__row { display: flex; align-items: center; gap: 24px; padding: 16px 0; }

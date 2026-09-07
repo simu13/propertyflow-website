@@ -135,8 +135,9 @@
             font-weight: 600;
             transition: background 0.2s, border-color 0.2s;
         }
-        .ds-split--2 .ds-btn-white { background: #FF0257; color: #ffffff; }
-        .ds-split--2 .ds-btn-white:hover { background: #d90048; color: #ffffff; }
+        /* pf-nav.css forces .ds-cta-card .ds-btn-white to a white pill with !important; restore the pink primary here */
+        .ds-split--2 .ds-cta-card .ds-btn-white { background: #FF0257 !important; color: #ffffff !important; border-color: transparent !important; }
+        .ds-split--2 .ds-cta-card .ds-btn-white:hover { background: #d90048 !important; color: #ffffff !important; }
         .ds-split--2 .ds-btn-ghost-white { background: transparent; color: #f0f0f5; border: 1px solid rgba(255, 255, 255, 0.28); }
         .ds-split--2 .ds-btn-ghost-white:hover { border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.04); }
 
