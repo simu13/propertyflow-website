@@ -39,25 +39,28 @@ body.hd-page .dr-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-
 
 body.hd-page .dr-hero__stats {
   display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-top: 36px;
-  max-width: 560px;
+  align-items: stretch;
+  gap: 28px;
+  margin-top: 40px;
+  max-width: 720px;
 }
-body.hd-page .dr-hero__stat-divider { width: 1px; height: 32px; background: var(--border-subtle); flex-shrink: 0; }
+body.hd-page .dr-hero__stats > div:not(.dr-hero__stat-divider) { flex: 1 1 0; min-width: 0; }
+body.hd-page .dr-hero__stat-divider { width: 1px; align-self: stretch; background: var(--border-subtle); flex-shrink: 0; }
 body.hd-page .dr-hero__stat-value {
   font-family: "Inter", sans-serif;
   font-weight: 800;
   font-size: 24px;
+  line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   display: block;
-  white-space: nowrap;
+  margin-bottom: 6px;
 }
-body.hd-page .dr-hero__stat-label { font-family: "Krub", sans-serif; font-size: 12px; color: var(--link-muted); margin: 0; max-width: 190px; }
+body.hd-page .dr-hero__stat-label { font-family: "Krub", sans-serif; font-size: 13px; line-height: 1.45; color: var(--link-muted); margin: 0; }
 
 @media (max-width: 640px) {
-  body.hd-page .dr-hero__stats { flex-wrap: wrap; gap: 16px 20px; }
+  body.hd-page .dr-hero__stats { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: none; }
+  body.hd-page .dr-hero__stat-divider { display: none; }
 }
 
 body.hd-page .dr-hero__visual {
@@ -133,7 +136,7 @@ body.hd-page .dr-accordion__desc--sm { font-family: "Krub", sans-serif; font-wei
 body.hd-page .dr-accordion__chevron { width: 24px; height: 24px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
 body.hd-page .dr-accordion__chevron img { width: 14px; height: auto; transition: transform 0.25s ease; }
 body.hd-page .dr-accordion__header[aria-expanded="true"] .dr-accordion__chevron img { transform: rotate(180deg); }
-body.hd-page .dr-accordion__note { font-family: "Krub", sans-serif; font-size: 16px; line-height: 24px; color: #ff5a5f; margin: 16px 0 0; }
+body.hd-page .dr-accordion__note { font-family: "Krub", sans-serif; font-size: 16px; line-height: 24px; color: #c9c9c9; margin: 20px 0 0; padding-left: 14px; border-left: 2px solid #ff5a5f; }
 
 /* Expand/collapse panel — collapsed via max-height:0 until JS sets an explicit
    pixel max-height on open (see inline script), so the transition can animate

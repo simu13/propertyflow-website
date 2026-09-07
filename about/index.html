@@ -48,7 +48,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home-ds.css?v=13">
-    <link rel="stylesheet" href="/css/site-ds.css?v=18">
+    <link rel="stylesheet" href="/css/site-ds.css?v=19">
     <link rel="stylesheet" href="/css/pf-nav.css?v=2">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <script type="application/ld+json">
@@ -84,6 +84,15 @@
       "foundingDate": "2025-12"
     }
     </script>
+    <style>
+        /* About page: reconcile duplicate .ds-stat-grid / .ds-info-card rules in site-ds.css */
+        .ds-section--dark .ds-stat-grid { grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 0; }
+        @media (max-width: 1100px) { .ds-section--dark .ds-stat-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .ds-section--dark .ds-stat-grid { grid-template-columns: 1fr; } }
+        .ds-split--2 { align-items: stretch; }
+        .ds-split--2 .ds-info-card { border-radius: 22px; padding: 2.25rem; }
+        @media (max-width: 640px) { .ds-split--2 .ds-info-card, .ds-split--2 .ds-cta-card { padding: 1.75rem; } }
+    </style>
 </head>
 <body class="ds-page ds-grain">
         <nav id="ds-nav" class="hd-nav hd-nav--light" aria-label="Main navigation">

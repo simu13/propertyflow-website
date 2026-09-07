@@ -90,6 +90,12 @@ body.hd-page .cm-notif__synced i { width: 0.44cqw; height: 0.44cqw; border-radiu
 @media (max-width: 900px) {
   body.hd-page .cm-notif { display: none; }
 }
+@media (max-width: 720px) {
+  body.hd-page .cm-hero { padding-bottom: 72px; }
+  body.hd-page .cm-hero__visual { margin-top: 56px; }
+  body.hd-page .cm-hero__visual-crop { aspect-ratio: 4 / 3; border-radius: 14px; }
+  body.hd-page .cm-hero__visual-crop img { width: auto; height: 100%; max-width: none; }
+}
 
 /* ---------- FeatureTabs (How it works) ---------- */
 
@@ -132,7 +138,7 @@ body.hd-page .cm-tabs__desc {
   font-family: "Krub", sans-serif;
   font-size: 13px;
   line-height: 1.6;
-  color: var(--link-muted);
+  color: var(--text-secondary);
   margin: 6px 0 0;
 }
 
@@ -251,8 +257,8 @@ body.hd-page .cm-direct__amount { font-family: "JetBrains Mono", monospace; font
 
 @media (max-width: 900px) {
   body.hd-page .cm-tabs { grid-template-columns: 1fr; gap: 40px; }
-  body.hd-page .cm-tabs__item--active::before { left: 0; }
-  body.hd-page .cm-tabs__list { padding-left: 12px; }
+  body.hd-page .cm-tabs__item--active::before { left: -14px; }
+  body.hd-page .cm-tabs__list { padding-left: 14px; }
 }
 
 /* ---------- Testimonials ---------- */
@@ -299,16 +305,16 @@ body.hd-page .cm-tcard__stat-note { font-family: "Krub", sans-serif; font-size: 
 body.hd-page .cm-channels__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.8px;
+  gap: 1px;
   background: var(--border-subtle);
-  border: 0.8px solid var(--border-subtle);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
   overflow: hidden;
   margin-top: 56px;
 }
 body.hd-page .cm-channel { display: flex; align-items: center; justify-content: center; height: 153.7px; background: var(--bg); }
 body.hd-page .cm-channel__logo { display: block; height: 32px; width: auto; max-width: 82%; object-fit: contain; }
-body.hd-page .cm-channels__footnote { text-align: center; font-family: "Krub", sans-serif; font-size: 12px; color: var(--link-muted); margin: 20px 0 0; }
+body.hd-page .cm-channels__footnote { text-align: center; font-family: "Krub", sans-serif; font-size: 13px; color: var(--text-secondary); margin: 20px 0 0; }
 
 @media (max-width: 900px) {
   body.hd-page .cm-channels__grid { grid-template-columns: repeat(2, 1fr); }
@@ -318,8 +324,8 @@ body.hd-page .cm-channels__footnote { text-align: center; font-family: "Krub", s
 /* 7 logos in a 4-col / 2-col grid: let the last tile fill the row so no empty slot shows */
 body.hd-page .cm-channel:last-child { grid-column: span 2; }
 @media (max-width: 480px) {
-  body.hd-page .cm-channels__grid { grid-template-columns: 1fr; }
-  body.hd-page .cm-channel:last-child { grid-column: auto; }
+  body.hd-page .cm-channel { height: 96px; }
+  body.hd-page .cm-channel__logo { height: 22px; max-width: 74%; }
 }
 
 

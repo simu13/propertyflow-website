@@ -405,3 +405,20 @@ body.hd-page .aip-h2 span { text-wrap: balance; }
 @media (max-width: 420px) {
   body.hd-page .hd-cta2__heading { font-size: 27px; }
 }
+
+/* ---------- Visual QA pass 2 ---------- */
+/* Card headings: balance lines so a single word is never orphaned on narrow screens. */
+body.hd-page .aip-outcome__heading,
+body.hd-page .aip-day__heading { text-wrap: balance; }
+
+@media (max-width: 480px) {
+  /* Hero mockup: four tabs no longer fit on one row at phone widths; keep the tab strip on a
+     single line instead of wrapping "Reports" onto its own line. */
+  body.hd-page .aip-panel__tabs { flex-wrap: nowrap; }
+  body.hd-page .aip-panel__tab { white-space: nowrap; padding: 5px 7px; }
+  body.hd-page .aip-panel__tab:nth-child(4) { display: none; }
+
+  /* Adaptive-pricing timeline: keep the active-row accent bar inside the page gutter rather
+     than pinned to the viewport edge. */
+  body.hd-page .aip-timeline__row--active::before { left: -12px; }
+}

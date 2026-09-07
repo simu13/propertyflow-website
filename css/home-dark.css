@@ -21,7 +21,7 @@ body.hd-page {
   --panel-border-soft: #0b1739;
   --muted-blue: #aeb9e1;
   --muted-blue-dim: #7e89ac;
-  --link-muted: #515159;
+  --link-muted: #7c7c86; /* was #515159: ~2.6:1 on the page background, unreadable at 12-14px */
   --accent-purple: #cb3cff;
   --accent-cyan: #00c2ff;
   --green: #14ca74;

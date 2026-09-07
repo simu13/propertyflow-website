@@ -46,9 +46,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/site-ds.css?v=18">
+    <link rel="stylesheet" href="/css/site-ds.css?v=19">
     <link rel="stylesheet" href="/css/pf-nav.css?v=2">
-    <link rel="stylesheet" href="/css/home-dark.css?v=6">
+    <link rel="stylesheet" href="/css/home-dark.css?v=7">
     <link rel="stylesheet" href="/css/unified-inbox-dark.css?v=1">
     <style>
       /* Page-local rules: four-item stats line and the app block */
@@ -68,6 +68,34 @@
       body.hd-page .pf-app-block__badges { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
       body.hd-page .pf-app-block__badges img { display: block; height: 48px; width: auto; }
       body.hd-page .pf-app-block__badges img.pf-app-block__gp { height: 72px; margin: -12px; }
+      /* Hero heading: avoid a one-word last line */
+      body.hd-page .ui-hero__heading span { text-wrap: balance; }
+      /* Hero mock, guest panel: stack check-in/out and give the fee rows room */
+      body.hd-page .ui-guest__card--split { display: block; }
+      body.hd-page .ui-guest__card--split .ui-guest__field-label { white-space: nowrap; }
+      body.hd-page .ui-guest__card--split .ui-guest__field-value--big { white-space: nowrap; margin: 0.18cqw 0 0.18cqw; }
+      body.hd-page .ui-guest__card-divider { width: auto; height: 1px; margin: 0.7cqw 0; }
+      body.hd-page .ui-guest__card > .ui-guest__field-label:first-child { font-family: "JetBrains Mono", monospace; font-size: 0.75cqw; letter-spacing: 0.06em; text-transform: uppercase; color: #454545; margin-bottom: 0.7cqw; }
+      body.hd-page .ui-guest__row { align-items: flex-start; gap: 0.7cqw; }
+      body.hd-page .ui-guest__row + .ui-guest__row { margin-top: 0.53cqw; }
+      body.hd-page .ui-guest__row .ui-guest__field-label { font-size: 0.88cqw; line-height: 1.35; }
+      body.hd-page .ui-guest__row .ui-guest__field-value--big { font-size: 1.05cqw; line-height: 1.35; }
+      @media (max-width: 640px) {
+        /* 2x2 stats grid instead of a wrapped flex row with an orphaned divider */
+        body.hd-page .ui-hero__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+        body.hd-page .ui-hero__stat-divider { display: none; }
+      }
+      @media (max-width: 900px) {
+        /* Mock window chrome on small screens: fixed-size dots, no illegible cqw-sized tabs */
+        body.hd-page .ui-window { border-radius: 14px; }
+        body.hd-page .ui-window__chrome { padding: 12px 16px; }
+        body.hd-page .ui-window__dots { gap: 7px; }
+        body.hd-page .ui-window__dot { width: 10px; height: 10px; }
+        body.hd-page .ui-window__tabs, body.hd-page .ui-window__status { display: none; }
+        body.hd-page .ui-window::after { font-size: 14px; padding: 56px 24px; }
+        /* Merge lines are hidden here, so separate the unified inbox from the scattered cards */
+        body.hd-page .ui-merge { margin-top: 28px; }
+      }
     </style>
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     <!-- Schema Markup: BreadcrumbList -->
@@ -396,7 +424,7 @@
             <div class="ui-journey__divider"></div>
             <div class="ui-journey__visual">
               <div class="ui-journey-photo">
-                <img src="/images/design/redesign/unified-inbox/step2-guest-question.webp" alt="PropertyFlow inbox showing an AI-drafted reply to a guest question" loading="lazy">
+                <img src="/images/design/redesign/unified-inbox/step2-guest-question.webp" alt="PropertyFlow inbox showing an AI-drafted reply to a guest question">
               </div>
             </div>
           </div>
@@ -409,7 +437,7 @@
             <div class="ui-journey__divider"></div>
             <div class="ui-journey__visual">
               <div class="ui-journey-photo">
-                <img src="/images/design/redesign/unified-inbox/step3-guest-checkin.webp" alt="Guest arriving at a short-term let" loading="lazy">
+                <img src="/images/design/redesign/unified-inbox/step3-guest-checkin.webp" alt="Guest arriving at a short-term let">
               </div>
             </div>
           </div>

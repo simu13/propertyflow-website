@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home-ds.css?v=13">
-    <link rel="stylesheet" href="/css/site-ds.css?v=18">
+    <link rel="stylesheet" href="/css/site-ds.css?v=19">
     <link rel="stylesheet" href="/css/pf-nav.css?v=2">
     <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossorigin>
     
@@ -71,6 +71,15 @@
       .pf-legal .ds-toc a { text-decoration: none; }
       @media (max-width: 640px) { .pf-legal .ds-toc ol { columns: 1; } }
       .pf-legal .ds-cta-band p a { color: inherit; }
+      @media (max-width: 640px) {
+        .pf-legal .ds-table { min-width: 0; font-size: .9375rem; }
+        .pf-legal .ds-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .pf-legal .ds-table tbody tr { display: block; padding: .25rem 0 .75rem; border-bottom: 1px solid var(--ds-border); }
+        .pf-legal .ds-table tbody tr:first-child { border-top: 2px solid var(--ds-orange); }
+        .pf-legal .ds-table .ds-table__row--alt { background: transparent; }
+        .pf-legal .ds-table .ds-table__cell { display: grid; grid-template-columns: 6.5rem 1fr; gap: .75rem; padding: .5rem 0; border-bottom: none; }
+        .pf-legal .ds-table .ds-table__cell::before { content: attr(data-label); font-size: .75rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #7a7670; padding-top: .15em; }
+      }
     </style>
     <script type="application/ld+json">
     {
@@ -231,12 +240,12 @@
                             <tr class="ds-table__head-row"><th class="ds-table__head" scope="col">Category</th><th class="ds-table__head" scope="col">Name and provider</th><th class="ds-table__head" scope="col">Purpose</th><th class="ds-table__head" scope="col">Duration</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td class="ds-table__cell">Strictly necessary</td><td class="ds-table__cell">pf_session (PropertyFlow)</td><td class="ds-table__cell">Keeps you logged in to the platform</td><td class="ds-table__cell">Session</td></tr>
-                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Strictly necessary</td><td class="ds-table__cell">pf_cookie_consent (PropertyFlow)</td><td class="ds-table__cell">Records your cookie choices</td><td class="ds-table__cell">12 months</td></tr>
-                            <tr><td class="ds-table__cell">Strictly necessary</td><td class="ds-table__cell">Security cookies set by our hosting or security provider, if used</td><td class="ds-table__cell">Security and bot protection</td><td class="ds-table__cell">Up to 30 minutes</td></tr>
-                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Analytics</td><td class="ds-table__cell">_ga, _ga_* (Google Analytics 4)</td><td class="ds-table__cell">Counts visits and shows us which pages and features are used</td><td class="ds-table__cell">Up to 2 years</td></tr>
-                            <tr><td class="ds-table__cell">Analytics and functionality</td><td class="ds-table__cell">hubspotutk, __hstc, __hssc, __hssrc (HubSpot)</td><td class="ds-table__cell">Recognises returning visitors and links form submissions to your contact record</td><td class="ds-table__cell">Up to 6 months</td></tr>
-                            <tr class="ds-table__row--alt"><td class="ds-table__cell">Marketing</td><td class="ds-table__cell">_fbp (Meta Pixel)</td><td class="ds-table__cell">Measures whether our advertising on Meta platforms led to a visit or sign-up</td><td class="ds-table__cell">3 months</td></tr>
+                            <tr><td class="ds-table__cell" data-label="Category">Strictly necessary</td><td class="ds-table__cell" data-label="Name and provider">pf_session (PropertyFlow)</td><td class="ds-table__cell" data-label="Purpose">Keeps you logged in to the platform</td><td class="ds-table__cell" data-label="Duration">Session</td></tr>
+                            <tr class="ds-table__row--alt"><td class="ds-table__cell" data-label="Category">Strictly necessary</td><td class="ds-table__cell" data-label="Name and provider">pf_cookie_consent (PropertyFlow)</td><td class="ds-table__cell" data-label="Purpose">Records your cookie choices</td><td class="ds-table__cell" data-label="Duration">12 months</td></tr>
+                            <tr><td class="ds-table__cell" data-label="Category">Strictly necessary</td><td class="ds-table__cell" data-label="Name and provider">Security cookies set by our hosting or security provider, if used</td><td class="ds-table__cell" data-label="Purpose">Security and bot protection</td><td class="ds-table__cell" data-label="Duration">Up to 30 minutes</td></tr>
+                            <tr class="ds-table__row--alt"><td class="ds-table__cell" data-label="Category">Analytics</td><td class="ds-table__cell" data-label="Name and provider">_ga, _ga_* (Google Analytics 4)</td><td class="ds-table__cell" data-label="Purpose">Counts visits and shows us which pages and features are used</td><td class="ds-table__cell" data-label="Duration">Up to 2 years</td></tr>
+                            <tr><td class="ds-table__cell" data-label="Category">Analytics and functionality</td><td class="ds-table__cell" data-label="Name and provider">hubspotutk, __hstc, __hssc, __hssrc (HubSpot)</td><td class="ds-table__cell" data-label="Purpose">Recognises returning visitors and links form submissions to your contact record</td><td class="ds-table__cell" data-label="Duration">Up to 6 months</td></tr>
+                            <tr class="ds-table__row--alt"><td class="ds-table__cell" data-label="Category">Marketing</td><td class="ds-table__cell" data-label="Name and provider">_fbp (Meta Pixel)</td><td class="ds-table__cell" data-label="Purpose">Measures whether our advertising on Meta platforms led to a visit or sign-up</td><td class="ds-table__cell" data-label="Duration">3 months</td></tr>
                         </tbody>
                     </table>
                 </div>

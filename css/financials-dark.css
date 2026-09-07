@@ -53,10 +53,15 @@ body.hd-page .fin-hero__stat-value {
   color: var(--text-primary);
   display: block;
 }
-body.hd-page .fin-hero__stat-label { font-family: "Krub", sans-serif; font-size: 12px; color: var(--link-muted); margin: 0; max-width: 186px; }
+body.hd-page .fin-hero__stat-label { font-family: "Krub", sans-serif; font-size: 13px; line-height: 1.4; color: var(--text-secondary); margin: 4px 0 0; max-width: 186px; }
 
 @media (max-width: 640px) {
-  body.hd-page .fin-hero__stats { flex-wrap: wrap; gap: 16px 20px; }
+  body.hd-page .fin-hero__stats { flex-wrap: wrap; align-items: flex-start; gap: 20px 24px; max-width: none; }
+  body.hd-page .fin-hero__stats > div { flex: 1 1 140px; }
+  body.hd-page .fin-hero__stat-divider { display: none; }
+  body.hd-page .fin-hero__stat-value { font-size: 20px; }
+  body.hd-page .fin-hero__stat-label { max-width: none; }
+  body.hd-page .fin-hero__visual { margin-top: 56px; border-radius: 12px; }
 }
 
 body.hd-page .fin-hero__visual {
@@ -127,13 +132,25 @@ body.hd-page .fin-integration__sub { font-family: "Krub", sans-serif; font-size:
 @media (max-width: 900px) {
   body.hd-page .fin-integrations { grid-template-columns: repeat(2, 1fr); }
   body.hd-page .fin-integration { border-right: none; border-bottom: 0.8px solid var(--border-subtle); }
+  body.hd-page .fin-integration:nth-child(odd) { border-right: 0.8px solid var(--border-subtle); }
+  body.hd-page .fin-integration:nth-last-child(-n+2) { border-bottom: none; }
 }
 @media (max-width: 480px) {
-  body.hd-page .fin-integrations { grid-template-columns: 1fr; }
+  body.hd-page .fin-integration { padding: 28px 12px; gap: 18px; }
+  body.hd-page .fin-integration__name { font-size: 17px; }
+  body.hd-page .fin-integration__sub { font-size: 14px; }
 }
 
 /* ---------- Section 04: month-end compare chart ---------- */
 
 body.hd-page .fin-compare-chart { margin-top: 56px; border-radius: 16px; overflow: hidden; border: 0.8px solid var(--border-subtle); }
 body.hd-page .fin-compare-chart img { display: block; width: 100%; }
+
+@media (max-width: 640px) {
+  /* Chart is wider than the viewport on phones: scroll it, starting at the
+     month-end payoff (rtl scroll origin), and hide the scrollbar chrome. */
+  body.hd-page .fin-compare-chart { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 40px; direction: rtl; scrollbar-width: none; }
+  body.hd-page .fin-compare-chart::-webkit-scrollbar { display: none; }
+  body.hd-page .fin-compare-chart img { width: 640px; max-width: none; direction: ltr; }
+}
 
