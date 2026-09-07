@@ -113,6 +113,21 @@
         .ds-table td.ds-table__cell:last-child{padding-bottom: 1.125rem;}
         .ds-table td.ds-table__cell::before{content: attr(data-col);display: block;font-size: 0.75rem;font-weight: 600;letter-spacing: 0.05em;text-transform: uppercase;color: var(--ds-orange);margin-bottom: 0.2rem;}
       }
+    
+/* Owner testimonials (real quotes, Edinburgh Partner portfolio, Sept 2026) */
+.pf-testi{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem;margin-top:2.5rem}
+.pf-testi__card{grid-column:span 2;margin:0;background:#131316;border:1px solid #26262b;border-radius:18px;padding:1.75rem 1.75rem 1.5rem;display:flex;flex-direction:column;gap:1.25rem;position:relative}
+.pf-testi--five .pf-testi__card:nth-child(n+4){grid-column:span 3}
+.pf-testi__card::before{content:"\201C";position:absolute;top:.35rem;right:1.25rem;font-size:4.5rem;line-height:1;color:#FF0257;opacity:.4;font-family:Georgia,"Times New Roman",serif}
+.pf-testi__card blockquote{margin:0;font-size:1rem;line-height:1.65;color:#d9d9e0}
+.pf-testi__card figcaption{margin-top:auto;display:flex;flex-direction:column;gap:.2rem;padding-top:1rem;border-top:1px solid #26262b}
+.pf-testi__name{font-weight:600;color:#f0f0f5;font-size:.9375rem}
+.pf-testi__meta{font-size:.8125rem;color:#a0a0aa}
+.pf-testi__eyebrow{display:flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#a0a0aa;margin:0 0 1rem}
+.pf-testi__eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#FF0257;flex:none}
+.pf-testi__note{margin:1.25rem 0 0;font-size:.8125rem;color:#7c7c86;max-width:44rem}
+@media (max-width:900px){.pf-testi__card,.pf-testi--five .pf-testi__card:nth-child(n+4){grid-column:span 3}}
+@media (max-width:600px){.pf-testi{gap:1rem}.pf-testi__card,.pf-testi--five .pf-testi__card:nth-child(n+4){grid-column:span 6;padding:1.5rem 1.25rem 1.25rem}}
     </style>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -506,6 +521,34 @@
     </section>
 
     <!-- TOURIST TAX -->
+    <section class="ds-section" id="owner-stories"><div class="ds-section__inner">
+        <p class="pf-testi__eyebrow">What owners say</p>
+        <h2 class="ds-section__h2" style="max-width: 44rem;">Real owners. Real Edinburgh flats.</h2>
+        <p class="ds-section__lead" style="max-width: 44rem;">Five owners whose properties run on PropertyFlow through a Partner, in their own words.</p>
+        <div class="pf-testi pf-testi--five">
+            <figure class="pf-testi__card">
+                <blockquote>I let the flat to students for nine months and PropertyFlow short-lets it over the summer. Halfway through the season there was a serious leak from the flat upstairs. PropertyFlow led the conversations with the neighbour from the start, brought me in when it was needed to get things moving, and managed everything on my side: guests were kept informed, maintenance visits were fitted in between stays, and any damage to the flat was dealt with immediately. Not a single booking was lost, and even with all of that going on it was by far the best summer the flat has had.</blockquote>
+                <figcaption><span class="pf-testi__name">Brett</span><span class="pf-testi__meta">Roseneath Place, Edinburgh &middot; Property owner</span></figcaption>
+            </figure>
+            <figure class="pf-testi__card">
+                <blockquote>PropertyFlow&rsquo;s service is personal. They know my property as well as I do and I always know what&rsquo;s happening with it. Guests are looked after properly, the awkward requests are handled calmly and professionally without involving me, and the reviews show it. The licensing and compliance paperwork is done and documented, and the flat is kept exactly as I&rsquo;d want it. It&rsquo;s just very well run, and that gives me real peace of mind.</blockquote>
+                <figcaption><span class="pf-testi__name">Agata</span><span class="pf-testi__meta">Trafalgar Lane, Edinburgh &middot; Property owner</span></figcaption>
+            </figure>
+            <figure class="pf-testi__card">
+                <blockquote>My flat is let to students for the academic year and I used to run it on Airbnb myself over the summer. It worked, but keeping on top of it alongside a full-time job was hard and I didn&rsquo;t have the tools or the time to do it properly. PropertyFlow priced the flat, marketed it to families visiting Edinburgh and ran the whole summer without me having to lift a finger. The guest reviews have been consistently great, the flat is bringing visitors into the city and money into local businesses, and I got my summer back. For the time and hassle it saves, it&rsquo;s well worth it.</blockquote>
+                <figcaption><span class="pf-testi__name">Gary</span><span class="pf-testi__meta">Slateford Road, Edinburgh &middot; Property owner</span></figcaption>
+            </figure>
+            <figure class="pf-testi__card">
+                <blockquote>I signed up with PropertyFlow for the summer as a trial, expecting to go back to a long let in September. The returns were excellent and the communication was excellent, so the property is now with PropertyFlow year round. Even the quieter months leave a long-term tenancy well behind, and maintenance issues are picked up and fixed without me having to chase anyone.</blockquote>
+                <figcaption><span class="pf-testi__name">Dave</span><span class="pf-testi__meta">Marchmont Crescent, Edinburgh &middot; Property owner</span></figcaption>
+            </figure>
+            <figure class="pf-testi__card">
+                <blockquote>The nine-month student let plus summer short let is the best of both worlds, but only because PropertyFlow runs the summer. They handled the licence application, the certificates and all the compliance paperwork, and the property is turned around and guest-ready without me being involved. The summer paid better than I&rsquo;d have thought possible for the flat, and I had my summer back.</blockquote>
+                <figcaption><span class="pf-testi__name">John</span><span class="pf-testi__meta">Rose Street, Edinburgh &middot; Property owner</span></figcaption>
+            </figure>
+        </div>
+        <p class="pf-testi__note">Quotes are from owners in the Edinburgh Partner portfolio and are published with their permission. First names and streets only.</p>
+    </div></section>
     <section class="ds-section--cream"><div class="ds-section__inner">
         <div class="ds-phero__eyebrow"><span class="ds-phero__dot"></span><span class="ds-phero__label">Tourist tax</span></div>
         <h2 class="ds-section__h2" style="max-width: 47rem;">Tourist tax, configured per council and calculated on each booking.</h2>
