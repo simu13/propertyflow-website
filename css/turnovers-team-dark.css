@@ -129,3 +129,24 @@ body.hd-page section.hd-stats .hd-stats__label {
   color: #515159;
 }
 
+
+/* ---------- Mobile / narrow fixes ---------- */
+/* Stats: the 48px value plus 24px cell padding exceeded a 2-col grid at 390px and forced
+   horizontal overflow (page zoomed out). Tighten on narrow screens. */
+@media (max-width: 720px) {
+  body.hd-page section.hd-stats .hd-stats__cell { padding: 28px 12px; min-width: 0; }
+  body.hd-page section.hd-stats .hd-stats__value { font-size: 38px; line-height: 44px; }
+}
+
+/* Hero visual: the dashboard artwork has dark padding baked into the image, which reads as
+   a tiny mockup floating in a black box at phone widths. Crop to the mockup on narrow screens. */
+@media (max-width: 900px) {
+  body.hd-page .tt-hero { padding-top: 128px; padding-bottom: 72px; }
+  body.hd-page .tt-hero__visual {
+    margin-top: 48px;
+    border-radius: 12px;
+    aspect-ratio: 1150 / 555;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 24px 60px rgba(0, 0, 0, 0.7);
+  }
+  body.hd-page .tt-hero__visual img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 34%; }
+}

@@ -2596,3 +2596,7 @@ textarea:focus:not(:focus-visible) {
     outline: none;
     box-shadow: none;
 }
+
+/* Inline links inside lead paragraphs (Sept 2026): inherit the text colour, subtle underline */
+.ds-section__lead a, .ds-prose a { color: inherit; text-decoration: underline; text-decoration-color: rgba(20, 26, 35, 0.35); text-underline-offset: 2px; }
+.ds-section__lead a:hover, .ds-prose a:hover { color: #E65A38; text-decoration-color: currentColor; }

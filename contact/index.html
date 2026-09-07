@@ -48,9 +48,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&family=JetBrains+Mono:wght@300;400;700;800&family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/site-ds.css?v=18">
+    <link rel="stylesheet" href="/css/site-ds.css?v=19">
     <link rel="stylesheet" href="/css/pf-nav.css?v=2">
-    <link rel="stylesheet" href="/css/home-dark.css?v=6">
+    <link rel="stylesheet" href="/css/home-dark.css?v=7">
     <link rel="stylesheet" href="/css/contact-dark.css?v=4">
     <style>
       /* Contact routes (page-local): Book a call plus three routes */
@@ -58,7 +58,10 @@
       body.hd-page .ct-routes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px; text-align: left; }
       body.hd-page .ct-route { display: flex; flex-direction: column; }
       body.hd-page .ct-route h2 { font-family: "Inter", sans-serif; font-weight: 600; font-size: 20px; line-height: 1.3; color: var(--text-primary); margin: 0 0 12px; }
-      body.hd-page .ct-route p { font-family: "Krub", sans-serif; font-size: 15px; line-height: 1.6; color: #b5b5b5; margin: 0 0 22px; }
+      body.hd-page .ct-route p:not(.ct-card__kicker) { font-family: "Krub", sans-serif; font-size: 15px; line-height: 1.6; color: #b5b5b5; margin: 0 0 22px; }
+      body.hd-page .ct-book h2 { margin-bottom: 16px; }
+      body.hd-page .ct-book .ct-calendly__body { padding: 8px 0 8px; }
+      body.hd-page .ct-hero__heading { text-wrap: balance; }
       body.hd-page .ct-route .ct-route__actions { margin-top: auto; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
       body.hd-page .ct-route .ct-route__actions .hd-pill { white-space: normal; text-align: center; }
       body.hd-page .ct-route__link { font-family: "Krub", sans-serif; font-weight: 600; font-size: 17px; color: var(--text-primary); text-decoration: none; }
