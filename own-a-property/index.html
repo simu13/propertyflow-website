@@ -128,6 +128,12 @@
 .pf-testi__note{margin:1.25rem 0 0;font-size:.8125rem;color:#7c7c86;max-width:44rem}
 @media (max-width:900px){.pf-testi__card,.pf-testi--five .pf-testi__card:nth-child(n+4){grid-column:span 3}}
 @media (max-width:600px){.pf-testi{gap:1rem}.pf-testi__card,.pf-testi--five .pf-testi__card:nth-child(n+4){grid-column:span 6;padding:1.5rem 1.25rem 1.25rem}}
+      /* Hero without a photo: single text column */
+      .ds-phero-split--solo{grid-template-columns:1fr;gap:0;padding-top:4.5rem;padding-bottom:3rem}
+      .ds-phero-split--solo > div{max-width:52rem}
+      .ds-phero-split--solo .ds-phero__title{font-size:clamp(2.25rem,4.6vw,3.75rem)}
+      .ds-phero-split--solo .ds-phero__lead{max-width:40rem}
+      @media (max-width:640px){.ds-phero-split--solo{padding-top:3rem;padding-bottom:2rem}}
     </style>
     <!-- Schema Markup: BreadcrumbList -->
     <script type="application/ld+json">
@@ -332,14 +338,13 @@
     </nav>
     <div class="ds-nav-spacer" aria-hidden="true"></div>
 <main>
-    <section class="ds-phero-split">
+    <section class="ds-phero-split ds-phero-split--solo">
         <div>
             <div class="ds-phero__eyebrow"><span class="ds-phero__dot"></span><span class="ds-phero__label">For property owners, UK-wide</span></div>
             <h1 class="ds-phero__title">Own a property? Tell us where it is and we'll connect you with a PropertyFlow Partner in your area.</h1>
             <p class="ds-phero__lead">Anywhere in the UK, whether you live here or overseas. Give us the address and a few details about the property. We send you a personalised report, then the PropertyFlow Verified Partner for your area gets in touch.</p>
             <div class="ds-phero-split__actions"><a href="#report-form" class="ds-cta ds-cta--dark">Get your personalised report</a><a href="#verified-partner" class="ds-btn-ghost">What a Partner does</a></div>
         </div>
-        <div class="ds-phero-split__media"><div class="ds-media-frame"><img src="/images/showcase/apartment-interior-hd.webp" alt="A furnished flat set up for short-let guests" loading="eager"></div></div>
     </section>
 
     <!-- HOW IT WORKS -->
