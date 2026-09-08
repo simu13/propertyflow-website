@@ -270,6 +270,15 @@
 
   /* ------------------------------------------------------------------ wire */
 
+  /** Label the destination so a swap is visible in the reports, not invisible. */
+  function bookingDestination(href) {
+    if (href.indexOf('mailto:') === 0) return 'email';
+    if (href.indexOf('calendly.com') !== -1) return 'calendly';
+    if (/hubspot\.com|hs-sites|meetings\./.test(href)) return 'hubspot_meetings';
+    if (/cal\.com|savvycal|tidycal/.test(href)) return 'other_scheduler';
+    return 'unknown';
+  }
+
   function wireEvents() {
     if (wired) return;
     wired = true;
@@ -291,16 +300,21 @@
       if (href.indexOf(APP_HOST + '/register') !== -1) {
         /* Intent to sign up, not a sign-up. See the header note. */
         pfTrack('signup_click', { link_text: (a.textContent || '').trim().slice(0, 60) });
-      } else if (href.indexOf('calendly.com') !== -1) {
-        pfTrack('book_a_call', { destination: 'calendly' });
-      } else if (href.indexOf('mailto:') === 0 && /book\s*a\s*call/i.test(href + ' ' + (a.textContent || ''))) {
-        /* The redesign replaced the Calendly booking with a mailto, so the
-           event has to follow the CTA rather than the vendor. Matched on the
-           link's own text and mailto subject, not the address, so routing the
-           mail elsewhere does not silently stop the conversion counting.
-           NOTE for the Friday deliverable: "Amrit's calendar behind Book a
-           call" is not met while this is an email link. */
-        pfTrack('book_a_call', { destination: 'email' });
+      } else if (a.closest && a.closest('#book-a-call')) {
+        /* Matched on the CTA's own container, not the vendor.
+           This link has already changed once — the redesign replaced the
+           Calendly booking with mailto:sales@ — and it is about to change
+           again when Amrit's booking link is swapped in. Matching on
+           calendly.com or on a mailto would silently stop counting the
+           moment that happens, and nobody would notice until the Monday
+           report showed zero. #book-a-call is the section id, so whatever
+           the link points at, the conversion is still recorded. */
+        pfTrack('book_a_call', { destination: bookingDestination(href) });
+      } else if (href.indexOf('calendly.com') !== -1
+                 || (href.indexOf('mailto:') === 0 && /book\s*a\s*call/i.test(href + ' ' + (a.textContent || '')))) {
+        /* A booking CTA outside that section — other pages link to /contact/
+           rather than embedding their own, but this keeps them covered. */
+        pfTrack('book_a_call', { destination: bookingDestination(href) });
       } else if (href.indexOf('/become-a-partner/apply') !== -1) {
         pfTrack('partner_apply_start', { from: location.pathname });
       }
