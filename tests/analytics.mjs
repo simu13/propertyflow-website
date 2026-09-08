@@ -450,6 +450,64 @@ let attributedPayload = null;
   await ctx.close();
 }
 
+// ------------- 6f. Meta receives the SAME conversions as GA4, from one call
+{
+  const ctx = await browser.newContext();
+  const page = await ctx.newPage();
+  for (const r of ['**://*.googletagmanager.com/**', '**://*.google-analytics.com/**',
+                   '**://connect.facebook.net/**', '**://*.hs-scripts.com/**',
+                   '**://*.facebook.com/**']) {
+    await ctx.route(r, (route) => route.abort());
+  }
+  await page.addInitScript(INIT);
+  /* The pixel has no ID in the repo, so supply one and stub fbq — this test is
+     about whether the events REACH Meta, which is what decides whether the
+     £500/month has anything to optimise toward. */
+  await page.addInitScript(() => {
+    window.PF_META_PIXEL_ID = '1234567890123456';
+    window.__meta = [];
+    Object.defineProperty(window, 'fbq', {
+      configurable: true, writable: true,
+      value: (...a) => { window.__meta.push(a); },
+    });
+  });
+
+  await page.goto(`${BASE}/contact/`);
+  await page.waitForTimeout(300);
+  await page.locator('button:has-text("Accept")').first().click({ timeout: 5000 }).catch(() => {});
+  await page.waitForTimeout(600);
+
+  await page.evaluate(() => {
+    const a = document.querySelector('#book-a-call a[href]');
+    if (a) { a.setAttribute('target', '_blank'); a.click(); }
+  });
+  await page.waitForTimeout(300);
+
+  const meta = await page.evaluate(() => window.__meta);
+  const names = meta.map((m) => m[1]);
+  check('Meta gets the book-a-call conversion', names.includes('Schedule'),
+    names.join(', ') || 'nothing');
+
+  /* The old meta-pixel.js fired its own conversion events too. If both fire,
+     every conversion is counted twice and Meta's cost-per-acquisition reads
+     half what it really is. */
+  const schedules = names.filter((n) => n === 'Schedule').length;
+  check('and exactly once — no double-count from two systems', schedules === 1,
+    `Schedule x${schedules}`);
+
+  /* signup_click must NOT look like a registration to Meta's bidding. */
+  await page.evaluate(() => {
+    const a = document.querySelector('a[href*="app.propertyflow.uk/register"]');
+    if (a) { a.setAttribute('target', '_blank'); a.click(); }
+  });
+  await page.waitForTimeout(300);
+  const after = (await page.evaluate(() => window.__meta)).map((m) => m[1]);
+  check('a click-through is InitiateCheckout, never CompleteRegistration',
+    after.includes('InitiateCheckout') && !after.includes('CompleteRegistration'),
+    after.join(', '));
+  await ctx.close();
+}
+
 // ------------------------------- 7. every page actually loads the script
 // This repo has no templating — head scripts are copy-pasted per file — so a
 // new page shipping without analytics is its most likely silent regression.
