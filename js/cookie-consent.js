@@ -32,6 +32,46 @@
   }
 
   /* HubSpot tracking (analytics/functionality cookies) — only after consent */
+  /**
+   * Make a withdrawal actually take effect.
+   *
+   * UK GDPR requires withdrawing consent to be as easy as giving it, and "as
+   * easy" has to mean effective — recording `rejected` while leaving
+   * everything already dropped on the device is not a withdrawal. Reject is
+   * reachable at any time via pfCookieSettings, so this is a normal journey.
+   *
+   * This existed before the redesign and was lost in the rewrite. It covers
+   * our own tags' cookies AND the two keys js/analytics.js stores outside
+   * cookies: pf_attribution (session) and pf_first_touch (localStorage,
+   * 90 DAYS) — campaign data would otherwise sit on the device for three
+   * months after the person asked us to stop.
+   */
+  function clearAnalyticsData() {
+    var host = location.hostname.replace(/^www\./, '');
+    ['_ga', '_gid', '_gat', '_fbp', '_fbc', 'hubspotutk', '__hstc', '__hssc', '__hssrc']
+      .forEach(function (name) {
+        ['/', ''].forEach(function (path) {
+          ['', '.' + host, host].forEach(function (domain) {
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+              + (path ? ';path=' + path : '')
+              + (domain ? ';domain=' + domain : '');
+          });
+        });
+      });
+    /* GA4 names its session cookie per measurement ID (_ga_XXXXXXXXXX), which
+       the fixed list cannot know. Sweep anything matching. */
+    try {
+      document.cookie.split(';').forEach(function (c) {
+        var n = c.split('=')[0].trim();
+        if (n.indexOf('_ga_') === 0) {
+          document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+        }
+      });
+    } catch (e) { /* nothing to sweep */ }
+    try { sessionStorage.removeItem('pf_attribution'); } catch (e) { /* private mode */ }
+    try { localStorage.removeItem('pf_first_touch'); } catch (e) { /* private mode */ }
+  }
+
   function loadHubSpot() {
     if (window.__pfHubSpot) return;
     window.__pfHubSpot = true;
@@ -114,6 +154,8 @@
 
     reject.addEventListener('click', function () {
       setCookie(COOKIE_NAME, 'rejected', COOKIE_DAYS);
+      clearAnalyticsData();
+      try { document.dispatchEvent(new CustomEvent('pf:consent-withdrawn')); } catch (e) { /* old browsers */ }
       close();
     });
 
