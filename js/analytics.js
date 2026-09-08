@@ -97,6 +97,38 @@
     // '<own-a-property GUID>': 'market_report_request',
   };
 
+  /**
+   * The Meta equivalent of each conversion.
+   *
+   * Meta can only optimise toward events it actually receives. Until now
+   * js/meta-pixel.js fired its OWN, older set — a different definition of a
+   * conversion from the one GA4 measures — so the two could disagree about
+   * what happened, and the pixel had no sign-up event at all. Routing Meta
+   * through pfTrack means one call site feeds GA4, the GTM dataLayer and Meta,
+   * and none of them can drift.
+   *
+   * Standard event names where Meta has one (they are what its bidding
+   * optimises against); trackCustom only where nothing fits. partner
+   * application and report request are both Lead — Meta's optimisable
+   * standard for an enquiry — separated by content_name so the reports can
+   * still tell them apart.
+   *
+   * signup_click is InitiateCheckout, NOT CompleteRegistration: it fires when
+   * someone leaves for the app, not when they register. Mapping it to
+   * CompleteRegistration would teach Meta's bidding to buy click-throughs and
+   * call them customers.
+   */
+  var META_EVENTS = {
+    register:              ['track', 'CompleteRegistration'],
+    model_chosen:          ['track', 'StartTrial'],
+    first_property_added:  ['trackCustom', 'FirstPropertyAdded'],
+    partner_application:   ['track', 'Lead'],
+    market_report_request: ['track', 'Lead'],
+    book_a_call:           ['track', 'Schedule'],
+    signup_click:          ['track', 'InitiateCheckout'],
+    partner_apply_start:   ['trackCustom', 'PartnerApplyIntent'],
+  };
+
   var APP_HOST = 'app.propertyflow.uk';
   var ATTRIBUTION_KEY = 'pf_attribution';
   var FIRST_TOUCH_KEY = 'pf_first_touch';
@@ -237,6 +269,20 @@
     var forGtm = { event: name };
     Object.keys(payload).forEach(function (k) { forGtm[k] = payload[k]; });
     window.dataLayer.push(forGtm);
+
+    /* Meta. Wrapped separately so a broken or extension-stubbed fbq cannot
+       stop GA4 from having already recorded the event. */
+    var meta = META_EVENTS[name];
+    if (meta && typeof window.fbq === 'function') {
+      try {
+        window.fbq(meta[0], meta[1], {
+          content_name: name,
+          /* No campaign parameters and no form values — Meta gets the fact of
+             the conversion, not the personal data behind it. */
+          value: undefined,
+        });
+      } catch (e) { /* analytics must never break a user action */ }
+    }
   }
 
   window.pfTrack = pfTrack;

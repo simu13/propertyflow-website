@@ -1,24 +1,54 @@
 /**
- * PropertyFlow — Meta (Facebook) Pixel, consent-gated
- * v1.0
+ * PropertyFlow — Meta (Facebook) Pixel loader, consent-gated
+ * v2.0
  *
- * SETUP: paste your Pixel/Dataset ID from Meta Events Manager below.
- * Until an ID is set, this file is a safe no-op (nothing loads, nothing fires).
+ * SETUP: paste the Pixel/Dataset ID from Meta Events Manager below.
+ * Until an ID is set this file is a safe no-op — nothing loads, nothing fires.
  *
- * PECR/consent: the pixel loads ONLY after the visitor has accepted cookies
- * (pf_cookie_consent, set by js/cookie-consent.js). If the banner is accepted
- * during the visit, the pixel initialises at that moment and fires PageView.
+ * ⚠️ AS OF 8 SEPT 2026 THE ID IS STILL EMPTY, SO THE PIXEL HAS NEVER FIRED
+ * ONCE, on any page, since it was installed. Two consequences worth knowing
+ * before anyone plans spend:
+ *   - £500/month of Meta and Instagram is scheduled from 21 September. Without
+ *     an ID it runs blind: no conversion data, no optimisation, no retargeting.
+ *   - The audience and conversion history a pixel builds cannot be backfilled.
+ *     Every day it stays empty is a day of learning the campaigns start
+ *     without. This is the one item on the tracking list where waiting has a
+ *     cost that cannot be recovered later.
+ *   - privacy-policy.html names the Meta Pixel nine times. That is currently
+ *     inaccurate in our favour, but it is still inaccurate.
  *
- * Events wired here (browser side):
- *   PageView            — every page, after consent
- *   InitiateCheckout    — click on any link to app.propertyflow.uk/register
- *   Lead                — HubSpot embedded form submitted (contact page)
- *   PartnerApplyIntent  — custom: click on a partner "apply" link/CTA
- *   CalculatorEngaged   — custom: first interaction with the earnings calculator
+ * WHAT CHANGED IN v2, AND WHY THIS FILE GOT SMALLER
+ * It used to fire its own conversion events — PageView, InitiateCheckout,
+ * Lead, PartnerApplyIntent, CalculatorEngaged. That was a second, older
+ * definition of "a conversion", maintained separately from the one GA4
+ * measures, and the two had already drifted:
+ *   - it had NO sign-up event at all, so Meta's bidding could only ever
+ *     optimise toward click-throughs to the app rather than registrations;
+ *   - `Lead` fired on ANY HubSpot form submission, so a plain contact enquiry
+ *     counted the same as a Partner application;
+ *   - `CalculatorEngaged` targeted #calculator, which the September redesign
+ *     removed — it could no longer fire under any circumstances.
  *
- * Still needed OUTSIDE this static site (see docs/staging-review tracker OP-34):
- *   - Same pixel + CompleteRegistration event inside app.propertyflow.uk
- *   - Conversions API needs a server (the app backend or a CAPI gateway)
+ * So conversion events now go through pfTrack in js/analytics.js, which feeds
+ * GA4, the GTM dataLayer and Meta from ONE call site (see META_EVENTS there).
+ * GA4 and Meta can no longer disagree about what a conversion is, and adding
+ * an event means touching one place instead of two.
+ *
+ * This file's remaining job: load the pixel after consent, and send the one
+ * PageView. Everything else is analytics.js.
+ *
+ * PECR/consent: loads ONLY after the visitor accepts (pf_cookie_consent, set
+ * by js/cookie-consent.js). If they accept mid-visit it initialises then.
+ * Withdrawal is handled by cookie-consent.js, which clears _fbp and _fbc.
+ *
+ * STILL NEEDED OUTSIDE THIS FILE:
+ *   - The pixel inside app.propertyflow.uk. register, model_chosen and
+ *     first_property_added all happen there, and they are the events worth
+ *     optimising toward. Without them Meta's best available signal is
+ *     InitiateCheckout — someone clicking through — which for a £9.99 product
+ *     is the difference between the budget working and not.
+ *   - Conversions API for server-side deduplication and iOS attribution.
+ *     Needs a server endpoint; not built.
  */
 (function () {
   'use strict';
@@ -28,7 +58,7 @@
   var id = window.PF_META_PIXEL_ID || PIXEL_ID;
   if (!id) {
     if (window.console && console.info) {
-      console.info('[meta-pixel] no Pixel ID configured — tracking disabled');
+      console.info('[meta-pixel] no Pixel ID configured — Meta tracking disabled');
     }
     return;
   }
@@ -41,7 +71,7 @@
   }
 
   function loadPixel() {
-    if (initialised) return;
+    if (initialised || !hasConsent()) return;
     initialised = true;
 
     /* Meta base code (official snippet) */
@@ -56,46 +86,10 @@
 
     window.fbq('init', id);
     window.fbq('track', 'PageView');
-    wireEvents();
   }
 
-  function wireEvents() {
-    /* outbound sign-up clicks → InitiateCheckout */
-    document.addEventListener('click', function (e) {
-      var a = e.target && e.target.closest && e.target.closest('a[href]');
-      if (!a) return;
-      var href = a.getAttribute('href') || '';
-      if (href.indexOf('app.propertyflow.uk/register') !== -1) {
-        window.fbq('track', 'InitiateCheckout', { content_name: 'signup_click' });
-      } else if (href.indexOf('/become-a-partner/apply') === 0 ||
-                 (a.textContent || '').toLowerCase().indexOf('apply to') !== -1) {
-        window.fbq('trackCustom', 'PartnerApplyIntent', { from: location.pathname });
-      }
-    }, true);
-
-    /* HubSpot embedded form submission → Lead */
-    window.addEventListener('message', function (e) {
-      var d = e.data;
-      if (d && d.type === 'hsFormCallback' && d.eventName === 'onFormSubmitted') {
-        window.fbq('track', 'Lead', { content_name: 'hubspot_form' });
-      }
-    });
-
-    /* partner earnings calculator engagement (once per page view) */
-    var calc = document.getElementById('calculator');
-    if (calc) {
-      var fired = false;
-      calc.addEventListener('input', function () {
-        if (fired) return;
-        fired = true;
-        window.fbq('trackCustom', 'CalculatorEngaged', { page: location.pathname });
-      }, true);
-    }
-  }
-
-  if (hasConsent()) {
-    loadPixel();
-  } else {
-    document.addEventListener('pf:consent-granted', loadPixel);
-  }
+  /* Not { once: true } — consent can be withdrawn and given again, and
+     loadPixel is idempotent. */
+  document.addEventListener('pf:consent-granted', loadPixel);
+  if (hasConsent()) loadPixel();
 })();
