@@ -180,18 +180,23 @@ let attributedPayload = null;
   await page.waitForTimeout(300);
   await page.locator('button:has-text("Accept")').first().click({ timeout: 5000 });
   await page.waitForTimeout(600);
-  await page.evaluate(() => {
-    // Whichever the current CTA is — the redesign moved it from Calendly to a
-    // mailto, and the event must follow the CTA, not the vendor.
-    const a = document.querySelector('a[href*="calendly.com"]')
-      || Array.from(document.querySelectorAll('a[href^="mailto:"]'))
-           .find((x) => /book\s*a\s*call/i.test(x.href + ' ' + x.textContent));
-    if (a) { a.setAttribute('target', '_blank'); a.click(); }
-  });
-  await page.waitForTimeout(300);
-  const evs = gtagEvents(await page.evaluate(() => window.__events));
-  check('book_a_call fires on the Calendly link', evs.some(e => e.name === 'book_a_call'),
-    evs.map(e => e.name).join(', '));
+    const dest = await page.evaluate(() => {
+      /* Click the CTA by SECTION, not by vendor. This link has already changed
+         once — the redesign replaced Calendly with mailto:sales@ — and changes
+         again when Amrit's booking link is swapped in. A vendor-coupled
+         selector made this test fail the moment the link changed, which reads
+         as "the tracking broke" when only the test had. */
+      const a = document.querySelector('#book-a-call a[href]');
+      if (!a) return null;
+      a.setAttribute('target', '_blank');
+      a.click();
+      return a.getAttribute('href');
+    });
+    await page.waitForTimeout(300);
+    const evs = gtagEvents(await page.evaluate(() => window.__events));
+    check('book_a_call fires on whatever the CTA points at',
+      evs.some(e => e.name === 'book_a_call'),
+      `dest=${dest} events=${evs.map(e => e.name).join(', ')}`);
   await ctx.close();
 }
 
