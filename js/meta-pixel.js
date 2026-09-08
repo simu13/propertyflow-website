@@ -5,17 +5,19 @@
  * SETUP: paste the Pixel/Dataset ID from Meta Events Manager below.
  * Until an ID is set this file is a safe no-op — nothing loads, nothing fires.
  *
- * ⚠️ AS OF 8 SEPT 2026 THE ID IS STILL EMPTY, SO THE PIXEL HAS NEVER FIRED
- * ONCE, on any page, since it was installed. Two consequences worth knowing
- * before anyone plans spend:
- *   - £500/month of Meta and Instagram is scheduled from 21 September. Without
- *     an ID it runs blind: no conversion data, no optimisation, no retargeting.
- *   - The audience and conversion history a pixel builds cannot be backfilled.
- *     Every day it stays empty is a day of learning the campaigns start
- *     without. This is the one item on the tracking list where waiting has a
- *     cost that cannot be recovered later.
- *   - privacy-policy.html names the Meta Pixel nine times. That is currently
- *     inaccurate in our favour, but it is still inaccurate.
+ * ID SET 8 SEPT 2026. Before that it was empty, so the pixel had never fired
+ * once since it was installed — and a pixel's audience and conversion history
+ * cannot be backfilled, so the £500/month Meta line starting 21 September now
+ * has roughly two weeks of learning behind it rather than none.
+ *
+ * The dataset is company-owned: created inside the Propertyflow Technologies
+ * LTD business portfolio, connected to the PropertyFlow — UK ad account. Two
+ * older pixels exist under a personal ad account (613045346702847 and
+ * 1448632136839651) and are deliberately NOT used — both had zero events, so
+ * nothing was lost, and Rajat's rule is that the company owns every asset.
+ *
+ * privacy-policy.html names the Meta Pixel nine times. Until today that was
+ * inaccurate in our favour; it is now accurate.
  *
  * WHAT CHANGED IN v2, AND WHY THIS FILE GOT SMALLER
  * It used to fire its own conversion events — PageView, InitiateCheckout,
@@ -53,7 +55,12 @@
 (function () {
   'use strict';
 
-  var PIXEL_ID = ''; // ← PASTE META PIXEL ID HERE (e.g. '1234567890123456')
+  /* Dataset "Propertyflow Web", created 8 Sept 2026 inside the
+     Propertyflow Technologies LTD business portfolio and connected to the
+     PropertyFlow — UK ad account (1095564742806634). Company-owned, not
+     personal — the two older pixels (613045346702847, 1448632136839651)
+     sat under a personal ad account and are deliberately not used. */
+  var PIXEL_ID = '1512399537594254';
 
   var id = window.PF_META_PIXEL_ID || PIXEL_ID;
   if (!id) {
