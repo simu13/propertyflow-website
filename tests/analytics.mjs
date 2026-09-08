@@ -399,6 +399,57 @@ let attributedPayload = null;
   await ctx.close();
 }
 
+// ------------- 6e. the sixth event: report request via the email fallback
+{
+  const { ctx, page } = await newPage();
+  /* This is the event that could not be measured at all: Rajat asked for
+     "report request" but no HubSpot form exists, so the page falls back to a
+     pre-filled email. Tracking the fallback makes it measurable NOW, and the
+     same event fires from the HubSpot branch once a GUID is pasted — so the
+     wiring does not need revisiting. */
+  await page.goto(`${BASE}/own-a-property/?utm_source=google&utm_campaign=2026-09-report`);
+  await page.waitForTimeout(300);
+  await page.locator('button:has-text("Accept")').first().click({ timeout: 5000 }).catch(() => {});
+  await page.waitForTimeout(600);
+
+  // The mailto redirect would navigate away; block it so the assertion can run.
+  await page.route('mailto:**', (r) => r.abort()).catch(() => {});
+
+  const filled = await page.evaluate(() => {
+    const f = document.getElementById('pf-report-form');
+    if (!f) return 'no form';
+    const set = (n, v) => { const el = f.elements[n]; if (el) el.value = v; };
+    set('address', '12 Test Street\nEdinburgh EH1 1AA');
+    set('bedrooms', '2');
+    set('sleeps', '4');
+    set('property_standard', 'Average');
+    set('name', 'Test Person');
+    set('email', 'test@example.com');
+    set('phone', '07700900123');
+    f.requestSubmit ? f.requestSubmit() : f.dispatchEvent(new Event('submit', { cancelable: true }));
+    return 'submitted';
+  });
+  await page.waitForTimeout(500);
+
+  const evs = gtagEvents(await page.evaluate(() => window.__events));
+  const ev = evs.find((e) => e.name === 'market_report_request');
+  check('report request fires on the email fallback', !!ev,
+    `${filled} — events: ${evs.map((e) => e.name).join(', ')}`);
+  if (ev) {
+    check('it records WHICH route, so email and HubSpot can be told apart',
+      ev.p.route === 'email_fallback', `route=${ev.p.route}`);
+    check('it carries the campaign that produced the enquiry',
+      ev.p.utm_campaign === '2026-09-report', `campaign=${ev.p.utm_campaign}`);
+    /* GA4 must never carry personal data. The form collects an address, a
+       name, an email and a phone number, and none of them may leave. */
+    const leaked = Object.entries(ev.p).filter(([, v]) =>
+      typeof v === 'string' && /test@example|Test Person|07700900123|Test Street/i.test(v));
+    check('and NO personal data reaches GA4', leaked.length === 0,
+      leaked.length ? JSON.stringify(leaked) : 'address/name/email/phone all absent');
+  }
+  await ctx.close();
+}
+
 // ------------------------------- 7. every page actually loads the script
 // This repo has no templating — head scripts are copy-pasted per file — so a
 // new page shipping without analytics is its most likely silent regression.

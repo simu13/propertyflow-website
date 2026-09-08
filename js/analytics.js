@@ -76,7 +76,25 @@
      alone would label a future market-report submission as a partner
      application. Match on the form ID from the start. */
   var FORMS = {
-    '10b60377-1c78-4f3f-936d-c54e3de1fdb5': 'partner_application'
+    /* ⚠️ 10b60377 is the OLD SITE CONTACT FORM. Partner applications are
+       currently routed through it as a stopgap (Rajat, 8 Sept: "it points at
+       the old site contact form, with the extra answers folded into the
+       message field"). So it reports as partner_application today and that is
+       correct — but it ALSO means a plain contact enquiry through the same
+       form is counted as a Partner application.
+
+       WHEN THE REAL PARTNER FORM EXISTS, DO BOTH OF THESE TOGETHER:
+         1. add its GUID below as 'partner_application'
+         2. change 10b60377 to 'contact_enquiry'
+       Doing only the first leaves every contact enquiry inflating the Partner
+       numbers; doing only the second loses the event entirely. */
+    '10b60377-1c78-4f3f-936d-c54e3de1fdb5': 'partner_application',
+
+    /* Own-a-property report form. Paste the GUID here at the same time as
+       HS_FORM_GUID in own-a-property/index.html. Until then that page tracks
+       market_report_request off its email fallback, so the event works either
+       way and this entry is additive rather than a fix. */
+    // '<own-a-property GUID>': 'market_report_request',
   };
 
   var APP_HOST = 'app.propertyflow.uk';
