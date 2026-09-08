@@ -436,6 +436,20 @@
           var body = 'Own a property? enquiry\n\nFull address: ' + d.address + '\nBedrooms: ' + d.bedrooms + '\nSleeps: ' + d.sleeps +
             '\nProperty standard: ' + d.standard + '\n\nName: ' + d.name + '\nEmail: ' + d.email + '\nPhone: ' + d.phone +
             '\n\nThis report is an estimate, not a valuation or a promise of returns.';
+          /* The sixth conversion event. Recorded on the EMAIL route as well as
+             the HubSpot one, so "report request" is measurable now rather than
+             waiting on a form GUID — and so it needs no second change when the
+             GUID lands. `route` is what tells the two apart: an email enquiry
+             needs a person to act on it, a HubSpot one does not, and the report
+             should show which is which.
+             No address, name, email or phone is sent. GA4 must never carry
+             personal data, and bedrooms/standard are enough to see what kind of
+             property enquired. */
+          if (typeof window.pfTrack === 'function') {
+            window.pfTrack('market_report_request', {
+              route: 'email_fallback', bedrooms: d.bedrooms, property_standard: d.standard
+            });
+          }
           window.location.href = 'mailto:info@propertyflow.uk?subject=' + encodeURIComponent('Own a property? ' + d.address.split('\n')[0]) + '&body=' + encodeURIComponent(body);
           say('Your email app should open with the details filled in. If it does not, email info@propertyflow.uk with the address, bedrooms, sleeps and standard of the property.', 'ok');
           return;
@@ -460,9 +474,22 @@
           if (!r.ok) throw new Error('HubSpot ' + r.status);
           form.reset(); btn.disabled = false;
           say('Thank you. Your details have gone to the PropertyFlow Verified Partner for your area, and your report will follow by email. This report is an estimate, not a valuation or a promise of returns.', 'ok');
+          if (typeof window.pfTrack === 'function') {
+            window.pfTrack('market_report_request', {
+              route: 'hubspot', bedrooms: d.bedrooms, property_standard: d.standard
+            });
+          }
+          /* NB: the Meta event below is inert — js/meta-pixel.js has no PIXEL_ID,
+             so fbq is never defined and nothing has ever fired. */
           if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (err) {} }
         }).catch(function () {
           btn.disabled = false;
+          /* A form that quietly stops accepting enquiries is the worst outcome:
+             the page looks fine, nobody complains, and the lead count just drops.
+             Recorded so it lands in the same report as the successes. */
+          if (typeof window.pfTrack === 'function') {
+            window.pfTrack('market_report_request_failed', { route: 'hubspot' });
+          }
           say('Something went wrong sending the form. Please email info@propertyflow.uk with the address, bedrooms, sleeps and standard of the property and we will pick it up from there.', 'error');
         });
       });
