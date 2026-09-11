@@ -584,13 +584,26 @@ body.hd-page .hd-pricing__sub { font-family: "Krub", sans-serif; font-size: 16px
 body.hd-page .hd-pricing__grid {
   text-align: left;
   display: grid;
-  /* Two cards since 2026-09-11: the Free/Premium split was retired, so the
-     host-facing plan and the Partner Programme are all that remain. Was
-     repeat(3, 1fr), which left a dead third column. */
+  /* Two cards since 2026-09-11 (the Free/Premium split was retired), where
+     there were three.
+     
+     The max-width is the point, not the column count. The wrap is 1144px of
+     content, so three columns gave each card (1144 - 24) / 3 = 373px. Simply
+     dropping to two made every card 566px — the same padding and type in a
+     52%-wider box, which reads as bloated and lets the Partner bullets run as
+     long single lines. Capping the grid at 2 x 373 + 12 keeps each card the
+     exact width it has always been, and centres the pair. */
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-top: 56px;
+  max-width: 758px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
+/* Same cap, so the channels card lines up with the two above it rather than
+   running the full 1144px on its own. */
+body.hd-page .hd-channels { max-width: 758px; margin-left: auto; margin-right: auto; }
 body.hd-page .hd-plan {
   position: relative;
   background: var(--sidebar-bg);
