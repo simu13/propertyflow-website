@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
 
     <!-- Google Tag Manager — consent-gated loader + Consent Mode v2 (js/gtm.js); included BEFORE the GA4 loader on purpose -->
-    <script src="/js/gtm.js?v=1"></script>
+    <script src="/js/gtm.js?v=2"></script>
     <!-- Google tag (gtag.js) -->
     <script>
       /* GA4 — consent-gated (PECR): loads only after the cookie banner is accepted */
       (function () {
+        if (!/(^|\.)propertyflow\.uk$/.test(location.hostname)) return; /* production tag: our domain only */
         function loadGA() {
           if (window.__pfGA) return; window.__pfGA = true;
           var s = document.createElement('script'); s.async = true;
@@ -344,6 +345,6 @@
 <script src="/js/propertyflow.js?v=14"></script>
 <script src="/js/cookie-consent.js?v=4"></script>
     <script src="/js/meta-pixel.js"></script>
-    <script src="/js/analytics.js?v=2"></script>
+    <script src="/js/analytics.js?v=3"></script>
 </body>
 </html>

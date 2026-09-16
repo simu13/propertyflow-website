@@ -30,6 +30,7 @@
  * before the banner is answered.
  */
 (function () {
+  if (!/(^|\.)propertyflow\.uk$/.test(location.hostname)) return; /* production tag: our domain only */
   var CONTAINER_ID = 'GTM-56J2JD85';
   var id = window.PF_GTM_ID || CONTAINER_ID;
   var COOKIE_NAME = 'pf_cookie_consent';
